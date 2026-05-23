@@ -1,0 +1,97 @@
+# inTrack Documentation (Markdown export)
+
+> Plain Markdown export of inTrack docs v3.0.0+ for AI tools and public reference.
+> Official site: https://docs.intrack.ir
+
+## Pages
+
+- [Getting Started](android/android-getting-started.md): inTrack Android SDK is hosted on mavenCentral Maven repository.
+  - Web: https://docs.intrack.ir/docs/getting-start/android/android-getting-started
+- [In-app Messaging](android/inapp-messaging.md): you can enable In App messaging service by calling `enableInAppMessaging()` on InTrackConfig object during inTrack initialization.
+  - Web: https://docs.intrack.ir/docs/getting-start/android/inapp-messaging
+- [Notification Channels](android/push-messaging/notification-channels.md): From Android 8.0 (API level 26) and higher, [notification channels](https://developer.android.com/develop/ui/views/notifications#ManageChannels) are supported a
+  - Web: https://docs.intrack.ir/docs/getting-start/android/push-messaging/notification-channels
+- [Push Amplification](android/push-messaging/push-amplification.md): Push amplification refers to the process of increasing the effectiveness and reach of push notifications by optimizing delivery strategies, targeting relevant a
+  - Web: https://docs.intrack.ir/docs/getting-start/android/push-messaging/push-amplification
+- [Push Messaging](android/push-messaging/push-messaging.md): Please ensure that you have completed all the platform integration steps listed under [GettingStarted](../android-getting-started) before proceeding.
+  - Web: https://docs.intrack.ir/docs/getting-start/android/push-messaging/push-messaging
+- [Push notification advance features](android/push-messaging/push-notification-advance-features.md): The inTrack SDK provides a helper class named InTrackPush designed to offer enhanced control and flexibility in handling push notifications. Below are some comm
+  - Web: https://docs.intrack.ir/docs/getting-start/android/push-messaging/push-notification-advance-features
+- [Tracking Events](android/tracking-events.md): We recommend that you get yourself acquainted with the concept of [SystemEvents](../events#system-events), [CustomEvents](../events#custom-events) and their att
+  - Web: https://docs.intrack.ir/docs/getting-start/android/tracking-events
+- [Tracking Users](android/tracking-users.md): We recommend that you get yourself acquainted with all the concepts related to [Users](../user.md) and [Events](../events.md) before proceeding. Doing so will h
+  - Web: https://docs.intrack.ir/docs/getting-start/android/tracking-users
+- [Custom Channels](custom-channel/custom-channels.md): Custom Channel as a Provider is a feature in inTrack that allows users to create and customize their own channels for content delivery. This can be useful for b
+  - Web: https://docs.intrack.ir/docs/getting-start/custom-channel/custom-channels
+- [Private Providers](custom-channel/private-providers.md): Many businesses are hesitant to share their users' contact details with third-party platforms like inTrack. We understand this concern, so we’ve developed Priva
+  - Web: https://docs.intrack.ir/docs/getting-start/custom-channel/private-providers
+- [Sending Push Notifications via Custom Channel](custom-channel/sending-push-notifications-via-custom-channel.md): The process of sending push notifications through inTrack's custom channels involves the following steps. Depending on your needs, some steps may require additi
+  - Web: https://docs.intrack.ir/docs/getting-start/custom-channel/sending-push-notifications-via-custom-channel
+- [Telegram Channel](custom-channel/telegram-provider.md): Obtain your Telegram API token by creating a bot through `@BotFather`. Follow [this tutorial](https://core.telegram.org/bots/tutorial) for detailed steps.
+  - Web: https://docs.intrack.ir/docs/getting-start/custom-channel/telegram-provider
+- [Events](events.md): All behavioral data points are called Events in [your dashboard](https://dash.intrack.ir). And each Event can further be understood in the context of its Attrib
+  - Web: https://docs.intrack.ir/docs/getting-start/events
+- [Getting Started](flutter/flutter-getting-started.md): Flutter is an open-source UI software development kit created by Google. It enabled you to develop apps for Android, iOS, Linux, Mac, Windows, and the web from 
+  - Web: https://docs.intrack.ir/docs/getting-start/flutter/flutter-getting-started
+- [In-app Messaging](flutter/inapp-messaging.md): you can enable In App messaging service by calling enableInAppMessaging on config object during inTrack initialization.
+  - Web: https://docs.intrack.ir/docs/getting-start/flutter/inapp-messaging
+- [Push Messaging](flutter/push-messaging.md): Before continuing, please ensure that you've [ added the Flutter SDK to your app ](../flutter/flutter-getting-started.md).
+  - Web: https://docs.intrack.ir/docs/getting-start/flutter/push-messaging
+- [Tracking Events](flutter/tracking-events.md): We recommend that you get yourself acquainted with the concept of [SystemEvents](../events#system-events), [CustomEvents](../events#custom-events) and their att
+  - Web: https://docs.intrack.ir/docs/getting-start/flutter/tracking-events
+- [Tracking Users](flutter/tracking-users.md): We recommend that you get yourself acquainted with all the concepts related to [Users](../user.md) and [Events](../events.md) before proceeding. Doing so will h
+  - Web: https://docs.intrack.ir/docs/getting-start/flutter/tracking-users
+- [Getting Started](getting-start.md): This documentation covers the steps to integrating your apps and website with inTrack. We’ll also discuss a few fundamentals of how the [dashboard](https://dash
+  - Web: https://docs.intrack.ir/docs/getting-start/
+- [Getting Started](iOS/ios-getting-started.md): You can add the  inTrack SDK to your project in two ways: using CocoaPods or manually. Before you begin, ensure everything is properly configured:
+  - Web: https://docs.intrack.ir/docs/getting-start/iOS/ios-getting-started
+- [In-app Messaging](iOS/ios-inapp-messaging.md): you can enable In App messaging service by calling `enableInAppMessaging` on InTrackConfig object during inTrack initialization.
+  - Web: https://docs.intrack.ir/docs/getting-start/iOS/ios-inapp-messaging
+- [Push Messaging](iOS/push-messaging.md): Please ensure that you have completed all the platform integration steps listed under [GettingStarted](ios-getting-started) before proceeding.
+  - Web: https://docs.intrack.ir/docs/getting-start/iOS/push-messaging
+- [Tracking Events](iOS/tracking-events.md): We recommend that you get yourself acquainted with the concept of [SystemEvents](../events#system-events), [CustomEvents](../events#custom-events) and their att
+  - Web: https://docs.intrack.ir/docs/getting-start/iOS/tracking-events
+- [Tracking Users](iOS/tracking-users.md): We recommend that you get yourself acquainted with all the concepts related to [Users](../user.md) and [Events](../events.md) before proceeding. Doing so will h
+  - Web: https://docs.intrack.ir/docs/getting-start/iOS/tracking-users
+- [Migrating from SDK V2 to V3](migration/migration-v2-to-v3.md): This guide provides step-by-step instructions to help you upgrade your integration from Version 2 to Version 3 of the SDK. It outlines breaking changes, updated
+  - Web: https://docs.intrack.ir/docs/getting-start/migration/migration-v2-to-v3
+- [Push Messaging](react-native/push-messaging.md): Before continuing, please ensure that you have added [react-native-inTrack](react-native-getting-started.md) to your App.
+  - Web: https://docs.intrack.ir/docs/getting-start/react-native/push-messaging
+- [Getting Started](react-native/react-native-getting-started.md): Here's how you can integrate the inTrack SDK with your react native apps:
+  - Web: https://docs.intrack.ir/docs/getting-start/react-native/react-native-getting-started
+- [In-app Messaging](react-native/react-native-inapp-messaging.md): you can enable In App messaging service by calling enableInAppMessaging on config object during inTrack initialization.
+  - Web: https://docs.intrack.ir/docs/getting-start/react-native/react-native-inapp-messaging
+- [Tracking Events](react-native/tracking-events.md): We recommend that you get yourself acquainted with the concept of [SystemEvents](../events#system-events), [CustomEvents](../events#custom-events) and their att
+  - Web: https://docs.intrack.ir/docs/getting-start/react-native/tracking-events
+- [Tracking Users](react-native/tracking-users.md): We recommend that you get yourself acquainted with all the concepts related to [Users](../user.md) and [Events](../events.md) before proceeding. Doing so will h
+  - Web: https://docs.intrack.ir/docs/getting-start/react-native/tracking-users
+- [Business Events](rest-api/business-events.md): inTrack offers an API for triggering business events using the business events endpoint as described below.
+  - Web: https://docs.intrack.ir/docs/getting-start/rest-api/business-events
+- [Getting Started](rest-api/rest-api-getting-started.md): REST API allows you to programmatically transfer information over the internet using a predefined schema. inTrack offers endpoints with specific requirements th
+  - Web: https://docs.intrack.ir/docs/getting-start/rest-api/rest-api-getting-started
+- [Tracking Events](rest-api/tracking-events.md): We recommend that you get yourself acquainted with the concept of [SystemEvents](../events#system-events), [CustomEvents](../events#custom-events) and their att
+  - Web: https://docs.intrack.ir/docs/getting-start/rest-api/tracking-events
+- [Tracking Users](rest-api/tracking-users.md): We recommend that you get yourself acquainted with all the concepts related to [Users](../user.md) and [Events](../events.md) before proceeding. Doing so will h
+  - Web: https://docs.intrack.ir/docs/getting-start/rest-api/tracking-users
+- [Transactional Campaign API](rest-api/transactional-campaign-api.md): The inTrack Transactional Campaign API enables you to send critical transactional messages to your users, such as order confirmations, shipping details, payment
+  - Web: https://docs.intrack.ir/docs/getting-start/rest-api/transactional-campaign-api
+- [Using a Custom Domain](sms-custom-domain.md): In digital marketing, short and visually appealing SMS links are essential. Intrack automatically shortens any link included in your SMS campaigns, reducing mes
+  - Web: https://docs.intrack.ir/docs/getting-start/sms-custom-domain
+- [User](user.md): At inTrack, anybody who has interacted with your business at least once is called a User.
+  - Web: https://docs.intrack.ir/docs/getting-start/user
+- [Integration Guide](web-view/implementaion-guide.md): If your application is designed to display website pages within the app (WebView), you can use the automatic sync feature of the Web SDK to seamlessly synchroni
+  - Web: https://docs.intrack.ir/docs/getting-start/web-view/implementaion-guide
+- [On-Site](web/on-site.md): Initializing On Site messages service is done by calling initOnSiteMessaging method with optional config parameter.
+  - Web: https://docs.intrack.ir/docs/getting-start/web/on-site
+- [Tracking Events](web/tracking-events.md): We recommend that you get yourself acquainted with the concept of [SystemEvents](../events#system-events), [CustomEvents](../events#custom-events) and their att
+  - Web: https://docs.intrack.ir/docs/getting-start/web/tracking-events
+- [Tracking Users](web/tracking-users.md): We recommend that you get yourself acquainted with all the concepts related to [Users](../user.md) and [Events](../events.md) before proceeding. Doing so will h
+  - Web: https://docs.intrack.ir/docs/getting-start/web/tracking-users
+- [Getting Started](web/web-getting-started.md): The inTrack Web SDK enables seamless web push notifications and comprehensive data gathering from web applications.
+  - Web: https://docs.intrack.ir/docs/getting-start/web/web-getting-started
+- [Web Push Messaging](web/web-push-notification.md): Please ensure that you have completed all the platform integration steps listed under [GettingStarted](web-getting-started) before proceeding.
+  - Web: https://docs.intrack.ir/docs/getting-start/web/web-push-notification
+- [How to Configure](webhook/configuration.md): You will be able to configure URLs for different events from the Webhooks section of your  [inTrack dashboard](https://dash.intrack.ir) -> setting-> webhook. Fo
+  - Web: https://docs.intrack.ir/docs/getting-start/webhook/configuration
+- [How It Works](webhook/webhook-getting-started.md): inTrack webhooks enable you to set up HTTP callbacks for events occurring within inTrack. By configuring a webhook, inTrack can trigger a callback to a script o
+  - Web: https://docs.intrack.ir/docs/getting-start/webhook/webhook-getting-started
