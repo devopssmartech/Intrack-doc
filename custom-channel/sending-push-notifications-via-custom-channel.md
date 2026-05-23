@@ -2,7 +2,8 @@
 title: Sending Push Notifications via Custom Channel
 version: 3.0.0+
 source_path: custom-channel/sending-push-notifications-via-custom-channel.md
-docs_url: https://docs.intrack.ir/docs/getting-start/custom-channel/sending-push-notifications-via-custom-channel
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/custom-channel/sending-push-notifications-via-custom-channel.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/custom-channel/sending-push-notifications-via-custom-channel.md
 ---
 # Sending Push Notifications via Custom Channel
 

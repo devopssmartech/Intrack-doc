@@ -2,7 +2,8 @@
 title: Telegram Channel
 version: 3.0.0+
 source_path: custom-channel/telegram-provider.md
-docs_url: https://docs.intrack.ir/docs/getting-start/custom-channel/telegram-provider
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/custom-channel/telegram-provider.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/custom-channel/telegram-provider.md
 ---
 # Telegram Channel
 

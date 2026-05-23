@@ -2,7 +2,8 @@
 title: Getting Started
 version: 3.0.0+
 source_path: android/android-getting-started.md
-docs_url: https://docs.intrack.ir/docs/getting-start/android/android-getting-started
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/android/android-getting-started.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/android/android-getting-started.md
 ---
 # Getting Started
 

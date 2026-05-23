@@ -2,7 +2,8 @@
 title: User
 version: 3.0.0+
 source_path: user.md
-docs_url: https://docs.intrack.ir/docs/getting-start/user
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/user.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/user.md
 ---
 # User
 ## Types of Users

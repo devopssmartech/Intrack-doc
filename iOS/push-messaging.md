@@ -2,7 +2,8 @@
 title: Push Messaging
 version: 3.0.0+
 source_path: iOS/push-messaging.md
-docs_url: https://docs.intrack.ir/docs/getting-start/iOS/push-messaging
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/iOS/push-messaging.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/iOS/push-messaging.md
 ---
 # Push Messaging
 

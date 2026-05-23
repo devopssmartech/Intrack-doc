@@ -2,7 +2,8 @@
 title: Getting Started
 version: 3.0.0+
 source_path: react-native/react-native-getting-started.md
-docs_url: https://docs.intrack.ir/docs/getting-start/react-native/react-native-getting-started
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/react-native/react-native-getting-started.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/react-native/react-native-getting-started.md
 ---
 # Getting Started
 

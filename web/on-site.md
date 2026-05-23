@@ -2,7 +2,8 @@
 title: On-Site
 version: 3.0.0+
 source_path: web/on-site.md
-docs_url: https://docs.intrack.ir/docs/getting-start/web/on-site
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/web/on-site.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/web/on-site.md
 ---
 # On-Site
 

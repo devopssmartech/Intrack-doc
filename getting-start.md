@@ -2,7 +2,8 @@
 title: Getting Started
 version: 3.0.0+
 source_path: getting-start.md
-docs_url: https://docs.intrack.ir/docs/getting-start/
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/getting-start.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/getting-start.md
 ---
 # Getting Started
 This documentation covers the steps to integrating your apps and website with **inTrack**. We’ll also discuss a few fundamentals of how the [dashboard](https://dash.intrack.ir) works in tandem with your business to provide a 360° view of your users and engage them with contextually personalized messages.

@@ -2,7 +2,8 @@
 title: Using a Custom Domain
 version: 3.0.0+
 source_path: sms-custom-domain.md
-docs_url: https://docs.intrack.ir/docs/getting-start/sms-custom-domain
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/sms-custom-domain.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/sms-custom-domain.md
 ---
 # Using a Custom Domain
 

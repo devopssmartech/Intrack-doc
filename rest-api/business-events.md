@@ -2,7 +2,8 @@
 title: Business Events
 version: 3.0.0+
 source_path: rest-api/business-events.md
-docs_url: https://docs.intrack.ir/docs/getting-start/rest-api/business-events
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/rest-api/business-events.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/rest-api/business-events.md
 ---
 # Business Events
 

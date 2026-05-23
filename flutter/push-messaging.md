@@ -2,7 +2,8 @@
 title: Push Messaging
 version: 3.0.0+
 source_path: flutter/push-messaging.md
-docs_url: https://docs.intrack.ir/docs/getting-start/flutter/push-messaging
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/flutter/push-messaging.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/flutter/push-messaging.md
 ---
 # Push Messaging
 

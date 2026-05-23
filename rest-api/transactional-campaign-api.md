@@ -2,7 +2,8 @@
 title: Transactional Campaign API
 version: 3.0.0+
 source_path: rest-api/transactional-campaign-api.md
-docs_url: https://docs.intrack.ir/docs/getting-start/rest-api/transactional-campaign-api
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/rest-api/transactional-campaign-api.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/rest-api/transactional-campaign-api.md
 ---
 # Transactional Campaign API
 

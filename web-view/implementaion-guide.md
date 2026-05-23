@@ -2,7 +2,8 @@
 title: Integration Guide
 version: 3.0.0+
 source_path: web-view/implementaion-guide.md
-docs_url: https://docs.intrack.ir/docs/getting-start/web-view/implementaion-guide
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/web-view/implementaion-guide.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/web-view/implementaion-guide.md
 ---
 # Integration Guide
 

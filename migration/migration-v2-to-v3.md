@@ -2,7 +2,8 @@
 title: Migrating from SDK V2 to V3
 version: 3.0.0+
 source_path: migration/migration-v2-to-v3.md
-docs_url: https://docs.intrack.ir/docs/getting-start/migration/migration-v2-to-v3
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/migration/migration-v2-to-v3.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/migration/migration-v2-to-v3.md
 ---
 # Migrating from SDK V2 to V3
 

@@ -2,7 +2,8 @@
 title: Getting Started
 version: 3.0.0+
 source_path: iOS/ios-getting-started.md
-docs_url: https://docs.intrack.ir/docs/getting-start/iOS/ios-getting-started
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/iOS/ios-getting-started.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/iOS/ios-getting-started.md
 ---
 # Getting Started
 

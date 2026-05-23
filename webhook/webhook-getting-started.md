@@ -2,7 +2,8 @@
 title: How It Works
 version: 3.0.0+
 source_path: webhook/webhook-getting-started.md
-docs_url: https://docs.intrack.ir/docs/getting-start/webhook/webhook-getting-started
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/webhook/webhook-getting-started.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/webhook/webhook-getting-started.md
 ---
 # How It Works
 

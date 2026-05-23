@@ -2,7 +2,8 @@
 title: Getting Started
 version: 3.0.0+
 source_path: web/web-getting-started.md
-docs_url: https://docs.intrack.ir/docs/getting-start/web/web-getting-started
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/web/web-getting-started.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/web/web-getting-started.md
 ---
 # Getting Started
 

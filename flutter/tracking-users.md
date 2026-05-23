@@ -2,7 +2,8 @@
 title: Tracking Users
 version: 3.0.0+
 source_path: flutter/tracking-users.md
-docs_url: https://docs.intrack.ir/docs/getting-start/flutter/tracking-users
+github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/flutter/tracking-users.md
+github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/flutter/tracking-users.md
 ---
 # Tracking Users
 
