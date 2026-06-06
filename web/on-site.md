@@ -1,7 +1,11 @@
 ---
 title: On-Site
+description: On-site messaging is initialized by calling the `initOnSiteMessaging` method with an optional config parameter to display targeted messages on your website.
 version: 3.0.0+
+category: Web SDK
+platform: web
 source_path: web/on-site.md
+docs_url: https://docs.intrack.ir/docs/getting-start/web/on-site
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/web/on-site.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/web/on-site.md
 ---
@@ -15,8 +19,6 @@ Initializing On Site messages service is done by calling initOnSiteMessaging met
  that for using onSite you should use our latest sdk (https://static1.intrack.ir/api/web/download/sdk/v1/inTrack.min.js?v=00)
  :::
 
-
-
 ### Asynchronous
 
 ```javascript
@@ -26,8 +28,6 @@ Initializing On Site messages service is done by calling initOnSiteMessaging met
 }
 ```
 
-
-
 ### Synchronous
 
 ```javascript
@@ -36,8 +36,6 @@ Initializing On Site messages service is done by calling initOnSiteMessaging met
 `
 }
 ```
-
-
 
 Method `initOnSiteMessaging` accepts a config parameter with the following model. You can customize look and feel of widget with these parameters:
 
@@ -86,8 +84,6 @@ our tracking object is look like this:
 
 you can tell our SDK about user's page views manually, by calling `sendScreenInfo` method.
 
-
-
 ### Asynchronous
 
 ```javascript
@@ -104,8 +100,6 @@ you can tell our SDK about user's page views manually, by calling `sendScreenInf
 }
 ```
 
-
-
 | Property  | Type    | Description                                                                                                             |
 |-----------|---------|-------------------------------------------------------------------------------------------------------------------------|
 | pageInfo  | Object  | It should contain two keys: title and data. title is a string representing the page's title and data is an object that could contain any key that matters to you. |
@@ -113,10 +107,7 @@ you can tell our SDK about user's page views manually, by calling `sendScreenInf
 
 you can use `sendScreenInfo` with our automatic page tracking for enriching page data. for example you want to display a message to a user who is seeing your product page, and whose price is more that a specific number, in this case you could call this method with following properties:
 
-
-
 ### Asynchronous
-
 
 ```javascript
         {
@@ -124,19 +115,13 @@ you can use `sendScreenInfo` with our automatic page tracking for enriching page
         }
 ```
 
-
-
-
 ### Synchronous
-
 
 ```javascript
         {
           `$InTrack.sendScreenInfo(title: 'MY_PRODUCT', data: {price: 10000}, false);`
         }
 ```
-
-
 
 ### Custom Display Message
 
@@ -236,7 +221,6 @@ Depending on message layout type(`Text & Link`, `Coupon` and `Image only`) You w
   "ttl": 1,
 }
 ```
-
 
 after you displaying message to user, you should tell us about user's activity about a message with sending events:
 

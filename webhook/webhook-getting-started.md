@@ -1,7 +1,11 @@
 ---
 title: How It Works
+description: inTrack webhooks let you set up HTTP callbacks for events within inTrack, triggering a callback to your web server whenever specific events occur so you receive real-time data.
 version: 3.0.0+
+category: Webhook
+platform: webhook
 source_path: webhook/webhook-getting-started.md
+docs_url: https://docs.intrack.ir/docs/getting-start/webhook/webhook-getting-started
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/webhook/webhook-getting-started.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/webhook/webhook-getting-started.md
 ---

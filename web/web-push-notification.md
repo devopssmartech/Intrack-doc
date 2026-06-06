@@ -1,7 +1,11 @@
 ---
 title: Web Push Messaging
+description: This guide covers web push notification setup; complete all platform integration steps in Getting Started before proceeding.
 version: 3.0.0+
+category: Web SDK
+platform: web
 source_path: web/web-push-notification.md
+docs_url: https://docs.intrack.ir/docs/getting-start/web/web-push-notification
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/web/web-push-notification.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/web/web-push-notification.md
 ---

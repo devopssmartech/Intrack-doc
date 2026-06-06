@@ -1,7 +1,11 @@
 ---
 title: In-app Messaging
+description: You can enable in-app messaging by calling `enableInAppMessaging` on the InTrackConfig object during inTrack initialization.
 version: 3.0.0+
+category: iOS SDK
+platform: ios
 source_path: iOS/ios-inapp-messaging.md
+docs_url: https://docs.intrack.ir/docs/getting-start/iOS/ios-inapp-messaging
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/iOS/ios-inapp-messaging.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/iOS/ios-inapp-messaging.md
 ---
@@ -43,8 +47,6 @@ for using In App messaging you should use **inTrack** sdk (version 2.6.5 or high
 }
 ```
 
-
-
 ## Custom Screen tracking
 
 Screens are mobile equivalent of web pages, which can have associated properties. **inTrack** SDK allows you to tag whenever a user sees a screen in your iOS pages.These tags allow you to pinpoint screens in your app where you would later render in-app messages using [inTrack dashboard](https://dash.intrack.ir). Note that screens are only usable for targeting in-app engagements.
@@ -67,8 +69,6 @@ you can manually tell **inTrack** about user navigation by calling **inTrack**'s
 `
 }
 ```
-
-
 
 ## Tracking Screen Data
 
@@ -98,8 +98,6 @@ Every screen can be associated with some contextual data, which can be part of t
 }
 ```
 
-
-
 ## Callbacks
 
 Callbacks are useful for understanding the lifecycle stages of **inTrack** messages. All **inTrack** callbacks are called on the main thread.
@@ -127,8 +125,6 @@ If you want to get notified about user reactions to Messages, first you should i
 }
 ```
 
-
-
 ### swift
 
 ```swift
@@ -151,8 +147,6 @@ If you want to get notified about user reactions to Messages, first you should i
 `
 }
 ```
-
-
 
 **on Message Trigger:** This callback is invoked before the in-app message is shown to your users.
 
@@ -189,8 +183,6 @@ and set `inAppDisplayDelegate = self` as shown below:
 `
 }
 ```
-
-
 
 :::info
 

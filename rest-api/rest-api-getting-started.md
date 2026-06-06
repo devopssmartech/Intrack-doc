@@ -1,7 +1,11 @@
 ---
 title: Getting Started
+description: The inTrack REST API lets you programmatically transfer information over the internet using predefined endpoints to track user attributes, events, and campaign data.
 version: 3.0.0+
+category: REST API
+platform: rest-api
 source_path: rest-api/rest-api-getting-started.md
+docs_url: https://docs.intrack.ir/docs/getting-start/rest-api/rest-api-getting-started
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/rest-api/rest-api-getting-started.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/rest-api/rest-api-getting-started.md
 ---

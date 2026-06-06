@@ -1,7 +1,11 @@
 ---
 title: Tracking Events
+description: Learn how to record System Events and Custom Events in the Web SDK; review the Events guide first to understand event types and their attributes.
 version: 3.0.0+
+category: Web SDK
+platform: web
 source_path: web/tracking-events.md
+docs_url: https://docs.intrack.ir/docs/getting-start/web/tracking-events
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/web/tracking-events.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/web/tracking-events.md
 ---
@@ -53,8 +57,6 @@ For example:
 }
 ```
 
-
-
 ### Synchronous
 
 ```javascript
@@ -74,8 +76,6 @@ For example:
 });`
 }
 ```
-
-
 
 ### Guidelines
 Here are a few things to keep in mind:
@@ -139,7 +139,5 @@ To log in a user, you can send the userId to the sendEvent method. Below are exa
 });`
 }
 ```
-
-
 
 If the user is not already logged in, the SDK will first call the login method internally (sending a login event) before registering the custom event.

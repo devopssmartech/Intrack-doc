@@ -1,7 +1,11 @@
 ---
 title: Getting Started
+description: The inTrack Web SDK enables seamless web push notifications and comprehensive data gathering from web applications.
 version: 3.0.0+
+category: Web SDK
+platform: web
 source_path: web/web-getting-started.md
+docs_url: https://docs.intrack.ir/docs/getting-start/web/web-getting-started
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/web/web-getting-started.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/web/web-getting-started.md
 ---

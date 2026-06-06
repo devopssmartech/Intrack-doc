@@ -1,7 +1,11 @@
 ---
 title: Telegram Channel
+description: This guide explains how to set up a Telegram channel by creating a bot through BotFather and configuring it as a custom provider in inTrack.
 version: 3.0.0+
+category: Custom Channels
+platform: custom-channel
 source_path: custom-channel/telegram-provider.md
+docs_url: https://docs.intrack.ir/docs/getting-start/custom-channel/telegram-provider
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/custom-channel/telegram-provider.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/custom-channel/telegram-provider.md
 ---

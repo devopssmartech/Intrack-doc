@@ -1,7 +1,11 @@
 ---
 title: Getting Started
+description: Flutter is an open-source UI toolkit from Google for building apps across platforms, and this guide covers integrating the inTrack Flutter SDK for Android and iOS from a single codebase.
 version: 3.0.0+
+category: Flutter SDK
+platform: flutter
 source_path: flutter/flutter-getting-started.md
+docs_url: https://docs.intrack.ir/docs/getting-start/flutter/flutter-getting-started
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/flutter/flutter-getting-started.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/flutter/flutter-getting-started.md
 ---

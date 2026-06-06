@@ -1,7 +1,11 @@
 ---
 title: Tracking Events
+description: Learn how to record System Events and Custom Events in the React Native SDK; review the Events guide first to understand event types and their attributes.
 version: 3.0.0+
+category: React Native SDK
+platform: react-native
 source_path: react-native/tracking-events.md
+docs_url: https://docs.intrack.ir/docs/getting-start/react-native/tracking-events
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/react-native/tracking-events.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/react-native/tracking-events.md
 ---
@@ -29,7 +33,6 @@ Users can create their own custom events and send them to **inTrack** server. Th
 ```
 
 example of custom event with a event data:
-
 
 ```javascript
 {

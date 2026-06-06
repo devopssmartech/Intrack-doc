@@ -1,3 +1,11 @@
+---
+title: inTrack Documentation
+description: Repository index and table of contents for inTrack SDK v3.0.0+ integration guides exported for AI tools and public reference.
+version: 3.0.0+
+category: Index
+platform: index
+type: index
+---
 # inTrack Documentation
 
 **inTrack** is an all-in-one marketing automation platform that helps businesses connect with customers through automated, personalized messaging across mobile apps, web, and APIs.
@@ -221,7 +229,7 @@ Read the full guide: **[react-native/tracking-users.md](react-native/tracking-us
 
 ### [Getting Started](flutter/flutter-getting-started.md)
 
-Flutter is an open-source UI software development kit created by Google. It enabled you to develop apps for Android, iOS, Linux, Mac, Windows, and the web from 
+Flutter is an open-source UI software development kit created by Google. It enabled you to develop apps for Android, iOS, Linux, Mac, Windows, and the web from
 
 Read the full guide: **[flutter/flutter-getting-started.md](flutter/flutter-getting-started.md)** · [View on GitHub](https://github.com/devopssmartech/Intrack-doc/blob/main/flutter/flutter-getting-started.md)
 
@@ -375,3 +383,5 @@ Read the full guide: **[migration/migration-v2-to-v3.md](migration/migration-v2-
 - Each `.md` file includes `github_url` (blob page for AI) in frontmatter.
 
 [inTrack](https://docs.intrack.ir) · [Dashboard](https://dash.intrack.ir) · Version 3.0.0+
+
+

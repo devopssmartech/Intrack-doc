@@ -1,7 +1,11 @@
 ---
 title: Tracking Users
+description: Learn how to identify users and set user attributes via the REST API; review the User and Events guides first for foundational concepts.
 version: 3.0.0+
+category: REST API
+platform: rest-api
 source_path: rest-api/tracking-users.md
+docs_url: https://docs.intrack.ir/docs/getting-start/rest-api/tracking-users
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/rest-api/tracking-users.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/rest-api/tracking-users.md
 ---

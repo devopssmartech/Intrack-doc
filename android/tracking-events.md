@@ -1,7 +1,11 @@
 ---
 title: Tracking Events
+description: Learn how to record System Events and Custom Events in the Android SDK; review the Events guide first to understand event types and their attributes.
 version: 3.0.0+
+category: Android SDK
+platform: android
 source_path: android/tracking-events.md
+docs_url: https://docs.intrack.ir/docs/getting-start/android/tracking-events
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/android/tracking-events.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/android/tracking-events.md
 ---
@@ -33,8 +37,6 @@ Users can create their own custom events and send them to inTrack server. This c
 }
 ```
 
-
-
 ### kotlin
 
 ```kotlin
@@ -46,8 +48,6 @@ Users can create their own custom events and send them to inTrack server. This c
 `
 }
 ```
-
-
 
 ### Guidelines
 Here are a few things to keep in mind:
@@ -83,8 +83,6 @@ sending delivery event:
 }
 ```
 
-
-
 ### kotlin
 
 ```kotlin
@@ -93,8 +91,6 @@ sending delivery event:
 `
 }
 ```
-
-
 
 sending click event:
 
@@ -107,8 +103,6 @@ sending click event:
 }
 ```
 
-
-
 ### kotlin
 
 ```kotlin
@@ -117,8 +111,5 @@ sending click event:
 `
 }
 ```
-
-
-
 
 in both methods, messageToken is the unique token identifier for messages that generate by inTrack. please refer to our custom-channel documents.

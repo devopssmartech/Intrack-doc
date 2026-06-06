@@ -1,7 +1,11 @@
 ---
 title: Custom Channels
+description: Custom Channel as a Provider lets you create and customize your own channels for content delivery, giving businesses more control over how content is distributed.
 version: 3.0.0+
+category: Custom Channels
+platform: custom-channel
 source_path: custom-channel/custom-channels.md
+docs_url: https://docs.intrack.ir/docs/getting-start/custom-channel/custom-channels
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/custom-channel/custom-channels.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/custom-channel/custom-channels.md
 ---

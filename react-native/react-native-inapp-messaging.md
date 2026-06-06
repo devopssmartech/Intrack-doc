@@ -1,7 +1,11 @@
 ---
 title: In-app Messaging
+description: You can enable in-app messaging by calling `enableInAppMessaging` on the config object during inTrack initialization.
 version: 3.0.0+
+category: React Native SDK
+platform: react-native
 source_path: react-native/react-native-inapp-messaging.md
+docs_url: https://docs.intrack.ir/docs/getting-start/react-native/react-native-inapp-messaging
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/react-native/react-native-inapp-messaging.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/react-native/react-native-inapp-messaging.md
 ---
@@ -131,7 +135,6 @@ To manually track screens, you need to setup a componentDidAppear event listener
 ## Callbacks
 
 To receive notifications about user interactions with In App Messages in your React Native application, you can register callback functions as a below:
-
 
 ```javascript
 {

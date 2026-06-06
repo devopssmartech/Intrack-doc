@@ -1,7 +1,11 @@
 ---
 title: Push Messaging
+description: This guide covers push notification setup for Flutter; add the Flutter SDK to your app before proceeding.
 version: 3.0.0+
+category: Flutter SDK
+platform: flutter
 source_path: flutter/push-messaging.md
+docs_url: https://docs.intrack.ir/docs/getting-start/flutter/push-messaging
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/flutter/push-messaging.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/flutter/push-messaging.md
 ---

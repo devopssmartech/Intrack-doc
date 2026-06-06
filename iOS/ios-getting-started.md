@@ -1,7 +1,11 @@
 ---
 title: Getting Started
+description: You can add the inTrack SDK to your iOS project using CocoaPods or manual installation, and this guide walks through configuration and initialization.
 version: 3.0.0+
+category: iOS SDK
+platform: ios
 source_path: iOS/ios-getting-started.md
+docs_url: https://docs.intrack.ir/docs/getting-start/iOS/ios-getting-started
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/iOS/ios-getting-started.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/iOS/ios-getting-started.md
 ---
@@ -34,8 +38,6 @@ CocoaPods is a dependency manager for Swift and Objective-C projects. You can in
 }
 ```
 
-
-
 :::note
 
 Please refer to the [CocoaPods Troubleshooting Guide](https://guides.cocoapods.org/using/troubleshooting.html) in case you have trouble using CocoaPods.🌟
@@ -55,8 +57,6 @@ In the terminal, navigate to your Xcode project directory and create a `Podfile`
 }
 ```
 
-
-
 #### Step 3: Edit your Podfile
 
 Add the following in your Podfile under your project's target.
@@ -72,8 +72,6 @@ Add the following in your Podfile under your project's target.
 `
 }
 ```
-
-
 
 #### Step 4: Install  inTrack SDK
 
@@ -138,8 +136,6 @@ Initialize  **inTrack** SDK with your `APP_KEY` and `AUTH_KEY` in the `applicati
 `
 }
 ```
-
-
 
 :::info
 
@@ -228,8 +224,6 @@ For receiving the **inTrack** iOS SDK's internal logs, you can set `loggerDelega
 }
 ```
 
-
-
 `internalLog:` method declared as required in InTrackLoggerDelegate protocol will be called with log NSString.
 
 ### Objective-C
@@ -251,8 +245,6 @@ For receiving the **inTrack** iOS SDK's internal logs, you can set `loggerDelega
 `
 }
 ```
-
-
 
 ### Crash Reporting
 The **inTrack** SDK for iOS has the ability to collect crash reports, which you may examine and resolve later on the [inTrack dashboard](https://dash.intrack.ir).
@@ -303,8 +295,6 @@ To enable crash reporting with the **inTrack** SDK, configure the `enableCrashRe
 }
 ```
 
-
-
 #### Crash Report Handling
 With crash reporting enabled, the **inTrack** iOS SDK will generate a crash report if your application crashes due to an exception. These reports are sent to the **inTrack** server for further analysis. If a crash report cannot be delivered (e.g., due to no internet connection or server unavailability), the SDK will store the report locally and retry sending it later
 
@@ -328,7 +318,5 @@ In addition to automatic crash reporting, you can manually record handled except
 `
 }
 ```
-
-
 
 By following these steps, you can ensure that all critical crash data is captured and sent to **inTrack**, allowing for thorough inspection and debugging.

@@ -1,7 +1,11 @@
 ---
 title: Private Providers
+description: Private Providers (SSP and ESP) act as a proxy layer that decrypts hashed contact information before delivery, so businesses can use inTrack without sharing raw user contact details with third parties.
 version: 3.0.0+
+category: Custom Channels
+platform: custom-channel
 source_path: custom-channel/private-providers.md
+docs_url: https://docs.intrack.ir/docs/getting-start/custom-channel/private-providers
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/custom-channel/private-providers.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/custom-channel/private-providers.md
 ---

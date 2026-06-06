@@ -1,7 +1,11 @@
 ---
 title: Using a Custom Domain
+description: InTrack automatically shortens links included in SMS campaigns to reduce message length and enable click tracking, and this guide explains how to configure a custom domain for those shortened links.
 version: 3.0.0+
+category: Overview
+platform: overview
 source_path: sms-custom-domain.md
+docs_url: https://docs.intrack.ir/docs/getting-start/sms-custom-domain
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/sms-custom-domain.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/sms-custom-domain.md
 ---

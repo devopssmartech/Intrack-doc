@@ -1,7 +1,11 @@
 ---
 title: Tracking Users
+description: Learn how to identify users, set user attributes, and manage user profiles in the React Native SDK; review the User and Events guides first for foundational concepts.
 version: 3.0.0+
+category: React Native SDK
+platform: react-native
 source_path: react-native/tracking-users.md
+docs_url: https://docs.intrack.ir/docs/getting-start/react-native/tracking-users
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/react-native/tracking-users.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/react-native/tracking-users.md
 ---

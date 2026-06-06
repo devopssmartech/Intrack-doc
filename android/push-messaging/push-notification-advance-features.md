@@ -1,7 +1,11 @@
 ---
 title: Push notification advance features
+description: The inTrack SDK provides an InTrackPush helper class for enhanced control in handling push notifications, including decoding incoming messages, deep links, and custom notification behavior.
 version: 3.0.0+
+category: Android SDK
+platform: android
 source_path: android/push-messaging/push-notification-advance-features.md
+docs_url: https://docs.intrack.ir/docs/getting-start/android/push-messaging/push-notification-advance-features
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/android/push-messaging/push-notification-advance-features.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/android/push-messaging/push-notification-advance-features.md
 ---
@@ -106,8 +110,6 @@ val filter = IntentFilter().apply{
 registerReceiver(messageReceiver, filter, packageName + $InTrackPush.$INTRACK_BROADCAST_PERMISSION_POSTFIX, null)`
 }
 ```
-
-
 
 **Note:** In InTrack.displayMessage, you can pass an activity-starting intent to be launched when the user taps on the notification. If you pass null, the main activity will be launched. Similarly, you can retrieve message data from your activity's intent:
 

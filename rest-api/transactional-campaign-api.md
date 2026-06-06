@@ -1,7 +1,11 @@
 ---
 title: Transactional Campaign API
+description: The Transactional Campaign API enables you to send critical transactional messages such as order confirmations, shipping details, and payment invoices through Push, SMS, Email, Web Push, and Custom Channel.
 version: 3.0.0+
+category: REST API
+platform: rest-api
 source_path: rest-api/transactional-campaign-api.md
+docs_url: https://docs.intrack.ir/docs/getting-start/rest-api/transactional-campaign-api
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/rest-api/transactional-campaign-api.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/rest-api/transactional-campaign-api.md
 ---
