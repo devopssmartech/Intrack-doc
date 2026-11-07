@@ -1,11 +1,7 @@
 ---
 title: Tracking Users
-description: Learn how to identify users, set user attributes, and manage user profiles in the Android SDK; review the User and Events guides first for foundational concepts.
 version: 3.0.0+
-category: Android SDK
-platform: android
 source_path: android/tracking-users.md
-docs_url: https://docs.intrack.ir/docs/getting-start/android/tracking-users
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/android/tracking-users.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/android/tracking-users.md
 ---
@@ -59,6 +55,8 @@ Make sure you call login as soon as the user logs in to your application, or whe
 }
 ```
 
+
+
 ### kotlin
 
 ```kotlin
@@ -67,6 +65,8 @@ Make sure you call login as soon as the user logs in to your application, or whe
 `
 }
 ```
+
+
 
 Method recordLogin accepts a  `ir.$intrack.android.sdk.UserDetails`
 
@@ -83,6 +83,8 @@ Make sure that you call logout when the user logs out and you don't want to atta
 }
 ```
 
+
+
 ### kotlin
 
 ```kotlin
@@ -91,6 +93,8 @@ Make sure that you call logout when the user logs out and you don't want to atta
 `
 }
 ```
+
+
 
 ### Profile Updates
 
@@ -105,6 +109,8 @@ In case of having any changes in user's details, these changes can be sent to **
 }
 ```
 
+
+
 ### kotlin
 
 ```kotlin
@@ -113,6 +119,8 @@ In case of having any changes in user's details, these changes can be sent to **
 `
 }
 ```
+
+
 
 Method updateProfile accepts a `ir.android.sdk.UserDetails`
 
@@ -180,6 +188,8 @@ You can use the setUserAttributes method of our Android SDK to track custom attr
 }
 ```
 
+
+
 ### kotlin
 
 ```kotlin
@@ -193,6 +203,8 @@ You can use the setUserAttributes method of our Android SDK to track custom attr
 `
 }
 ```
+
+
 
 ## Other methods
 
@@ -209,6 +221,8 @@ For tracking unknown users, **inTrack** SDK automatically generate a random id f
 }
 ```
 
+
+
 ### kotlin
 
 ```kotlin
@@ -217,6 +231,8 @@ For tracking unknown users, **inTrack** SDK automatically generate a random id f
 `
 }
 ```
+
+
 
 #### Getting User ID
 
@@ -230,6 +246,8 @@ For tracking known users you can get them by calling our getUserId method.
 `
 }
 ```
+
+
 
 ### kotlin
 

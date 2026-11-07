@@ -1,11 +1,7 @@
 ---
 title: Tracking Users
-description: Learn how to identify users, set user attributes, and manage user profiles in the Flutter SDK; review the User and Events guides first for foundational concepts.
 version: 3.0.0+
-category: Flutter SDK
-platform: flutter
 source_path: flutter/tracking-users.md
-docs_url: https://docs.intrack.ir/docs/getting-start/flutter/tracking-users
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/flutter/tracking-users.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/flutter/tracking-users.md
 ---

@@ -1,11 +1,7 @@
 ---
 title: Tracking Events
-description: Learn how to record System Events and Custom Events via the REST API; review the Events guide first to understand event types and their attributes.
 version: 3.0.0+
-category: REST API
-platform: rest-api
 source_path: rest-api/tracking-events.md
-docs_url: https://docs.intrack.ir/docs/getting-start/rest-api/tracking-events
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/rest-api/tracking-events.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/rest-api/tracking-events.md
 ---

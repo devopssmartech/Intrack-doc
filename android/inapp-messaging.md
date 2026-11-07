@@ -1,11 +1,7 @@
 ---
 title: In-app Messaging
-description: You can enable in-app messaging by calling `enableInAppMessaging()` on the InTrackConfig object during inTrack initialization.
 version: 3.0.0+
-category: Android SDK
-platform: android
 source_path: android/inapp-messaging.md
-docs_url: https://docs.intrack.ir/docs/getting-start/android/inapp-messaging
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/android/inapp-messaging.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/android/inapp-messaging.md
 ---

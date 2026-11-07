@@ -1,11 +1,7 @@
 ---
 title: Integration Guide
-description: If your app displays website pages in a WebView, you can use the Web SDK automatic sync feature to synchronize devices in inTrack so web and native app events are unified under one profile.
 version: 3.0.0+
-category: WebView integration
-platform: web-view
 source_path: web-view/implementaion-guide.md
-docs_url: https://docs.intrack.ir/docs/getting-start/web-view/implementaion-guide
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/web-view/implementaion-guide.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/web-view/implementaion-guide.md
 ---

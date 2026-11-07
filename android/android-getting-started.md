@@ -1,11 +1,7 @@
 ---
 title: Getting Started
-description: The inTrack Android SDK is hosted on Maven Central, and this guide covers installation, configuration, and initialization for your Android app.
 version: 3.0.0+
-category: Android SDK
-platform: android
 source_path: android/android-getting-started.md
-docs_url: https://docs.intrack.ir/docs/getting-start/android/android-getting-started
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/android/android-getting-started.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/android/android-getting-started.md
 ---
@@ -15,9 +11,13 @@ github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/mai
 **inTrack** Android SDK is hosted on mavenCentral Maven repository.
 Add dependencies of **inTrack** in the `app/build.gradle` file. You can check latest version in change log.
 
+If your connection to international internet / Maven Central is unavailable, you can use the [Myket](https://maven.myket.ir/services/maven.html) Maven repository.
+
 **PreRequirement:**
 * minSDKVersion: 21
 * compileSdkVersion: 35
+
+
 
 ### Groovy
 
@@ -29,6 +29,8 @@ Add dependencies of **inTrack** in the `app/build.gradle` file. You can check la
 }
 ```
 
+
+
 ### KotlinDSL
 
 ```Kotlin
@@ -38,6 +40,8 @@ Add dependencies of **inTrack** in the `app/build.gradle` file. You can check la
 }`
 }
 ```
+
+
 
 ### ProGuard Rules
 If you enable minify and shrinking (`minifyEnabled true` & `shrinkResources true`),
@@ -79,6 +83,8 @@ add the following rules to your ProGuard file (proguard-rules.pro):
 }
 ```
 
+
+
 :::info
 
 Check your **APP_KEY** and **AUTH_KEY**, in [inTrackPanel](https://dash.intrack.ir)->setting->SDK->Initialize, choose SDK type in **Integration Guide for** dropdown, Now your keys are in Initialization step
@@ -86,6 +92,8 @@ Check your **APP_KEY** and **AUTH_KEY**, in [inTrackPanel](https://dash.intrack.
 :::
 
 Also, the following call should be added in `onStart` method of the main activity:
+
+
 
 ### Java
 

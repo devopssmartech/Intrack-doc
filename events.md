@@ -1,11 +1,7 @@
 ---
 title: Events
-description: All behavioral data points are called Events in your dashboard, and each Event can be understood in the context of its Attributes, which include details like time, location, device details, price, and quantity.
 version: 3.0.0+
-category: Overview
-platform: overview
 source_path: events.md
-docs_url: https://docs.intrack.ir/docs/getting-start/events
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/events.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/events.md
 ---

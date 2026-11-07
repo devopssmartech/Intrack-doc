@@ -1,11 +1,7 @@
 ---
 title: Migrating from SDK V2 to V3
-description: This guide provides step-by-step instructions to upgrade from SDK Version 2 to Version 3, outlining breaking changes, updated APIs, and best practices for a smooth migration.
 version: 3.0.0+
-category: Migration
-platform: migration
 source_path: migration/migration-v2-to-v3.md
-docs_url: https://docs.intrack.ir/docs/getting-start/migration/migration-v2-to-v3
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/migration/migration-v2-to-v3.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/migration/migration-v2-to-v3.md
 ---

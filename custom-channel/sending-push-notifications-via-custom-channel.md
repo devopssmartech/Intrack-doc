@@ -1,11 +1,7 @@
 ---
 title: Sending Push Notifications via Custom Channel
-description: This guide walks through the steps to send push notifications through inTrack custom channels, including setting up a service to receive campaign data and forward it to a provider such as FCM.
 version: 3.0.0+
-category: Custom Channels
-platform: custom-channel
 source_path: custom-channel/sending-push-notifications-via-custom-channel.md
-docs_url: https://docs.intrack.ir/docs/getting-start/custom-channel/sending-push-notifications-via-custom-channel
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/custom-channel/sending-push-notifications-via-custom-channel.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/custom-channel/sending-push-notifications-via-custom-channel.md
 ---

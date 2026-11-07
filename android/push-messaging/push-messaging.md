@@ -1,11 +1,7 @@
 ---
 title: Push Messaging
-description: This guide covers FCM push notification setup for Android; complete all platform integration steps in Getting Started before proceeding.
 version: 3.0.0+
-category: Android SDK
-platform: android
 source_path: android/push-messaging/push-messaging.md
-docs_url: https://docs.intrack.ir/docs/getting-start/android/push-messaging/push-messaging
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/android/push-messaging/push-messaging.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/android/push-messaging/push-messaging.md
 ---
@@ -62,6 +58,8 @@ Initializing **inTrack** notification service is done by calling `$inTrack.initP
 `$InTrack.initPush(Application application)`
 }
 ```
+
+
 
 ### kotlin
 
@@ -138,6 +136,8 @@ It is also mandatory that you pass Firebase token to **inTrack** from onCreate o
 }`
 }
 ```
+
+
 
 ## 5. Pass Messages to SDK
 

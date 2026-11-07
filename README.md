@@ -1,11 +1,3 @@
----
-title: inTrack Documentation
-description: Repository index and table of contents for inTrack SDK v3.0.0+ integration guides exported for AI tools and public reference.
-version: 3.0.0+
-category: Index
-platform: index
-type: index
----
 # inTrack Documentation
 
 **inTrack** is an all-in-one marketing automation platform that helps businesses connect with customers through automated, personalized messaging across mobile apps, web, and APIs.
@@ -17,9 +9,9 @@ This repository contains **plain Markdown** integration guides (version **3.0.0+
 ## Table of contents
 
 ### [Overview](#overview)
+* [Custom Shortener](custom-shortener.md)
 * [Events](events.md)
 * [Getting Started](getting-start.md)
-* [Using a Custom Domain](sms-custom-domain.md)
 * [User](user.md)
 
 ### [Android SDK](#android)
@@ -87,6 +79,12 @@ This repository contains **plain Markdown** integration guides (version **3.0.0+
 
 ## <a id="overview"></a>Overview
 
+### [Custom Shortener](custom-shortener.md)
+
+By default, Intrack shortens every link in the Messages section of a channel or campaign with its own shortener. Shortened links start with `intk.ir/`.
+
+Read the full guide: **[custom-shortener.md](custom-shortener.md)** · [View on GitHub](https://github.com/devopssmartech/Intrack-doc/blob/main/custom-shortener.md)
+
 ### [Events](events.md)
 
 All behavioral data points are called Events in [your dashboard](https://dash.intrack.ir). And each Event can further be understood in the context of its Attrib
@@ -98,12 +96,6 @@ Read the full guide: **[events.md](events.md)** · [View on GitHub](https://gith
 This documentation covers the steps to integrating your apps and website with inTrack. We’ll also discuss a few fundamentals of how the [dashboard](https://dash
 
 Read the full guide: **[getting-start.md](getting-start.md)** · [View on GitHub](https://github.com/devopssmartech/Intrack-doc/blob/main/getting-start.md)
-
-### [Using a Custom Domain](sms-custom-domain.md)
-
-In digital marketing, short and visually appealing SMS links are essential. Intrack automatically shortens any link included in your SMS campaigns, reducing mes
-
-Read the full guide: **[sms-custom-domain.md](sms-custom-domain.md)** · [View on GitHub](https://github.com/devopssmartech/Intrack-doc/blob/main/sms-custom-domain.md)
 
 ### [User](user.md)
 
@@ -229,7 +221,7 @@ Read the full guide: **[react-native/tracking-users.md](react-native/tracking-us
 
 ### [Getting Started](flutter/flutter-getting-started.md)
 
-Flutter is an open-source UI software development kit created by Google. It enabled you to develop apps for Android, iOS, Linux, Mac, Windows, and the web from
+Flutter is an open-source UI software development kit created by Google. It enabled you to develop apps for Android, iOS, Linux, Mac, Windows, and the web from 
 
 Read the full guide: **[flutter/flutter-getting-started.md](flutter/flutter-getting-started.md)** · [View on GitHub](https://github.com/devopssmartech/Intrack-doc/blob/main/flutter/flutter-getting-started.md)
 
@@ -380,8 +372,6 @@ Read the full guide: **[migration/migration-v2-to-v3.md](migration/migration-v2-
 ## For AI tools
 
 - See [`llms.txt`](llms.txt) for a machine-readable index of all pages.
-- Each `.md` file includes `github_url` (blob page for AI) in frontmatter.
+- Each `.md` file includes `github_url` (blob) and `github_raw_url` (for AI) in frontmatter.
 
 [inTrack](https://docs.intrack.ir) · [Dashboard](https://dash.intrack.ir) · Version 3.0.0+
-
-

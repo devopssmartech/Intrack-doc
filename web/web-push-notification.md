@@ -1,11 +1,7 @@
 ---
 title: Web Push Messaging
-description: This guide covers web push notification setup; complete all platform integration steps in Getting Started before proceeding.
 version: 3.0.0+
-category: Web SDK
-platform: web
 source_path: web/web-push-notification.md
-docs_url: https://docs.intrack.ir/docs/getting-start/web/web-push-notification
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/web/web-push-notification.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/web/web-push-notification.md
 ---
@@ -121,6 +117,7 @@ Method `InitWebPush` accepts a config parameter with the following model. You ca
     },
     isRTL: true,
     askAgainAfterDays: 0,
+    askAgainMaxDays: 7,
     widget: {
         enable: false,
         enableUnsubs: false,
@@ -160,7 +157,10 @@ Method `InitWebPush` accepts a config parameter with the following model. You ca
 | subscriptionTheme               | number  | There are 4 different styles that you can choose from: 0, 1, 2, 3, 4. 0 is 1-step opt-in initiated natively by the browser, requiring 1 step for the user to opt-in. The rest are 2-step opt-in initiated by inTrack, requiring 2 steps for the user to opt-in. |
 | subscriptionThemePos            | number  | You can specify the position of push notification.  1: top 2: bottom  3: center                                                                                                                                                                                                 |
 | subscriptionStyleMobileSeparate | boolean | Enable this feature to separate themes on mobile devices, allowing you to specify the properties of the subscriptionStyleMobile object.                                                                                                                                         |
-| askAgainAfterDays               | number  | If you choose to display a welcome subscription message to the user, and the user decides to subscribe later, after this period (in days), the subscription message will be shown again. Zero means never ask again.                                                            |
+| askAgainAfterDays               | number  | Days to wait after the user dismisses the prompt ("Not now") before showing it again. `0` (default) means never ask again. Set to `1` or higher to re-ask after that many days since the last dismiss.                                                                          |
+| askAgainMaxDays                 | number  | How long ask-again stays active from the **first** dismiss. Default is `7`. After this window, the prompt is no longer shown again. Set to `0` to keep ask-again forever (still gated by `askAgainAfterDays`).                                                                   |
+
+If browser notification permission is already `granted` but the PushSubscription is missing, the SDK silently re-subscribes without showing the prompt again. When a subscription already exists, the SDK periodically resends the token to the backend (about every 7 days). Neither case re-prompts the user.
 
 **Available position for subscriptionTheme:** 1 : 1, 2, 3
 

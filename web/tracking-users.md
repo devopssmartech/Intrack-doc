@@ -1,11 +1,7 @@
 ---
 title: Tracking Users
-description: Learn how to identify users, set user attributes, and manage user profiles in the Web SDK; review the User and Events guides first for foundational concepts.
 version: 3.0.0+
-category: Web SDK
-platform: web
 source_path: web/tracking-users.md
-docs_url: https://docs.intrack.ir/docs/getting-start/web/tracking-users
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/web/tracking-users.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/web/tracking-users.md
 ---
@@ -60,6 +56,8 @@ Make sure you call login as soon as the user logs in to your application, or whe
 }
 ```
 
+
+
 ### Synchronous
 
 ```javascript
@@ -67,6 +65,8 @@ Make sure you call login as soon as the user logs in to your application, or whe
   `$InTrack.login(userDetails);`
 }
 ```
+
+
 
 ### Logout
 
@@ -90,6 +90,8 @@ Make sure that you call logout when the user logs out and you don't want to atta
 }
 ```
 
+
+
 ### Profile Updates
 
 In case of having any changes in user's details, these changes can be sent to **inTrack** server by calling the following method:
@@ -111,6 +113,8 @@ In case of having any changes in user's details, these changes can be sent to **
 `
 }
 ```
+
+
 
 Method recordLogin and  Profile Updates accepts a parameter with the following model:
 

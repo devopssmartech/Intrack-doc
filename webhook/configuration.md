@@ -1,11 +1,7 @@
 ---
 title: How to Configure
-description: You can configure webhook URLs for different event types from the Webhooks section of your inTrack dashboard under Settings, including custom events, user profile updates, and campaign events.
 version: 3.0.0+
-category: Webhook
-platform: webhook
 source_path: webhook/configuration.md
-docs_url: https://docs.intrack.ir/docs/getting-start/webhook/configuration
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/webhook/configuration.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/webhook/configuration.md
 ---

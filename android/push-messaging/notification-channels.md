@@ -1,11 +1,7 @@
 ---
 title: Notification Channels
-description: From Android 8.0 (API level 26) and higher, notification channels are supported and recommended, and you can set a custom default channel or modify push channel configurations before SDK initialization.
 version: 3.0.0+
-category: Android SDK
-platform: android
 source_path: android/push-messaging/notification-channels.md
-docs_url: https://docs.intrack.ir/docs/getting-start/android/push-messaging/notification-channels
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/android/push-messaging/notification-channels.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/android/push-messaging/notification-channels.md
 ---

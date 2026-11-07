@@ -1,11 +1,7 @@
 ---
 title: Business Events
-description: inTrack offers an API for triggering business events, which represent significant actions on the business side and can initiate workflow-based communications based on specific activities.
 version: 3.0.0+
-category: REST API
-platform: rest-api
 source_path: rest-api/business-events.md
-docs_url: https://docs.intrack.ir/docs/getting-start/rest-api/business-events
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/rest-api/business-events.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/rest-api/business-events.md
 ---

@@ -1,11 +1,7 @@
 ---
 title: In-app Messaging
-description: You can enable in-app messaging by calling `enableInAppMessaging` on the config object during inTrack initialization.
 version: 3.0.0+
-category: Flutter SDK
-platform: flutter
 source_path: flutter/inapp-messaging.md
-docs_url: https://docs.intrack.ir/docs/getting-start/flutter/inapp-messaging
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/flutter/inapp-messaging.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/flutter/inapp-messaging.md
 ---

@@ -1,11 +1,7 @@
 ---
 title: Getting Started
-description: This guide explains how to integrate the inTrack SDK with your React Native apps, including library installation, configuration, and initialization.
 version: 3.0.0+
-category: React Native SDK
-platform: react-native
 source_path: react-native/react-native-getting-started.md
-docs_url: https://docs.intrack.ir/docs/getting-start/react-native/react-native-getting-started
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/react-native/react-native-getting-started.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/react-native/react-native-getting-started.md
 ---
@@ -32,6 +28,8 @@ Use the below command in your project directory to install **inTrack** React Nat
 `yarn add $intrack-react-native-bridge@3.0.3`
 }
 ```
+
+
 
 :::warning
 
@@ -75,6 +73,8 @@ Grab a reference to the inTrack React Native library in your JavaScript file.
 }
 ```
 
+
+
 In order to initialize the **inTrack** SDK, two init and start methods should be called. These methods should be called once in application's lifecycle, and it should be done as early as possible. Main app component's componentDidMount method is a good place.
 
 ### Java
@@ -93,6 +93,8 @@ In order to initialize the **inTrack** SDK, two init and start methods should be
 `
 }
 ```
+
+
 
 :::info
 

@@ -1,11 +1,7 @@
 ---
 title: Tracking Users
-description: Learn how to identify users, set user attributes, and manage user profiles in the iOS SDK; review the User and Events guides first for foundational concepts.
 version: 3.0.0+
-category: iOS SDK
-platform: ios
 source_path: iOS/tracking-users.md
-docs_url: https://docs.intrack.ir/docs/getting-start/iOS/tracking-users
 github_url: https://github.com/devopssmartech/Intrack-doc/blob/main/iOS/tracking-users.md
 github_raw_url: https://raw.githubusercontent.com/devopssmartech/Intrack-doc/main/iOS/tracking-users.md
 ---
@@ -69,6 +65,8 @@ Make sure you call login as soon as the user logs in to your application, or whe
 }
 ```
 
+
+
 Method recordLogin accepts a `$InTrackUserDetails` class.
 
 ### Logout
@@ -93,6 +91,8 @@ Make sure that you call logout when the user logs out and you don't want to atta
 }
 ```
 
+
+
 ### Profile Updates
 
 In case of having any changes in user's details, these changes can be sent to  **inTrack** server by calling the following method:
@@ -114,6 +114,8 @@ In case of having any changes in user's details, these changes can be sent to  *
 `
 }
 ```
+
+
 
 Method updateProfile accepts a `$InTrackUserDetails` class.
 
@@ -199,6 +201,8 @@ You can use the UserAttributes method of our iOS SDK to track custom attributes 
 }
 ```
 
+
+
 ### swift
 
 ```swift
@@ -233,6 +237,8 @@ You can use the UserAttributes method of our iOS SDK to track custom attributes 
 }
 ```
 
+
+
 ## Other methods
 
 #### Getting device/anonymous ID
@@ -248,6 +254,8 @@ For tracking unknown users,  **inTrack** SDK automatically generate a random id 
 }
 ```
 
+
+
 ### swift
 
 ```swift
@@ -256,6 +264,8 @@ For tracking unknown users,  **inTrack** SDK automatically generate a random id 
 `
 }
 ```
+
+
 
 #### Getting User ID
 
