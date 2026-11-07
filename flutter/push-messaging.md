@@ -27,45 +27,36 @@ Here's how you can enable Push Messaging for your Android app via the **inTrack*
 **Step 2:** Add the below dependencies in the app-level build.gradle file.
 
 ```groovy
-{
-    `implementation platform('com.google.firebase:firebase-bom:25.12.0')
+implementation platform('com.google.firebase:firebase-bom:25.12.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-messaging:20.2.1'
-`
-}
 ```
 
 **Step 3:** Add the following to your dependencies section in project/build.gradle file.
 
 ```groovy
-{
-    `classpath 'com.google.gms:google-services:4.3.4'
-`
-}
+classpath 'com.google.gms:google-services:4.3.4'
 ```
 
 **Step 4:** Add the following line in file `android/app/src/main/AndroidManifest.xml` inside application tag.
 
 ```xml
-{
-    ` <service
-        android:name="ir.$intrack.flutter.sdk.$InTrackMessagingService"
+ <service
+        android:name="ir.intrack.flutter.sdk.InTrackMessagingService"
         android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
 </service>
         <meta-data
-            android:name="ir.$intrack.sdk.default_notification_channel_id"
+            android:name="ir.intrack.sdk.default_notification_channel_id"
             android:value="YOUR_CHANNEL_ID" />
         <meta-data
-            android:name="ir.$intrack.sdk.default_notification_channel_name"
+            android:name="ir.intrack.sdk.default_notification_channel_name"
             android:value="YOUR CHANNEL NAME" />
         <meta-data
-            android:name="ir.$intrack.sdk.default_notification_channel_description"
+            android:name="ir.intrack.sdk.default_notification_channel_description"
             android:value="YOUR CHANNEL DESCRIPTION" />
-`
-}
 ```
 
 **channelName:** This is the human-readable name of the notification channel that will be displayed to users in the system settings.
@@ -81,26 +72,23 @@ inTrack will create a push notification channel for you, you can change channel 
 :::
 
 **step 5:** Initialize push notification service, for initiating push notification service you just neet to call
-`$InTrack.askForNotificationPermission()` function, after initializing the SDK itself.
+`InTrack.askForNotificationPermission()` function, after initializing the SDK itself.
 
 ```dart
-{
-    `$InTrack.isInitialized().then((bool isInitialized) {
+InTrack.isInitialized().then((bool isInitialized) {
         if (!isInitialized) {
-            $InTrackConfig config = $InTrackConfig(APP_KEY)
+            InTrackConfig config = InTrackConfig(APP_KEY)
             ..setAndroidAuthKey(ANDROID_AUTH_KEY)
             ..setIOSAuthKey(IOS_AUTH_KEY)
 
             config.setLoggingEnabled(true);
-            $InTrack.initWithConfig(config).then((value) {
+            InTrack.initWithConfig(config).then((value) {
 
-            // This method will ask for permission, enables push notification channel and send push token to $inTrack server.;
-            $InTrack.askForNotificationPermission();
-            }); // Initialize the $InTrack SDK.
+            // This method will ask for permission, enables push notification channel and send push token to inTrack server.;
+            InTrack.askForNotificationPermission();
+            }); // Initialize the InTrack SDK.
         }
     });
-`
-}
 ```
 
 ### Handling multiple FCM services
@@ -110,14 +98,11 @@ inTrack will create a push notification channel for you, you can change channel 
 To support multiple messaging services, you should create a wrapper messaging service and register it in your `AndroidManifest.xml` file:
 
 ```xml
-{
-    `<service android:name=".WrapperMessagingService" android:exported="false">
+<service android:name=".WrapperMessagingService" android:exported="false">
         <intent-filter>
             <action android:name="com.google.firebase.MESSAGING_EVENT" />
          </intent-filter>
 </service>
-`
-}
 ```
 
 Inside `WrapperMessagingService.java`, you'll need to forward messages to other messaging services.
@@ -125,8 +110,7 @@ Inside `WrapperMessagingService.java`, you'll need to forward messages to other 
 In the code below, we assume you are using `FlutterFirebaseMessagingService`. If you are using additional `FirebaseMessagingServices` from other packages or dependencies that you have imported, you will need to include them as well.
 
 ```swift
-{
-    `package YOUR.APP.PACKAGE.NAME;
+package YOUR.APP.PACKAGE.NAME;
     import java.lang.reflect.Field;
     import java.util.ArrayList;
     import java.util.List;
@@ -135,13 +119,13 @@ In the code below, we assume you are using `FlutterFirebaseMessagingService`. If
     import com.google.firebase.messaging.RemoteMessage;
 
     import io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService;
-    import ir.$intrack.flutter.sdk.$InTrackMessagingService;
+    import ir.intrack.flutter.sdk.InTrackMessagingService;
 
     public class WrapperMessagingService extends FirebaseMessagingService{
         private List<FirebaseMessagingService> messagingServices = new ArrayList<>(2);
 
         public WrapperMessagingService() {
-            messagingServices.add(new $InTrackMessagingService());
+            messagingServices.add(new InTrackMessagingService());
             messagingServices.add(new FlutterFirebaseMessagingService());
         }
 
@@ -211,8 +195,6 @@ In the code below, we assume you are using `FlutterFirebaseMessagingService`. If
             void run(T t);
         }
     }
-`
-}
 ```
 
 ### Push Notification Callback
@@ -220,13 +202,10 @@ In the code below, we assume you are using `FlutterFirebaseMessagingService`. If
 o receive notifications when a user clicks on a push notification sent by inTrack, you can register a callback function using the onNotification method:
 
 ```dart
-{
-    `$InTrack.onNotification((String notification) {
+InTrack.onNotification((String notification) {
         print('The notification');
         print(notification);
     });
-`
-}
 ```
 
 ### Manual setup
@@ -236,22 +215,16 @@ We recommend using the above settings to set up inTrack push notifications. Howe
 * Pass Firebase tokens to **inTrack**:
 
 ```dart
-{
-    `$InTrack.onTokenRefresh(fcmToken)
-`
-}
+InTrack.onTokenRefresh(fcmToken)
 ```
 
 * Pass messages to **inTrack**:
 
 ```dart
-{
-    `Map<String, dynamic> data = message.data;
-    if (data.isNotEmpty && data['source'] == "$inTrack") {
-          $InTrack.displayMessage(data, 'HIGH_IMPORTANCE_CHANNEL_ID');
+Map<String, dynamic> data = message.data;
+    if (data.isNotEmpty && data['source'] == "inTrack") {
+          InTrack.displayMessage(data, 'HIGH_IMPORTANCE_CHANNEL_ID');
         }
-`
-}
 ```
 
 :::note

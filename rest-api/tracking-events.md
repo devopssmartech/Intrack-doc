@@ -90,7 +90,7 @@ Maximum size of the event list in batch requests can be 100.
 
 **Method:** POST
 
-**URL STRUCTURE:** `<HOST>/api/sdk/accounts/<YOUR_$INTRACK_LICENSE_CODE>/events`
+**URL STRUCTURE:** `<HOST>/api/sdk/accounts/<YOUR_INTRACK_LICENSE_CODE>/events`
 
 **AUTHENTICATION:** `Authorization: Bearer <YOUR_API_KEY>`
 
@@ -99,14 +99,13 @@ Maximum size of the event list in batch requests can be 100.
 | Name                                       | Description                                                                                                                                                                                                                                                                                      |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ```x-request-id:<HEX_STRING>```            | Replace `{HEX_STRING}` with a unique random hex string.If API re-attempts are being made, this tag stops propagation of duplicate events within a 4 hour window. Events with same ID re-attempted within 4 hours won't get duplicated if the previous HTTP request was able to ingest the event. |
-| ```Authorization: Bearer <YOUR_API_KEY>``` | Replace `<YOUR_$INTRACK_API_KEY>` with your **inTrack** API KEY.                                                                                                                                                                                 |
+| ```Authorization: Bearer <YOUR_API_KEY>``` | Replace `<YOUR_INTRACK_API_KEY>` with your **inTrack** API KEY.                                                                                                                                                                                 |
 
 #### Requests Example
 
 ```bash
-{
-`curl -X POST <HOST>/api/sdk/accounts/<YOUR_$INTRACK_LICENSE_CODE>/events  \\
-    --header 'Authorization: Bearer <YOUR_$INTRACK_API_KEY>' \\
+curl -X POST <HOST>/api/sdk/accounts/<YOUR_INTRACK_LICENSE_CODE>/events  \\
+    --header 'Authorization: Bearer <YOUR_INTRACK_API_KEY>' \\
     --header 'Content-Type: application/json' \\
     --data '{
       "userId": "xxx-xxx", // for your known users
@@ -140,15 +139,14 @@ Maximum size of the event list in batch requests can be 100.
         "additionalProp3": "2021-07-09T03:28:38+04:30"
       },
       "eventTime": "2021-07-09T03:28:38+04:30"
-    }'`
-}
+    }'
 ```
 
 ### Batch requests(/eventsBatch)
 
 **Method:** POST
 
-**URL STRUCTURE:** `<HOST>/api/sdk/accounts/<YOUR_$INTRACK_LICENSE_CODE>/eventsBatch`
+**URL STRUCTURE:** `<HOST>/api/sdk/accounts/<YOUR_INTRACK_LICENSE_CODE>/eventsBatch`
 
 **AUTHENTICATION:** `Authorization: Bearer <YOUR_API_KEY>`
 
@@ -157,7 +155,7 @@ Maximum size of the event list in batch requests can be 100.
 | Name                                       | Description                                                                                                                                                                                                                                                                                      |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ```x-request-id:<HEX_STRING>```            | Replace `{HEX_STRING}` with a unique random hex string.If API re-attempts are being made, this tag stops propagation of duplicate events within a 4 hour window. Events with same ID re-attempted within 4 hours won't get duplicated if the previous HTTP request was able to ingest the event. |
-| ```Authorization: Bearer <YOUR_API_KEY>``` | Replace `<YOUR_$INTRACK_API_KEY>` with your **inTrack** API KEY.                                                                                                                                                                                 |
+| ```Authorization: Bearer <YOUR_API_KEY>``` | Replace `<YOUR_INTRACK_API_KEY>` with your **inTrack** API KEY.                                                                                                                                                                                 |
 
 :::note
 
@@ -168,9 +166,8 @@ Maximum size of the event list in batch requests can be 100.
 #### Request Example
 
 ```bash
-{
-`curl -X POST "<HOST>/api/sdk/accounts/<YOUR_$INTRACK_LICENSE_CODE>/eventsBatch" \\
-    --header "Authorization: Bearer <YOUR_$INTRACK_API_KEY>" \\
+curl -X POST "<HOST>/api/sdk/accounts/<YOUR_INTRACK_LICENSE_CODE>/eventsBatch" \\
+    --header "Authorization: Bearer <YOUR_INTRACK_API_KEY>" \\
     --header "Content-Type: application/json" \\
     --data '{
       "list": [
@@ -241,6 +238,5 @@ Maximum size of the event list in batch requests can be 100.
           "eventTime": "2021-07-09T03:28:38+04:30"
         }
       ]
-    }'`
-}
+    }'
 ```

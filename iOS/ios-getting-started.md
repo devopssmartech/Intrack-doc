@@ -28,10 +28,7 @@ CocoaPods is a dependency manager for Swift and Objective-C projects. You can in
 ### shell
 
 ```shell
-{
-  `$ sudo gem install cocoapods
-`
-}
+$ sudo gem install cocoapods
 ```
 
 
@@ -49,10 +46,7 @@ In the terminal, navigate to your Xcode project directory and create a `Podfile`
 ### shell
 
 ```shell
-{
-  ` $ pod init
-`
-}
+ $ pod init
 ```
 
 
@@ -64,13 +58,10 @@ Add the following in your Podfile under your project's target.
 ### ruby
 
 ```ruby
-{
-  `target 'YourAppTarget' do
+target 'YourAppTarget' do
     platform :ios,'9.0'
-    pod '$InTrackSDK', '3.0.3'
+    pod 'InTrackSDK', '3.0.3'
   end
-`
-}
 ```
 
 
@@ -82,10 +73,7 @@ To install the  **inTrack** SDK, navigate to your Xcode project directory and ru
 ### shell
 
 ```shell
-{
-  `$ pod install
-`
-}
+$ pod install
 ```
 
 #### Step 5: Using xcodeproj
@@ -95,7 +83,7 @@ To install the  **inTrack** SDK, navigate to your Xcode project directory and ru
  * Doing so will ensure that the  **inTrack** SDK is properly loaded.
 
 ### Adding inTrack SDK Manually
-Also you could download inTrack.xcframework version 1.3.0 from [here](https://static1.intrack.ir/api/web/download/sdk/ios/1.3.0/$InTrack.xcframework.zip) and manually add that to your XCode project.
+Also you could download inTrack.xcframework version 1.3.0 from [here](https://static1.intrack.ir/api/web/download/sdk/ios/1.3.0/InTrack.xcframework.zip) and manually add that to your XCode project.
 
 ## 2. Initialize the SDK
 
@@ -104,39 +92,33 @@ Initialize  **inTrack** SDK with your `APP_KEY` and `AUTH_KEY` in the `applicati
 ### Objective-C
 
 ```swift
-{
-  `- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
   {
-    $InTrackConfig* config = $InTrackConfig.new;
+    InTrackConfig* config = InTrackConfig.new;
     config.appKey = @"YOUR_APP_KEY";
     config.authKey = @"YOUR_AUTH_KEY";
-    [$InTrack startWithConfig:config];
+    [InTrack startWithConfig:config];
     /**
       YOUR CODE GOES HERE
       **/
       return YES;
   }
-`
-}
 ```
 
 ### swift
 
 ```swift
-{
-  `func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
   {
-    let config: $InTrackConfig = $InTrackConfig()
+    let config: InTrackConfig = InTrackConfig()
     config.appKey = @"YOUR_APP_KEY"
     config.authKey = @"YOUR_AUTH_KEY"
-    $InTrack.initWith(config);
+    InTrack.initWith(config);
         /**
         YOUR CODE GOES HERE
         **/
     return true
   }
-`
-}
 ```
 
 
@@ -189,10 +171,7 @@ You only need to specify this in Objective-C even if you are using Swift for you
 ### Objective-C
 
 ```Objective-C
-{
-  `#import <$InTrack/$InTrack.h>
-`
-}
+#import <InTrack/InTrack.h>
 ```
 
 :::tip[**Congratulations** ]
@@ -208,24 +187,18 @@ You have now successfully integrated the **inTrack** SDK with your iOS app and a
 During  **inTrack** initialization, you could enable logging. If logging is enabled, then **inTrack** SDK will print out debug messages about its internal state and encountered problems.
 
 For receiving the **inTrack** iOS SDK's internal logs, you can set `loggerDelegate` property on the
-`$InTrackConfig` object. If set, the **inTrack** iOS SDK will forward its internal logs to this delegate object.
+`InTrackConfig` object. If set, the **inTrack** iOS SDK will forward its internal logs to this delegate object.
 
 ### Objective-C
 
 ```Objective-C
-{
-  `config.loggerDelegate = self; //or any other object to act as $InTrackLoggerDelegate
-`
-}
+config.loggerDelegate = self; //or any other object to act as InTrackLoggerDelegate
 ```
 
 ### swift
 
 ```swift
-{
-  `config.loggerDelegate = self; //or any other object to act as $InTrackLoggerDelegate
-`
-}
+config.loggerDelegate = self; //or any other object to act as InTrackLoggerDelegate
 ```
 
 
@@ -235,21 +208,15 @@ For receiving the **inTrack** iOS SDK's internal logs, you can set `loggerDelega
 ### Objective-C
 
 ```c
-{
-  `// $InTrackLoggerDelegate protocol method
+// InTrackLoggerDelegate protocol method
   -(void)internalLog:(NSString *)log
-`
-}
 ```
 
 ### swift
 
 ```swift
-{
-  `// $InTrackLoggerDelegate protocol method
+// InTrackLoggerDelegate protocol method
   func internalLog(_ log: String)
-`
-}
 ```
 
 
@@ -258,49 +225,43 @@ For receiving the **inTrack** iOS SDK's internal logs, you can set `loggerDelega
 The **inTrack** SDK for iOS has the ability to collect crash reports, which you may examine and resolve later on the [inTrack dashboard](https://dash.intrack.ir).
 
 To enable crash reporting with the **inTrack** SDK, configure the `enableCrashReporting` flag in the
-`$InTrackConfig` object. Below is a step-by-step guide to set this up:
+`InTrackConfig` object. Below is a step-by-step guide to set this up:
 
 #### Initialize the InTrackConfig Object
 
 ### Objective-C
 
 ```c
-{
-  `-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
   {
-    $InTrackConfig* config = $InTrackConfig.new;
+    InTrackConfig* config = InTrackConfig.new;
     config.appKey = @"YOUR_APP_KEY";
     config.authKey = @"YOUR_AUTH_KEY";
     config.enableCrashReporting = YES;
-    [$InTrack startWithConfig:config];
+    [InTrack startWithConfig:config];
       /**
       YOUR CODE GOES HERE
         **/
         return YES;
   }
-`
-}
 ```
 
 ### swift
 
 ```swift
-{
-  `func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptio
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptio
   [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
-      let config: $InTrackConfig = $InTrackConfig()
+      let config: InTrackConfig = InTrackConfig()
       config.appKey = @"YOUR_APP_KEY"
       config.authKey = @"YOUR_AUTH_KEY"
       config.enableCrashReporting = true
-      $InTrack.initWith(config)
+      InTrack.initWith(config)
       /**
         YOUR CODE GOES HERE
           **/
           return true
   }
-`
-}
 ```
 
 
@@ -314,19 +275,13 @@ In addition to automatic crash reporting, you can manually record handled except
 ### Objective-C
 
 ```objectivec
-{
-  `[$InTrack recordHandledException:exception];
-`
-}
+[InTrack recordHandledException:exception];
 ```
 
 ### swift
 
 ```swift
-{
-  `$InTrack.recordHandledException(exception)
-`
-}
+InTrack.recordHandledException(exception)
 ```
 
 

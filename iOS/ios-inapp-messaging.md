@@ -20,27 +20,21 @@ for using In App messaging you should use **inTrack** sdk (version 2.6.5 or high
 ### Objective-C
 
 ```objectivec
-{
-  `$InTrackConfig* config = $InTrackConfig.new;
+InTrackConfig* config = InTrackConfig.new;
   config.appKey = @"YOUR_APP_KEY";
   config.authKey = @"YOUR_AUTH_KEY";
   config.enableInAppMessaging = YES;
-  [$InTrack startWithConfig:config];
-`
-}
+  [InTrack startWithConfig:config];
 ```
 
 ### swift
 
 ```swift
-{
-  `let config: $InTrackConfig = $InTrackConfig()
+let config: InTrackConfig = InTrackConfig()
   config.appKey = @"YOUR_APP_KEY"
   config.authKey = @"YOUR_AUTH_KEY"
   config.enableInAppMessaging = true
-  $InTrack.initWith(config)
-`
-}
+  InTrack.initWith(config)
 ```
 
 
@@ -53,19 +47,13 @@ you can manually tell **inTrack** about user navigation by calling **inTrack**'s
 ### Objective-C
 
 ```objectivec
-{
-  `[$InTrack customNavigateTo:@"YOUR_SCREEN_NAME" data:nil];
-`
-}
+[InTrack customNavigateTo:@"YOUR_SCREEN_NAME" data:nil];
 ```
 
 ### swift
 
 ```swift
-{
-  `$InTrack.customNavigate(to:"YOUR_SCREEN_NAME", data: nil)
-`
-}
+InTrack.customNavigate(to:"YOUR_SCREEN_NAME", data: nil)
 ```
 
 
@@ -77,25 +65,19 @@ Every screen can be associated with some contextual data, which can be part of t
 ### Objective-C
 
 ```objectivec
-{
-  `NSMutableDictionary *customScreenData = [NSMutableDictionary dictionary];
+NSMutableDictionary *customScreenData = [NSMutableDictionary dictionary];
   customScreenData[@"category"] = @"YOUR_PRODUCT_CATEGORY";
   customScreenData[@"price"] = @100;
-  [$InTrack customNavigateTo:@"YOUR_SCREEN_NAME" data:customScreenData];
-`
-}
+  [InTrack customNavigateTo:@"YOUR_SCREEN_NAME" data:customScreenData];
 ```
 
 ### swift
 
 ```swift
-{
-  `var customScreenData: [String: Any] = [:]
+var customScreenData: [String: Any] = [:]
   customScreenData["category"] = "YOUR_PRODUCT_CATEGORY"
   customScreenData["price"] = 100
-  $InTrack.customNavigate(to: "YOUR_SCREEN_NAME", data: customScreenData)
-`
-}
+  InTrack.customNavigate(to: "YOUR_SCREEN_NAME", data: customScreenData)
 ```
 
 
@@ -108,23 +90,20 @@ If you want to get notified about user reactions to Messages, first you should i
 ### Objective-C
 
 ```objectivec
-{
-    `@interface AppDelegate : UIResponder <UIApplicationDelegate, $InTrackInAppMessagingDisplayDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, InTrackInAppMessagingDisplayDelegate>
      @end
 
      @implementation AppDelegate
-     - (void)messageClicked:($InTrackInAppMessage *)inAppMessage {
+     - (void)messageClicked:(InTrackInAppMessage *)inAppMessage {
          NSLog(@"[MESSAGE CLICKED ------>] @", inAppMessage.messageId ?: @"");
       }
-    - (void)messageDismissed:($InTrackInAppMessage *)inAppMessage {
+    - (void)messageDismissed:(InTrackInAppMessage *)inAppMessage {
       NSLog(@"[MESSAGE DISMISSED ------>] @", inAppMessage.messageId ?: @"");
       }
-    - (void)messageTriggered:($InTrackInAppMessage *)inAppMessage {
+    - (void)messageTriggered:(InTrackInAppMessage *)inAppMessage {
         NSLog(@"[MESSAGE TRIGGERED ------>] @", inAppMessage.messageId ?: @"");
       }
     @end
-`
-}
 ```
 
 
@@ -132,24 +111,21 @@ If you want to get notified about user reactions to Messages, first you should i
 ### swift
 
 ```swift
-{
-  `@main
-  class AppDelegate: UIResponder, UIApplicationDelegate, $InTrackInAppMessagingDisplayDelegate {
+@main
+  class AppDelegate: UIResponder, UIApplicationDelegate, InTrackInAppMessagingDisplayDelegate {
 
-    func messageClicked(_ inAppMessage: $InTrackInAppMessage?) {
+    func messageClicked(_ inAppMessage: InTrackInAppMessage?) {
         NSLog("%@%@", "[MESSAGE CLICKED ------>]", inAppMessage?.messageId ?? "");
     }
 
-    func messageDismissed(_ inAppMessage: $InTrackInAppMessage?) {
+    func messageDismissed(_ inAppMessage: InTrackInAppMessage?) {
         NSLog("%@%@", "[MESSAGE DISSMISSED ------>]", inAppMessage?.messageId ?? "");
     }
 
-    func messageTriggered(_ inAppMessage: $InTrackInAppMessage?) {
+    func messageTriggered(_ inAppMessage: InTrackInAppMessage?) {
         NSLog("%@%@", "[MESSAGE TRIGGERED ------>]", inAppMessage?.messageId ?? "");
     }
   }
-`
-}
 ```
 
 
@@ -165,29 +141,23 @@ and set `inAppDisplayDelegate = self` as shown below:
 ### Objective-C
 
 ```objectivec
-{
-  `$InTrackConfig* config = $InTrackConfig.new;
+InTrackConfig* config = InTrackConfig.new;
     config.appKey = @"YOUR_APP_KEY";
     config.authKey = @"YOUR_AUTH_KEY";
     config.enableInAppMessaging = YES;
     config.inAppDisplayDelegate = self;
-    [$InTrack startWithConfig:config];
-`
-}
+    [InTrack startWithConfig:config];
 ```
 
 ### swift
 
 ```swift
-{
-  `let config: $InTrackConfig = $InTrackConfig()
+let config: InTrackConfig = InTrackConfig()
   config.appKey = @"YOUR_APP_KEY"
   config.authKey = @"YOUR_AUTH_KEY"
   config.enableInAppMessaging = true
   config.inAppDisplayDelegate = self
-  $InTrack.initWith(config)
-`
-}
+  InTrack.initWith(config)
 ```
 
 

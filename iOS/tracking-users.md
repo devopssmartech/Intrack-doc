@@ -50,24 +50,18 @@ Make sure you call login as soon as the user logs in to your application, or whe
 ### Objective-C
 
 ```objectivec
-{
-  `[$InTrack recordLoginWithUserDetails:($InTrackUserDetails *)userDetails];
-`
-}
+[InTrack recordLoginWithUserDetails:(InTrackUserDetails *)userDetails];
 ```
 
 ### swift
 
 ```swift
-{
-  ` $InTrack.recordLogin(userDetails: $InTrackUserDetails!)
-`
-}
+ InTrack.recordLogin(userDetails: InTrackUserDetails!)
 ```
 
 
 
-Method recordLogin accepts a `$InTrackUserDetails` class.
+Method recordLogin accepts a `InTrackUserDetails` class.
 
 ### Logout
 
@@ -76,19 +70,13 @@ Make sure that you call logout when the user logs out and you don't want to atta
 ### Objective-C
 
 ```objectivec
-{
-  `[$InTrack recordLogout];
-`
-}
+[InTrack recordLogout];
 ```
 
 ### swift
 
 ```swift
-{
-  `$InTrack.recordLogout();
-`
-}
+InTrack.recordLogout();
 ```
 
 
@@ -100,24 +88,18 @@ In case of having any changes in user's details, these changes can be sent to  *
 ### Objective-C
 
 ```objectivec
-{
-  `[$InTrack updateProfile:($InTrackUserDetails *)userDetails];
-`
-}
+[InTrack updateProfile:(InTrackUserDetails *)userDetails];
 ```
 
 ### swift
 
 ```swift
-{
-  `$InTrack.updateProfile(userDetails: $InTrackUserDetails!);
-`
-}
+InTrack.updateProfile(userDetails: InTrackUserDetails!);
 ```
 
 
 
-Method updateProfile accepts a `$InTrackUserDetails` class.
+Method updateProfile accepts a `InTrackUserDetails` class.
 
 :::warning
 
@@ -172,8 +154,7 @@ You can use the UserAttributes method of our iOS SDK to track custom attributes 
 ### Objective-C
 
 ```objectivec
-{
-  `$InTrackUserDetails *userDetails = [[$InTrackUserDetails alloc] init];
+InTrackUserDetails *userDetails = [[InTrackUserDetails alloc] init];
     userDetails.userId = userId;
     userDetails.firstName = firstName;
     userDetails.lastName = lastName;
@@ -196,9 +177,7 @@ You can use the UserAttributes method of our iOS SDK to track custom attributes 
       @"attr3":@42,
         @"attr4":@[@1, @2, @3, @4]
     };
-    [$InTrack recordLogin:userDetails];
-`
-}
+    [InTrack recordLogin:userDetails];
 ```
 
 
@@ -206,8 +185,7 @@ You can use the UserAttributes method of our iOS SDK to track custom attributes 
 ### swift
 
 ```swift
-{
-  `let userDetails:$InTrackUserDetails = $InTrackUserDetails();
+let userDetails:InTrackUserDetails = InTrackUserDetails();
       userDetails.userId=userId;
       userDetails.firstName=firstName
       userDetails.lastName=lastName
@@ -232,9 +210,7 @@ You can use the UserAttributes method of our iOS SDK to track custom attributes 
             "attr4" : [1,2,3,4]
 
         ]
-  $InTrack.recordLogin(userDetails)
-`
-}
+  InTrack.recordLogin(userDetails)
 ```
 
 
@@ -248,10 +224,7 @@ For tracking unknown users,  **inTrack** SDK automatically generate a random id 
 ### Objective-C
 
 ```objectivec
-{
-  ` NSString *_Nullable deviceId = [$InTrack getDeviceId];
-`
-}
+ NSString *_Nullable deviceId = [InTrack getDeviceId];
 ```
 
 
@@ -259,10 +232,7 @@ For tracking unknown users,  **inTrack** SDK automatically generate a random id 
 ### swift
 
 ```swift
-{
-  `let deviceId = $InTrack.getDeviceId();
-`
-}
+let deviceId = InTrack.getDeviceId();
 ```
 
 
@@ -274,17 +244,11 @@ For tracking known users you can get them by calling our getUserId method.
 ### Objective-C
 
 ```objectivec
-{
-  `NSString *_Nullable userId = [$InTrack getUserId];
-`
-}
+NSString *_Nullable userId = [InTrack getUserId];
 ```
 
 ### swift
 
 ```swift
-{
-  `let userId = $InTrack.getUserId();
-`
-}
+let userId = InTrack.getUserId();
 ```

@@ -20,29 +20,25 @@ for using In App messaging you should use **inTrack** sdk (version 2 or higher).
 ### Java
 
 ```java
-{
-`$InTrack.init(
-    new $InTrackConfig()
+InTrack.init(
+    new InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .enableInAppMessaging() // <-- HERE
-);`
-}
+);
 ```
 
 ### Kotlin
 
 ```kotlin
-{
-`$InTrack.init(
-    $InTrackConfig()
+InTrack.init(
+    InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .enableInAppMessaging() // <-- HERE
-)`
-}
+)
 ```
 
 you can also pass 2 boolean value to the `enableInAppMessaging` method for enable/disable AutoTracking and define the way that how we store activity and fragment name by using ShortName or full class names.
@@ -50,23 +46,20 @@ you can also pass 2 boolean value to the `enableInAppMessaging` method for enabl
 ### Java
 
 ```java
-{
-`$InTrack.init(
-    new $InTrackConfig()
+InTrack.init(
+    new InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .enableInAppMessaging(true, true) // <-- HERE
-);`
-}
+);
 ```
 
 ### Kotlin
 
 ```kotlin
-{
-`$InTrack.init(
-    $InTrackConfig()
+InTrack.init(
+    InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
@@ -74,8 +67,7 @@ you can also pass 2 boolean value to the `enableInAppMessaging` method for enabl
             enableAutoTracking: true,
             useActivityShortName: true
         ); //<-- HERE
-)`
-}
+)
 ```
 
 ## Activity And Fragments auto tracking
@@ -85,31 +77,27 @@ by defualt **inTrack** SDK, tracking user's navigation through your app by track
 ### Java
 
 ```java
-{
-`$InTrack.init(
-    new $InTrackConfig()
+InTrack.init(
+    new InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .enableInAppMessaging()
         .disableInAppMessagingActivityAndFragmentAutoTracking(); // <-- HERE
-);`
-}
+);
 ```
 
 ### Kotlin
 
 ```kotlin
-{
-`$InTrack.init(
-    $InTrackConfig()
+InTrack.init(
+    InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .enableInAppMessaging()
         .disableInAppMessagingActivityAndFragmentAutoTracking() // <-- HERE
-)`
-}
+)
 ```
 
 ## Custom Screen tracking
@@ -120,17 +108,13 @@ you can manually tell **inTrack** about user navigation by calling **inTrack**'s
 ### Java
 
 ```java
-{
-`$InTrack.customNavigatedTo("YOUR_SCREEN_NAME");`
-}
+InTrack.customNavigatedTo("YOUR_SCREEN_NAME");
 ```
 
 ### Kotlin
 
 ```kotlin
-{
-`$InTrack.customNavigatedTo("YOUR_SCREEN_NAME")`
-}
+InTrack.customNavigatedTo("YOUR_SCREEN_NAME")
 ```
 
 ## Tracking Screen Data
@@ -140,24 +124,20 @@ Every screen can be associated with some contextual data, which can be part of t
 ### Java
 
 ```java
-{
-`HashMap<String, Object> customScreenData = new HashMap<>();
+HashMap<String, Object> customScreenData = new HashMap<>();
 customScreenData.put("category", "YOUR_PRODUCT_CATEGORY");
 customScreenData.put("price", 100);
-$InTrack.customNavigatedTo("YOUR_PRODUCT_NAME", customScreenData);`
-}
+InTrack.customNavigatedTo("YOUR_PRODUCT_NAME", customScreenData);
 ```
 
 ### Kotlin
 
 ```kotlin
-{
-`val customScreenData = hashMapOf<String, Any>(
+val customScreenData = hashMapOf<String, Any>(
     "category" to "YOUR_PRODUCT_CATEGORY",
     "price" to 100
 )
-$InTrack.customNavigatedTo("YOUR_PRODUCT_NAME", customScreenData)`
-}
+InTrack.customNavigatedTo("YOUR_PRODUCT_NAME", customScreenData)
 ```
 
 marketing agents can run campaigns based on number of pages that a user navigates through you app, so each time you call `customNavigatedTo` we will increase user's page view count.
@@ -166,24 +146,20 @@ but if you want just update page without increasing user's page veiw, you can ca
 ### Java
 
 ```java
-{
-`HashMap<String, Object> customScreenData = new HashMap<>();
+HashMap<String, Object> customScreenData = new HashMap<>();
 customScreenData.put("category", "YOUR_PRODUCT_CATEGORY");
 customScreenData.put("price", 100);
-$InTrack.updateScreenData("YOUR_PRODUCT_NAME", customScreenData);`
-}
+InTrack.updateScreenData("YOUR_PRODUCT_NAME", customScreenData);
 ```
 
 ### Kotlin
 
 ```kotlin
-{
-`val customScreenData = hashMapOf<String, Any>(
+val customScreenData = hashMapOf<String, Any>(
     "category" to "YOUR_PRODUCT_CATEGORY",
     "price" to 100
 )
-$InTrack.updateScreenData("YOUR_PRODUCT_NAME", customScreenData)`
-}
+InTrack.updateScreenData("YOUR_PRODUCT_NAME", customScreenData)
 ```
 
 :::note
@@ -200,43 +176,39 @@ If you want to get notified about user reactions to Messages, first you should i
 ### Java
 
 ```java
-{
-`class MyInAppListener implements InAppMessageListener {
+class MyInAppListener implements InAppMessageListener {
     @Override
     public void onMessageTrigger(IAMMessage details) {
-        Log.d("[$InTrack]", "inApp message triggered ...");
+        Log.d("[InTrack]", "inApp message triggered ...");
     }
 
     @Override
     public void onMessageClick(IAMMessage details) {
-        Log.d("[$InTrack]", "inApp message clicked ...");
+        Log.d("[InTrack]", "inApp message clicked ...");
     }
 
     @Override
     public void onMessageDismiss(IAMMessage details) {
-        Log.d("[$InTrack]", "inApp message dismissed ...");
+        Log.d("[InTrack]", "inApp message dismissed ...");
     }
-}`
 }
 ```
 
 ### Kotlin
 
 ```kotlin
-{
-`val myInAppListener = object : InAppMessageListener {
+val myInAppListener = object : InAppMessageListener {
     override fun onMessageTrigger(details: IAMMessage) {
-        Log.d("[$InTrack]", "inApp message triggered ...")
+        Log.d("[InTrack]", "inApp message triggered ...")
     }
 
     override fun onMessageClick(details: IAMMessage) {
-        Log.d("[$InTrack]", "inApp message clicked ...")
+        Log.d("[InTrack]", "inApp message clicked ...")
     }
 
     override fun onMessageDismiss(details: IAMMessage) {
-        Log.d("[$InTrack]", "inApp message dismissed ...")
+        Log.d("[InTrack]", "inApp message dismissed ...")
     }
-}`
 }
 ```
 
@@ -251,31 +223,27 @@ and set this class as InAppListener through InTrackConfig as shown below:
 ### Java
 
 ```java
-{
-`$InTrack.init(
-    new $InTrackConfig()
+InTrack.init(
+    new InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .enableInAppMessaging()
         .setInAppListener(new MyInAppListener()); // <-- HERE
-);`
-}
+);
 ```
 
 ### Kotlin
 
 ```kotlin
-{
-`$InTrack.init(
-    $InTrackConfig()
+InTrack.init(
+    InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .enableInAppMessaging()
         .setInAppListener(MyInAppListener()) // <-- HERE
-)`
-}
+)
 ```
 
 :::info

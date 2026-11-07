@@ -24,32 +24,26 @@ Users can create their own custom events and send them to **inTrack** server. Th
 ### Objective-C
 
 ```objectivec
-{
-  `NSDictionary *dictionary = @{
+NSDictionary *dictionary = @{
     @"ios_object": @{@"key1": @"value1", @"key2": @"value2"},
     @"ios_string": @"string",
     @"ios_number": @42,
     @"ios_array": @[@1, @2, @3, @4]
     };
-    [$InTrack recordEvent:@"eventName" eventData:dictionary];
-`
-}
+    [InTrack recordEvent:@"eventName" eventData:dictionary];
 ```
 
 ### swift
 
 ```swift
-{
-  `let dictionary: [String: Any] = [
+let dictionary: [String: Any] = [
       "ios_object": ["key1": "value1", "key2": "value2"],
       "ios_string": "string ",
         "ios_number": 42,
           "ios_array": [1,2,3,4]
             ];
 
-            $InTrack.recordEvent("eventName", eventData: dictionary)
-`
-}
+            InTrack.recordEvent("eventName", eventData: dictionary)
 ```
 
 
@@ -82,10 +76,7 @@ sending delivery event:
 ### Objective-C
 
 ```objectivec
-{
-  `[$InTrack recordCustomChannelDeliveryWithToken:@"token"];
-`
-}
+[InTrack recordCustomChannelDeliveryWithToken:@"token"];
 ```
 
 
@@ -93,10 +84,7 @@ sending delivery event:
 ### swift
 
 ```swift
-{
-  `$InTrack.recordCustomChannelDelivery(withToken: "token")
-`
-}
+InTrack.recordCustomChannelDelivery(withToken: "token")
 ```
 
 sending click event:
@@ -104,19 +92,13 @@ sending click event:
 ### Objective-C
 
 ```objectivec
-{
-  `[$InTrack recordCustomChannelClickWithToken:@"token"];
-`
-}
+[InTrack recordCustomChannelClickWithToken:@"token"];
 ```
 
 ### swift
 
 ```swift
-{
-  `$InTrack.recordCustomChannelClick(withToken: "token")
-`
-}
+InTrack.recordCustomChannelClick(withToken: "token")
 ```
 
 

@@ -20,27 +20,26 @@ The **inTrack** Transactional Campaign API enables you to send critical transact
 **URL Structure:**
 
 ```
-<HOST>/api/sdk/accounts/<YOUR_$INTRACK_LICENSE_CODE>/transactionCommunication
+<HOST>/api/sdk/accounts/<YOUR_INTRACK_LICENSE_CODE>/transactionCommunication
 ```
 
 **Header Structure:**
 
-Authorization: Bearer `<YOUR_$INTRACK_API_KEY>`
+Authorization: Bearer `<YOUR_INTRACK_API_KEY>`
 x-request-id: `<HEX_STRING>`
 
 #### Request Headers
 
 | Name          | Description                                                                                                                                                                   |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Authorization | Bearer `<YOUR_$INTRACK_API_KEY>` Replace `<YOUR_$INTRACK_API_KEY>` with your inTrack API Key. |
+| Authorization | Bearer `<YOUR_INTRACK_API_KEY>` Replace `<YOUR_INTRACK_API_KEY>` with your inTrack API Key. |
 | x-request-id  | `<HEX_STRING>` Replace `<HEX_STRING>` with a unique random hex string. Prevents duplicate events within 4 hours.                                                              |
 
 ### Example API Request
 
 ```bash
-{
-`curl -X POST <HOST>/api/sdk/accounts/<YOUR_$INTRACK_LICENSE_CODE>/transactionCommunication \\
-    --header 'Authorization: Bearer <YOUR_$INTRACK_API_KEY>' \\
+curl -X POST <HOST>/api/sdk/accounts/<YOUR_INTRACK_LICENSE_CODE>/transactionCommunication \\
+    --header 'Authorization: Bearer <YOUR_INTRACK_API_KEY>' \\
     --header 'Content-Type: application/json' \\
     --data '{
       "communicationId": 5,
@@ -54,8 +53,7 @@ x-request-id: `<HEX_STRING>`
         "phone": "09379897845",
         "queueMinutes": 2
       }
-    }'`
-}
+    }'
 ```
 
 ### Guidelines

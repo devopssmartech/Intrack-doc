@@ -15,30 +15,26 @@ You can utilize the **InTrackPush.decodeMessage** method to extract message data
 ### Java
 
 ```java
-{
-`$InTrackPush.Message message = $InTrackPush.decodeMessage(remoteMessage.getData());
+InTrackPush.Message message = InTrackPush.decodeMessage(remoteMessage.getData());
 if (message == null) {
-    Log.d(TAG, "The message was not sent from $InTrack");
+    Log.d(TAG, "The message was not sent from InTrack");
     return;
 }
 if (message.customData().containsKey("your-custom-key")) {
     // Perform actions with your custom key-value data
-}`
 }
 ```
 
 ### kotlin
 
 ```kotlin
-{
-`val message = $InTrackPush.decodeMessage(remoteMessage.data)
+val message = InTrackPush.decodeMessage(remoteMessage.data)
 if (message == null) {
-    Log.d(TAG, "The message was not sent from $InTrack")
+    Log.d(TAG, "The message was not sent from InTrack")
     return
 }
 if (message.customData().containsKey("your-custom-key")) {
     // Perform actions with your custom key-value data
-}`
 }
 ```
 
@@ -49,62 +45,57 @@ To enable custom processing of push notifications, you may register a BroadcastR
 ### Java
 
 ```java
-{
-`BroadcastReceiver messageReceiver = new BroadcastReceiver() {
+BroadcastReceiver messageReceiver = new BroadcastReceiver() {
     @Override
     public void onReceive(Context context, Intent intent) {
-      Intent sentIntent = intent.getParcelableExtra($InTrackPush.EXTRA_INTENT);
-      sentIntent.setExtrasClassLoader($InTrackPush.class.getClassLoader());
-      Bundle bun = sentIntent.getParcelableExtra($InTrackPush.EXTRA_MESSAGE);
-      $InTrackPush.Message message;
+      Intent sentIntent = intent.getParcelableExtra(InTrackPush.EXTRA_INTENT);
+      sentIntent.setExtrasClassLoader(InTrackPush.class.getClassLoader());
+      Bundle bun = sentIntent.getParcelableExtra(InTrackPush.EXTRA_MESSAGE);
+      InTrackPush.Message message;
       int actionIndex =
-          sentIntent.getIntExtra($InTrackPush.EXTRA_ACTION_INDEX, -100);
+          sentIntent.getIntExtra(InTrackPush.EXTRA_ACTION_INDEX, -100);
       String title = "NULL";
       if (bun != null) {
-        message = bun.getParcelable($InTrackPush.EXTRA_MESSAGE);
+        message = bun.getParcelable(InTrackPush.EXTRA_MESSAGE);
         if (message != null) {
           title = message.title();
         }
       }
-      Log.i("$InTrack", "Received message with title: [" + title + "]");
+      Log.i("InTrack", "Received message with title: [" + title + "]");
     }
   };
   IntentFilter filter = new IntentFilter();
-  filter.addAction($InTrackPush.SECURE_NOTIFICATION_BROADCAST);
-  registerReceiver(messageReceiver, filter, getPackageName() + $InTrackPush.$INTRACK_BROADCAST_PERMISSION_POSTFIX, null);
-`
-}
+  filter.addAction(InTrackPush.SECURE_NOTIFICATION_BROADCAST);
+  registerReceiver(messageReceiver, filter, getPackageName() + InTrackPush.INTRACK_BROADCAST_PERMISSION_POSTFIX, null);
 ```
 
 ### kotlin
 
 ```kotlin
-{
-`// Overriding Push Message Handling
+// Overriding Push Message Handling
 val messageReceiver = object : BroadcastReceiver() {
     override fun onReceive(context : Context, intent : Intent) {
-      val sentIntent = intent.getParcelableExtra<Intent>($InTrackPush.EXTRA_INTENT)
+      val sentIntent = intent.getParcelableExtra<Intent>(InTrackPush.EXTRA_INTENT)
       sentIntent?.apply {
-        setExtrasClassLoader($InTrackPush::class.java.classLoader)
-        val bun = getParcelableExtra<Bundle>($InTrackPush.EXTRA_MESSAGE)
-        val message : $InTrackPush.Message?
-        val actionIndex = getIntExtra($InTrackPush.EXTRA_ACTION_INDEX, -100)
+        setExtrasClassLoader(InTrackPush::class.java.classLoader)
+        val bun = getParcelableExtra<Bundle>(InTrackPush.EXTRA_MESSAGE)
+        val message : InTrackPush.Message?
+        val actionIndex = getIntExtra(InTrackPush.EXTRA_ACTION_INDEX, -100)
         var title = "NULL"
         bun?.apply {
-            message = getParcelable($InTrackPush.EXTRA_MESSAGE)
+            message = getParcelable(InTrackPush.EXTRA_MESSAGE)
             message?.apply {
                 title = title()
             }
         }
-        Log.i("$InTrack", "Received message with title: [$title]")
+        Log.i("InTrack", "Received message with title: [$title]")
       }
     }
 }
 val filter = IntentFilter().apply{
-    addAction($InTrackPush.SECURE_NOTIFICATION_BROADCAST)
+    addAction(InTrackPush.SECURE_NOTIFICATION_BROADCAST)
 }
-registerReceiver(messageReceiver, filter, packageName + $InTrackPush.$INTRACK_BROADCAST_PERMISSION_POSTFIX, null)`
-}
+registerReceiver(messageReceiver, filter, packageName + InTrackPush.INTRACK_BROADCAST_PERMISSION_POSTFIX, null)
 ```
 
 
@@ -114,32 +105,28 @@ registerReceiver(messageReceiver, filter, packageName + $InTrackPush.$INTRACK_BR
 ### Java
 
 ```java
-{
-`// Retrieving data from intent
-Bundle bun = intent.getParcelableExtra($InTrack.EXTRA_MESSAGE);
-$InTrackPush.Message message;
+// Retrieving data from intent
+Bundle bun = intent.getParcelableExtra(InTrack.EXTRA_MESSAGE);
+InTrackPush.Message message;
 String title = "NULL";
 if (bun != null) {
-      message = bun.getParcelable($InTrackPush.EXTRA_MESSAGE);
+      message = bun.getParcelable(InTrackPush.EXTRA_MESSAGE);
       if (message != null) {
           title = message.title();
       }
-}`
 }
 ```
 
 ### kotlin
 
 ```kotlin
-{
-`val bun = intent.getParcelableExtra<Bundle>($InTrack.EXTRA_MESSAGE)
-val message: $InTrackPush.Message?
+val bun = intent.getParcelableExtra<Bundle>(InTrack.EXTRA_MESSAGE)
+val message: InTrackPush.Message?
 var title = "NULL"
 bun?.apply {
-    message = getParcelable($InTrackPush.EXTRA_MESSAGE)
+    message = getParcelable(InTrackPush.EXTRA_MESSAGE)
     message?.apply {
       title = title()
     }
-  }`
-}
+  }
 ```

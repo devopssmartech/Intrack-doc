@@ -19,15 +19,14 @@ All styling—colors, fonts, and layout—is now managed directly from the dashb
 ### Java
 
 ```java
-{
-`$InTrack.init(
-    new $InTrackConfig()
+InTrack.init(
+    new InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .enableInAppMessaging()
         .setInAppMessagesDefaultTheme(  //<========= Remove this method
-            new $InTrackInAppMessageTheme(
+            new InTrackInAppMessageTheme(
                 "#000000", // titleColor
                 "#000000", // descriptionColor
                 "#FFFFFF", // backgroundColor
@@ -36,22 +35,20 @@ All styling—colors, fonts, and layout—is now managed directly from the dashb
                 FontFamily.B_YEKAN // customFont
             )
         )
-);`
-}
+);
 ```
 
 ### Kotlin
 
 ```kotlin
-{
-`$InTrack.init(
-    $InTrackConfig()
+InTrack.init(
+    InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .enableInAppMessaging()
         .setInAppMessagesDefaultTheme( //<========= Remove this method
-            $InTrackInAppMessageTheme(
+            InTrackInAppMessageTheme(
                 titleColor = "#000000",
                 descriptionColor = "#000000",
                 backgroundColor = "#FFFFFF",
@@ -60,8 +57,7 @@ All styling—colors, fonts, and layout—is now managed directly from the dashb
                 FontFamily.B_YEKAN
             )
         )
-)`
-}
+)
 ```
 
 ## Web
@@ -72,8 +68,7 @@ Your onsite campaigns will automatically use the styles set in the panel and no 
 You can remove the `baseTheme` config from your code when calling the method [`initOnSiteMessaging`](../web/on-site.md#initialization).
 
 ```javascript
-{
-`config: {
+config: {
     baseTheme: { //<========= Remove this
         bg_color: '#fefefe',
         border_radius: '8',
@@ -87,7 +82,6 @@ You can remove the `baseTheme` config from your code when calling the method [`i
     },
     displayMessage: null,
     disableAutoTracking: false
-}`
 }
 ```
 
@@ -98,9 +92,7 @@ Starting from SDK v3.0 the SDK has been renamed from **InTrack** to **InTrackSDK
 If you're upgrading from an earlier version (e.g., v2.x), make sure to update your Podfile:
 
 ```ruby
-{
-  `pod '$InTrackSDK'`
-}
+pod 'InTrackSDK'
 ```
 
 All theme-related settings have been removed from the SDK side.
@@ -109,8 +101,7 @@ you can remove `setInAppTheme` config from your code.
 ### Objective-C
 
 ```objectivec
-{
-  `$InTrackConfig* config = $InTrackConfig.new;
+InTrackConfig* config = InTrackConfig.new;
   config.appKey = @"YOUR_APP_KEY";
   config.authKey = @"YOUR_AUTH_KEY";
   config.enableInAppMessaging = YES;
@@ -120,24 +111,19 @@ you can remove `setInAppTheme` config from your code.
             bodyColor:@"#000000"
       actionLabelColor:@"#860202"
   actionBackgroundColor:@"#FFFFFF"];  //<========= Remove this
-  [$InTrack startWithConfig:config];
-`
-}
+  [InTrack startWithConfig:config];
 ```
 
 ### swift
 
 ```swift
-{
-  `let config: $InTrackConfig = $InTrackConfig()
+let config: InTrackConfig = InTrackConfig()
   config.appKey = @"YOUR_APP_KEY"
   config.authKey = @"YOUR_AUTH_KEY"
   config.enableInAppMessaging = true
   config.inAppDisplayDelegate = self
   config.setInAppTheme("#000000", backgroundColor: "#00a1b1", bodyColor: "#000000", actionLableColor: "#860202", actionBackgroundColor: "#FFFFFF") //<========= Remove this
-  $InTrack.initWith(config)
-`
-}
+  InTrack.initWith(config)
 ```
 
 ## Flutter
@@ -150,22 +136,18 @@ If you are extending from `FlutterActivity` you can change it to `FlutterFragmen
 ### Java
 
 ```java
-{
-`import io.flutter.embedding.android.FlutterFragmentActivity;
+import io.flutter.embedding.android.FlutterFragmentActivity;
 
 public class MainActivity extends FlutterFragmentActivity {
-}`
 }
 ```
 
 ### Kotlin
 
 ```kotlin
-{
-`import io.flutter.embedding.android.FlutterFragmentActivity
+import io.flutter.embedding.android.FlutterFragmentActivity
 
 public class MainActivity : FlutterFragmentActivity {
-}`
 }
 ```
 
@@ -174,11 +156,10 @@ Starting from SDK v3.0, all theme-related settings have been removed from the SD
 You can remove the `defaultTheme` config from your code when calling the method [`enableInAppMessaging`](../flutter/inapp-messaging.md#message-theme)
 
 ```dart
-{
-  `$InTrack.isInitialized().then((bool isInitialized) {
+InTrack.isInitialized().then((bool isInitialized) {
     if (!isInitialized) {
-      $InTrackConfig config =
-      $InTrackConfig("YOUR_APP_KEY")
+      InTrackConfig config =
+      InTrackConfig("YOUR_APP_KEY")
         ..setAndroidAuthKey("YOUR_ANDROID_AUTH_KEY")
         ..setIOSAuthKey("YOUR_IOS_AUTH_KEY")
           ..enableInAppMessaging(
@@ -189,14 +170,12 @@ You can remove the `defaultTheme` config from your code when calling the method 
               'actionLabelColor': '#000000',
               'actionBgColor': '#ffffff'
           });
-    $InTrack.initWithConfig(config).then((value) {
-      print('$inTrack $value');
+    InTrack.initWithConfig(config).then((value) {
+      print('inTrack $value');
       //you can enable push notification here
     });
   }
 });
-`
-}
 ```
 
 ## React Native
@@ -206,8 +185,7 @@ Starting from SDK v3.0, all theme-related settings have been removed from the SD
 you can remove `inAppDefaultTheme` config from your code.
 
 ```javascript
-{
-`if (!(await $InTrack.isInitialized())) {
+if (!(await InTrack.isInitialized())) {
     const options = {
       appKey: 'APP_KEY',
       iosAuthKey: 'ّAUTH_KEY_FOR_IOS',
@@ -221,8 +199,7 @@ you can remove `inAppDefaultTheme` config from your code.
         actionBgColor: '#ffffff'
       }
     };
-    await $InTrack.init(options);
+    await InTrack.init(options);
 }
-$InTrack.start();`
-}
+InTrack.start();
 ```

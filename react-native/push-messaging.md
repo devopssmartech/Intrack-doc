@@ -42,18 +42,15 @@ For optimal integration, we recommend utilising the @react-native-firebase/messa
 In the App.js file, inside the useEffect block, obtain the FCM token using messaging().getToken() and pass it to inTrack like this:
 
 ```javascript
-{
-  `useEffect(() => {
+useEffect(() => {
     await messaging().registerDeviceForRemoteMessages();
 
     // Get Token From Firebase
     const token = await messaging().getToken();
 
-    // Pass Token to $InTrack
-    $InTrack.onTokenRefresh(token);
+    // Pass Token to InTrack
+    InTrack.onTokenRefresh(token);
   }, []);
-`
-}
 ```
 
 #### Step 3: Integrating inTrack with your React-Native Android App
@@ -61,22 +58,19 @@ In the App.js file, inside the useEffect block, obtain the FCM token using messa
 Assuming you have integrated firebase using @react-native-firebase/messaging and implemented all the necessary methods outlined in the [React Native Firebase Messaging Docs](https://rnfirebase.io/messaging/usage) for Android, Initializing inTrack notification service is done by calling InTrack.initNotificationService. This method should be called before start and after init:
 
 ```javascript
-{
-  `const initIntrack = async () => {
-      if (!(await $InTrack.isInitialized())) {
+const initIntrack = async () => {
+      if (!(await InTrack.isInitialized())) {
         const options = {
         appKey: 'APP_KEY',
         iosAuthKey: 'ّAUTH_KEY_FOR_IOS',
         androidAuthKey: 'AUTH_KEY_FOR_ANDROID',
         loggingEnabled: true,
       };
-      await $InTrack.init(options);
-      $InTrack.initNotificationService(); <-- Here
-      $InTrack.start();
+      await InTrack.init(options);
+      InTrack.initNotificationService(); <-- Here
+      InTrack.start();
       }
       };
-`
-}
 ```
 
 After calling this method, notification channels may be created and registering to a push service may be done.
@@ -86,8 +80,7 @@ After calling this method, notification channels may be created and registering 
 Android requires channels for notifications starting from Android 8.0 (API level 26). You can create a channel in your React Native project using the react-native-push-notification library or the Firebase messaging API directly.
 
 ```javascript
-{
-  `import PushNotification from 'react-native-push-notification';
+import PushNotification from 'react-native-push-notification';
     PushNotification.createChannel(
     {
       channelId: "default-channel-id", // (required)
@@ -97,8 +90,6 @@ Android requires channels for notifications starting from Android 8.0 (API level
 
     (created) => console.log("createChannel returned \${created}") // (optional) callback returns whether the channel was created, false means it already existed.
     );
-`
-}
 ```
 
 #### Step 5: Pass push payload to inTrack
@@ -108,24 +99,18 @@ Whenever a push message is received, the inTrack SDK should be notified by calli
 * `onMessage`: Invoke the inTrack's pushMessageReceived method within this method to render foreground notifications.
 
 ```javascript
-{
-  `messaging().onMessage(async remoteMessage => {
-    $InTrack.pushMessageReceived(remoteMessage.data, channelId) <--- Here
+messaging().onMessage(async remoteMessage => {
+    InTrack.pushMessageReceived(remoteMessage.data, channelId) <--- Here
   });
-`
-}
 ```
 
 * `setBackgroundMessageHandler`: Invoke the inTrack's onMessageReceived method within this handler method to render background notifications.
 
 ```javascript
-{
-  `messaging().setBackgroundMessageHandler(message => {
-      $InTrack.pushMessageReceived(message.data, channelId) <--- Here
+messaging().setBackgroundMessageHandler(message => {
+      InTrack.pushMessageReceived(message.data, channelId) <--- Here
       return Promise.resolve();
     });
-`
-}
 ```
 
 * channelId: The identifier for the notification channel.
@@ -183,12 +168,9 @@ after initialze inTrack, you'll need to initalize push notifications by calling 
 please note that you also need to ask for user's permission for push notifications, if you didn't already get the permission, you can pass the related option to initNotificationService method.
 
 ```javascript
-{
-  `$InTrack.initNotificationService({
+InTrack.initNotificationService({
      askForUserPermission: true, // the default value is false, you can set it to true to get user permissions here.
   });
-`
-}
 ```
 
 #### Rich Push Notifications
@@ -199,12 +181,9 @@ For enabling Rich Push Notification on iOS follow the [related instuction](../re
 if you want to get notified when user clicked on an push notification that sent by inTrack, you can register a callBack function with `onNotificationClicked` method:
 
 ```javascript
-{
-  ` $InTrack.onNotificationClicked(event => {
+ InTrack.onNotificationClicked(event => {
       console.log('push notification clicked:', event);
     });
-`
-}
 ```
 
 :::info

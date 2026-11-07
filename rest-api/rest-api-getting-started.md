@@ -24,20 +24,17 @@ And much more!
 All available resources (/users, /events, /businessEvents, /refresh) can be accessed over HTTPS via the respective URLs listed below. The host URL serves as the parent link of the actual API resource endpoint.
 
 ```json
-{
-  `$https://api.intrack.ir/
-`
-}
+https://api.intrack.ir/
 ```
 
 | Name                  | Endpoint                                                                                        | Description                                 |
 |-----------------------|-------------------------------------------------------------------------------------------------|---------------------------------------------|
 | Refresh token         | /api/sdk/accounts/`<YOUR_LICENSE_CODE>`/refresh                                                 | Revoke a token in jwt authorization method. |
-| Tracking users        | /api/sdk/accounts/`<YOUR_$INTRACK_LICENSE_CODE>` /users         |                                             |
-| Tracking users batch  | /api/sdk/accounts/`<YOUR_$INTRACK_LICENSE_CODE>`/usersBatch     | Sending a list of users in batch request    |
-| Tracking events       | /api/sdk/accounts/`<YOUR_$INTRACK_LICENSE_CODE>`/events         |                                             |
-| Tracking events batch | /api/sdk/accounts/`<YOUR_$INTRACK_LICENSE_CODE>`/eventsBatch    | Sending a list of events in batch request   |
-| Business Events       | /api/sdk/accounts/`<YOUR_$INTRACK_LICENSE_CODE>`/businessEvents |                                             |
+| Tracking users        | /api/sdk/accounts/`<YOUR_INTRACK_LICENSE_CODE>` /users         |                                             |
+| Tracking users batch  | /api/sdk/accounts/`<YOUR_INTRACK_LICENSE_CODE>`/usersBatch     | Sending a list of users in batch request    |
+| Tracking events       | /api/sdk/accounts/`<YOUR_INTRACK_LICENSE_CODE>`/events         |                                             |
+| Tracking events batch | /api/sdk/accounts/`<YOUR_INTRACK_LICENSE_CODE>`/eventsBatch    | Sending a list of events in batch request   |
+| Business Events       | /api/sdk/accounts/`<YOUR_INTRACK_LICENSE_CODE>`/businessEvents |                                             |
 
 :::info
 
@@ -88,14 +85,11 @@ To activate JWT, please contact the support team.
 Tokens are valid for one hour. For continuous usage, tokens must be used sequentially to regenerate new tokens. Use the following cURL command to generate a new token using an existing one:
 
 ```bash
-{
-  `curl -X POST "<HOST>/api/sdk/accounts/<YOUR_LICENSE_CODE>/refresh"  \\
+curl -X POST "<HOST>/api/sdk/accounts/<YOUR_LICENSE_CODE>/refresh"  \\
       --header "Content-Type: application/json"  \\
       --data '{
         "refresh_token": "<TOKEN>"
       }'
-`
-}
 ```
 
 #### Revoking Token
@@ -103,15 +97,12 @@ Tokens are valid for one hour. For continuous usage, tokens must be used sequent
 To revoke a token, use the following cURL command:
 
 ```bash
-{
-  `curl -X POST "<HOST>/api/sdk/accounts/<YOUR_LICENSE_CODE>/revoke"  \\
+curl -X POST "<HOST>/api/sdk/accounts/<YOUR_LICENSE_CODE>/revoke"  \\
       --header "Content-Type: application/json" \\
       --data '{
         "token": "<TOKEN>",
         "identifier": "<IDENTIFIER>"
       }'
-`
-}
 ```
 
 :::note

@@ -76,7 +76,7 @@ You can check custom channels system events [here](../events#custom-channel-syst
 ### Delivery Status
 
 ```
-{`curl -X PUT '$https://api.intrack.ir/api/sdk/track/manualDelivery?token={token}&status={status}'`}
+curl -X PUT 'https://api.intrack.ir/api/sdk/track/manualDelivery?token={token}&status={status}'
 ```
 
 - **token** (required): Unique trackingId provided to your send endpoint
@@ -90,7 +90,7 @@ This endpoint should be called to update message delivery status.
 ### Open Tracking
 
 ```
-{`curl -X PUT '$https://api.intrack.ir/api/sdk/track/opened?token={token}'`}
+curl -X PUT 'https://api.intrack.ir/api/sdk/track/opened?token={token}'
 ```
 
 - **token** (required): Unique trackingId provided to your send endpoint
@@ -100,7 +100,7 @@ This endpoint should be called when a message is opened.
 ### Click Tracking
 
 ```
-{`curl -X PUT '$https://api.intrack.ir/api/sdk/track/clicked?token={token}&button={button?}&url={url?}'`}
+curl -X PUT 'https://api.intrack.ir/api/sdk/track/clicked?token={token}&button={button?}&url={url?}'
 ```
 
 - **token** (required): Unique trackingId provided to your send endpoint

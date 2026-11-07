@@ -27,15 +27,13 @@ Typically, the configuration of the **inTrack** SDKs requires two parameters: **
 At this stage, simply copy the `auth_key` for both Android and iOS from the  [dashboard](https://dash.intrack.ir) and add them to the configuration of the Web SDK.
 
 ```javascript
-{
-`var $inTrack_config = {
+var inTrack_config = {
     app_key: 'Provided_App_Key',
     auth_key: 'Provided_Auth_Key_for_Web',
     public_key: 'Provided_Public_Key',
     android_auth_key: 'Provided_Auth_key_for_Android', // HERE
     ios_auth_key: 'Provided_Auth_key_for_iOS' // HERE
-};`
- }
+};
 ```
 
 ### 2. Specifying the Execution Environment for the Web SDK
@@ -49,16 +47,13 @@ This can be done in two ways:
 If you want to inform the **inTrack** SDK from the native code that it is running within a WebView, you need to pass the query string **intrack_device_id=-1** to the webpage. For example, use a URL like this:
 
 ```javascript
-{
-`https://yourdomain.com?$intrack_device_id=-1`
- }
+https://yourdomain.com?intrack_device_id=-1
 ```
 
 **Kotlin Code for Passing `deviceId` to WebView**
 
 ```kotlin
-{
-`val webView = view.findViewById<WebView>(R.id.webview)  // Find the WebView
+val webView = view.findViewById<WebView>(R.id.webview)  // Find the WebView
 val webSettings = webView.settings  // Get WebView settings
 
 // Enable JavaScript and DOM storage for the WebView
@@ -66,8 +61,7 @@ webSettings.javaScriptEnabled = true
 webSettings.setDomStorageEnabled(true)
 
 // Load the URL with the query parameter to notify Web SDK
-webView.loadUrl("https://yourdomain.com?$intrack_device_id=-1")`
-}
+webView.loadUrl("https://yourdomain.com?intrack_device_id=-1")
 ```
 
 #### 2.2. From the Web Side
@@ -75,16 +69,14 @@ webView.loadUrl("https://yourdomain.com?$intrack_device_id=-1")`
 Another way to specify the WebView status is by setting the webview parameter in the configuration for the Web SDK. You can specify the environment like this:
 
 ```javascript
-{
-`var $inTrack_config = {
+var inTrack_config = {
     app_key: 'Provided_App_Key',
     auth_key: 'Provided_Auth_Key_for_Web',
     public_key: 'Provided_Public_Key',
     android_auth_key: 'Provided_Auth_key_for_Android',
     ios_auth_key: 'Provided_Auth_key_for_iOS',
     webview: true,
-};`
-}
+};
 ```
 
 :::note
@@ -104,17 +96,13 @@ Finally, you need to send the `deviceId` obtained from step 3, along with the pa
 Here’s the Kotlin code for injecting the deviceId into the WebView:
 
 ```kotlin
-{
-`webView.loadUrl("javascript:$Intk('injectDevice','{deviceId: \"$InTrack.getDeviceId()\", appId: \"context?.packageName\", appVersion: \"context.packageManager.getPackageInfo(context.packageName, 0).versionName\"}')")`
-}
+webView.loadUrl("javascript:Intk('injectDevice','{deviceId: \"InTrack.getDeviceId()\", appId: \"context?.packageName\", appVersion: \"context.packageManager.getPackageInfo(context.packageName, 0).versionName\"}')")
 ```
 
 In other words, the following JavaScript code should be executed in the WebView:
 
 ```javascript
-{
-`$Intk("injectDevice", {deviceId: "YOUR_$INTRACK_DEVICEID", appId: "your.app.id", appVersion: "1.0.0"})`
-}
+Intk("injectDevice", {deviceId: "YOUR_INTRACK_DEVICEID", appId: "your.app.id", appVersion: "1.0.0"})
 ```
 
 This will pass the `deviceId`, `packageName`, and `appVersion` to the **inTrack** Web SDK.

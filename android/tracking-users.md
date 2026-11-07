@@ -49,10 +49,7 @@ Make sure you call login as soon as the user logs in to your application, or whe
 ### Java
 
 ```java
-{
-  `$InTrack.recordLogin(UserDetails userDetails);
-`
-}
+InTrack.recordLogin(UserDetails userDetails);
 ```
 
 
@@ -60,15 +57,12 @@ Make sure you call login as soon as the user logs in to your application, or whe
 ### kotlin
 
 ```kotlin
-{
-  `$InTrack.recordLogin(UserDetails())
-`
-}
+InTrack.recordLogin(UserDetails())
 ```
 
 
 
-Method recordLogin accepts a  `ir.$intrack.android.sdk.UserDetails`
+Method recordLogin accepts a  `ir.intrack.android.sdk.UserDetails`
 
 ### Logout
 
@@ -77,10 +71,7 @@ Make sure that you call logout when the user logs out and you don't want to atta
 ### Java
 
 ```java
-{
-  `$InTrack.recordLogout();
-`
-}
+InTrack.recordLogout();
 ```
 
 
@@ -88,10 +79,7 @@ Make sure that you call logout when the user logs out and you don't want to atta
 ### kotlin
 
 ```kotlin
-{
-  `$InTrack.recordLogout()
-`
-}
+InTrack.recordLogout()
 ```
 
 
@@ -103,10 +91,7 @@ In case of having any changes in user's details, these changes can be sent to **
 ### Java
 
 ```java
-{
-  ` $InTrack.updateProfile(UserDetails userDetails);
-`
-}
+ InTrack.updateProfile(UserDetails userDetails);
 ```
 
 
@@ -114,10 +99,7 @@ In case of having any changes in user's details, these changes can be sent to **
 ### kotlin
 
 ```kotlin
-{
-  `$InTrack.updateProfile(UserDetails())
-`
-}
+InTrack.updateProfile(UserDetails())
 ```
 
 
@@ -152,7 +134,7 @@ Several addtional details like a user's name. email address, location and so on 
 | country      | String        | must be less than 255 character.                                                                                                                                                                                     |
 | state        | String        | must be less than 255 character.                                                                                                                                                                                     |
 | city         | String        | must be less than 255 character.                                                                                                                                                                                     |
-| gender       | ApiUserGender | System Attributes. `ir.$intrack.android.sdk.ApiUserGender`                                                                                                                           |
+| gender       | ApiUserGender | System Attributes. `ir.intrack.android.sdk.ApiUserGender`                                                                                                                           |
 | birthday     | Date          | System Attributes.                                                                                                                                                                                                   |
 | company      | String        | System Attributes.                                                                                                                                                                                                   |
 | hashedPhone  | String        | Many businesses are averse to sharing contact details of their users with third-party platforms like **inTrack**. This is why, we've made it possible for you to pass encrypted phone of your users. |
@@ -177,15 +159,12 @@ You can use the setUserAttributes method of our Android SDK to track custom attr
 ### Java
 
 ```java
-{
-  `UserDetails details = new UserDetails();
+UserDetails details = new UserDetails();
    details.setUserId("xxx-xxx");
    HashMap<String, Object> userAttributes = new HashMap<>();
    userAttributes.put("key", "value");
    details.setUserAttributes(userAttributes);
-   $InTrack.recordLogin(details);
-`
-}
+   InTrack.recordLogin(details);
 ```
 
 
@@ -193,15 +172,12 @@ You can use the setUserAttributes method of our Android SDK to track custom attr
 ### kotlin
 
 ```kotlin
-{
-  `val details = UserDetails()
+val details = UserDetails()
    details.userId = "xxx-xxx"
    val userAttributes = HashMap<String, Any>()
    userAttributes.set("key", "value")
    details.userAttributes = userAttributes
-   $InTrack.recordLogin(details)
-`
-}
+   InTrack.recordLogin(details)
 ```
 
 
@@ -215,10 +191,7 @@ For tracking unknown users, **inTrack** SDK automatically generate a random id f
 ### Java
 
 ```java
-{
-  `String deviceId = $InTrack.getDeviceId();
-`
-}
+String deviceId = InTrack.getDeviceId();
 ```
 
 
@@ -226,10 +199,7 @@ For tracking unknown users, **inTrack** SDK automatically generate a random id f
 ### kotlin
 
 ```kotlin
-{
-  `val deviceId: String = $InTrack.getDeviceId()
-`
-}
+val deviceId: String = InTrack.getDeviceId()
 ```
 
 
@@ -241,10 +211,7 @@ For tracking known users you can get them by calling our getUserId method.
 ### Java
 
 ```java
-{
-  `String deviceId = $InTrack.getUserId();
-`
-}
+String deviceId = InTrack.getUserId();
 ```
 
 
@@ -252,8 +219,5 @@ For tracking known users you can get them by calling our getUserId method.
 ### kotlin
 
 ```kotlin
-{
-  `val deviceId: String = $InTrack.getUserId()
-`
-}
+val deviceId: String = InTrack.getUserId()
 ```

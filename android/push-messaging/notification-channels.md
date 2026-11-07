@@ -14,29 +14,25 @@ You can modify default push channel configurations by calling specific methods o
 ### Java
 
 ```java
-{
-`String channelId = getString(R.string.default_notification_channel_id);
+String channelId = getString(R.string.default_notification_channel_id);
 String channelName = getString(R.string.default_notification_channel_name);
 NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 if (notificationManager != null) {
       NotificationChannel channel = new NotificationChannel(channelId, channelName, NotificationManager
       IMPORTANCE_DEFAULT);
       notificationManager.createNotificationChannel(channel);
-}`
 }
 ```
 
 ### Kotlin
 
 ```kotlin
-{
-`val channelId = getString(R.string.default_notification_channel_id)
+val channelId = getString(R.string.default_notification_channel_id)
 val channelName = getString(R.string.default_notification_channel_name)
 val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager?
 notificationManager?.let {
       val channel = NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_DEFAULT)
       notificationManager.createNotificationChannel(channel)
-}`
 }
 ```
 

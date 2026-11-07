@@ -50,17 +50,13 @@ Once login is called, all of this stored information is attributed to this ident
 Make sure you call login as soon as the user logs in to your application, or whenever earliest you are able to identify the user.
 
 ```javascript
-{
-  `$InTrack.login(userDetails);
-`
-}
+InTrack.login(userDetails);
 ```
 
 Login accepts an object with the following structure:
 
 ```javascript
-{
-  `UserDetails: {
+UserDetails: {
       firstName: String,
       lastName: String,
       email: String,
@@ -80,15 +76,12 @@ Login accepts an object with the following structure:
       userId: String,
       attributes: Object
   }
-`
-}
 ```
 
 sample of login event with attributes:
 
 ```javascript
-{
-  `const customData = {
+const customData = {
     string: 'string',
     boolean: true,
     integer: 100000,
@@ -110,9 +103,7 @@ sample of login event with attributes:
         userId: 'UID22222222',
         attributes: customData,
       };
-      $InTrack.login(data);
-`
-}
+      InTrack.login(data);
 ```
 
 ### Logout
@@ -120,10 +111,7 @@ sample of login event with attributes:
 Make sure that you call logout when the user logs out and you don't want to attach any future event, session or user data with this user, until login is called again.
 
 ```javascript
-{
-  `$InTrack.logout();
-`
-}
+InTrack.logout();
 ```
 
 ### Profile Updates
@@ -131,10 +119,7 @@ Make sure that you call logout when the user logs out and you don't want to atta
 In case of having any changes in user's details, these changes can be sent to **inTrack** server by calling the following method:
 
 ```javascript
-{
-  `$InTrack.updateProfile(userDetails);
-`
-}
+InTrack.updateProfile(userDetails);
 ```
 
 Profile Updates accepts an object like login object.
@@ -142,14 +127,11 @@ Profile Updates accepts an object like login object.
 sample of Profile Updates event with attributes:
 
 ```javascript
-{
-  `const data = {
+const data = {
     firstName: 'firstname-changed',
         lastName: 'lastname-changed',
       };
-      $InTrack.updateProfile(data);
-`
-}
+      InTrack.updateProfile(data);
 ```
 
 :::warning
@@ -198,12 +180,9 @@ If the login event has not been called before updating the profile (i.e., the us
 For tracking unknown users, **inTrack** SDK automatically generate a random id for each device. we refer this identifier as deviceId or anonymousId. you can get that by calling our `getDeviceId ` method.
 
 ```javascript
-{
-  `$InTrack.getDeviceId(deviceId => {
-      console.log('$inTrack deviceId', deviceId);
+InTrack.getDeviceId(deviceId => {
+      console.log('inTrack deviceId', deviceId);
       });
-`
-}
 ```
 
 #### Getting User ID
@@ -211,10 +190,7 @@ For tracking unknown users, **inTrack** SDK automatically generate a random id f
 For tracking known users you can get them by calling our getUserId method.
 
 ```javascript
-{
-  ` $InTrack.getUserId(userId => {
-      console.log('$inTrack userId', userId);
+ InTrack.getUserId(userId => {
+      console.log('inTrack userId', userId);
       });
-`
-}
 ```

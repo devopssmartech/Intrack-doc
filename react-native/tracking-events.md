@@ -32,8 +32,7 @@ example of custom event with a event data:
 
 
 ```javascript
-{
-  `const date = new Date().toISOString();
+const date = new Date().toISOString();
   // Event with custom event attributes.
     const customData = {
       string: 'string',
@@ -44,12 +43,10 @@ example of custom event with a event data:
     };
     console.log(customData); // Log custom event data
     // Record custom event
-    $InTrack.sendEvent({
-      eventName: '$intrack_custom_event',
+    InTrack.sendEvent({
+      eventName: 'intrack_custom_event',
       eventData: customData,
   });
-`
-}
 ```
 
 ### Guidelines

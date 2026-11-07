@@ -13,7 +13,7 @@ Any significant action that occurs on the business's end can trigger a business 
 
 **Method:** POST
 
-**URL STRUCTURE:** `<HOST>/api/sdk/accounts/<YOUR_$INTRACK_LICENSE_CODE>/businessEvents`
+**URL STRUCTURE:** `<HOST>/api/sdk/accounts/<YOUR_INTRACK_LICENSE_CODE>/businessEvents`
 
 **AUTHENTICATION:** `Authorization: Bearer <YOUR_API_KEY>`
 
@@ -22,7 +22,7 @@ Any significant action that occurs on the business's end can trigger a business 
 | Name                                       | Description                                                                                                                                                                                                                                                                                      |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ```x-request-id:<HEX_STRING>```            | Replace `{HEX_STRING}` with a unique random hex string.If API re-attempts are being made, this tag stops propagation of duplicate events within a 4 hour window. Events with same ID re-attempted within 4 hours won't get duplicated if the previous HTTP request was able to ingest the event. |
-| ```Authorization: Bearer <YOUR_API_KEY>``` | Replace `<YOUR_$INTRACK_API_KEY>` with your inTrack API KEY.                                                                                                                                                                                     |
+| ```Authorization: Bearer <YOUR_API_KEY>``` | Replace `<YOUR_INTRACK_API_KEY>` with your inTrack API KEY.                                                                                                                                                                                     |
 
 ### Event Attributes
 
@@ -47,9 +47,8 @@ Sending `eventName` is mandatory.
 #### Requests Example
 
 ```bash
-{
-`curl -X POST <HOST>/api/sdk/accounts/<YOUR_$INTRACK_LICENSE_CODE>/businessEvents  \\
-    --header 'Authorization: Bearer <YOUR_$INTRACK_API_KEY>' \\
+curl -X POST <HOST>/api/sdk/accounts/<YOUR_INTRACK_LICENSE_CODE>/businessEvents  \\
+    --header 'Authorization: Bearer <YOUR_INTRACK_API_KEY>' \\
     --header 'Content-Type: application/json' \\
     --data '{
         "eventName": "str",
@@ -59,8 +58,7 @@ Sending `eventName` is mandatory.
             "businessEventAttributeName2": {},
             "businessEventAttributeName3": {}
         }
-    }'`
-}
+    }'
 ```
 
 #### Response

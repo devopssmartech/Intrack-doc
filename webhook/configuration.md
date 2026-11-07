@@ -23,8 +23,7 @@ Example Webhook Body:
 
 ```json
 {
-  `{
-      "licenceCode": "<YOUR_$INTRACK_LICENSE_CODE>",
+      "licenceCode": "<YOUR_INTRACK_LICENSE_CODE>",
       "userId": "34561",
       "anonymousId": "2213c9a6-a4ec-4481-a2ba-af8d72793bc0",
       "eventName": "update_cart",
@@ -41,8 +40,6 @@ Example Webhook Body:
         "customDate": "2021-09-21T10:30:00+0430"
       }
     }
-`
-}
 ```
 
 ### Webhook Details:
@@ -67,8 +64,7 @@ Example Webhook Body:
 
 ```json
 {
-  `{
-      "licenceCode": "<YOUR_$INTRACK_LICENSE_CODE>",
+      "licenceCode": "<YOUR_INTRACK_LICENSE_CODE>",
       "userId": "34561",
       "anonymousId": "2213c9a6-a4ec-4481-a2ba-af8d72793bc0",
       "eventName": "[INT]_email_sent",
@@ -85,8 +81,6 @@ Example Webhook Body:
         "customDate": "2021-09-21T10:30:00+0430"
       }
   }
-`
-}
 ```
 
 :::note
@@ -115,8 +109,7 @@ Example Webhook Body:
 
 ```json
 {
-  `{
-      "licenceCode": "<YOUR_$INTRACK_LICENSE_CODE>",
+      "licenceCode": "<YOUR_INTRACK_LICENSE_CODE>",
       "eventName": "JOURNEY_EVENT_CREATED",
       "eventTime": "2021-09-21T10:30:00+0430",
       "type": "JOURNEY",
@@ -131,8 +124,6 @@ Example Webhook Body:
         "tags": ["Adservice"]
       }
   }
-`
-}
 ```
 
 ## 3: Communication
@@ -155,8 +146,7 @@ Example Webhook Body:
 
 ```json
 {
-  `{
-      "licenceCode": "<YOUR_$INTRACK_LICENSE_CODE>",
+      "licenceCode": "<YOUR_INTRACK_LICENSE_CODE>",
       "eventName": "COMMUNICATION_EVENT_CREATED",
       "eventTime": "2021-09-21T10:30:00+0430",
       "type": "COMMUNICATION",
@@ -173,8 +163,6 @@ Example Webhook Body:
         "tags": ["Adservice"]
       }
   }
-`
-}
 ```
 
 ### Webhook Details:

@@ -30,33 +30,27 @@ Add the dependency for Firebase Cloud Messaging in your module's build.grad.
 ### Groovy
 
 ```groovy
-{
-`dependencies {
+dependencies {
      implementation 'com.google.firebase:firebase-messaging:22.0.0'
-}`
 }
 ```
 
 ### KotlinDSL
 
 ```kotlin
-{
-`dependencies {
+dependencies {
      implementation ("com.google.firebase:firebase-messaging:22.0.0")
-}`
 }
 ```
 
 ## 3.Initializing notification service
 
-Initializing **inTrack** notification service is done by calling `$inTrack.initPush()`. This method should be called after init method of the **inTrack** SDK:
+Initializing **inTrack** notification service is done by calling `inTrack.initPush()`. This method should be called after init method of the **inTrack** SDK:
 
 ### Java
 
 ```java
-{
-`$InTrack.initPush(Application application)`
-}
+InTrack.initPush(Application application)
 ```
 
 
@@ -64,9 +58,7 @@ Initializing **inTrack** notification service is done by calling `$inTrack.initP
 ### kotlin
 
 ```kotlin
-{
-`$InTrack.initPush(Application())`
-}
+InTrack.initPush(Application())
 ```
 
 ## 4. Pass Firebase Token to our Server
@@ -76,28 +68,23 @@ Firebase tokens can be passed to **inTrack** using FirebaseMessagingService
 ### Java
 
 ```java
-{
-`public class MyFirebaseMessagingService extends FirebaseMessagingService {
+public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onNewToken(String s) {
       super.onNewToken(s);
-      $InTrack.onTokenRefresh(String token)
+      InTrack.onTokenRefresh(String token)
     }
-}`
 }
 ```
 
 ### kotlin
 
 ```kotlin
-{
-`class MyFirebaseMessagingService : FirebaseMessagingService() {
+class MyFirebaseMessagingService : FirebaseMessagingService() {
     override fun onNewToken(token : String) {
-      $InTrack.onTokenRefresh(token)
+      InTrack.onTokenRefresh(token)
     }
   }
-`
-}
 ```
 
 :::note
@@ -111,29 +98,25 @@ It is also mandatory that you pass Firebase token to **inTrack** from onCreate o
 ### Java
 
 ```java
-{
-`FirebaseMessaging.getInstance().getToken().addOnCompleteListener(
+FirebaseMessaging.getInstance().getToken().addOnCompleteListener(
     new OnCompleteListener<String>() {
       @Override
       public void onComplete(@NonNull Task<String> task) {
         if (task.isSuccessful()) {
-          $InTrack.onTokenRefresh(token);
+          InTrack.onTokenRefresh(token);
         }
       }
     }
-);`
-}
+);
 ```
 
 ### kotlin
 
 ```kotlin
-{
-`FirebaseMessaging.getInstance().token.addOnCompleteListener {
+FirebaseMessaging.getInstance().token.addOnCompleteListener {
     task -> if (task.isSuccessful) {
-      $InTrack.onTokenRefresh(token)
+      InTrack.onTokenRefresh(token)
     }
-}`
 }
 ```
 
@@ -147,12 +130,11 @@ If you want **inTrack** handle displaying push notifications you should call **i
 ### Java
 
 ```java
-{
-`public class MyFirebaseMessagingService extends FirebaseMessagingService {
+public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        if (Objects.equals(remoteMessage.getData().get("source"), "$inTrack")) {
-            Boolean result = $InTrack.displayMessage(
+        if (Objects.equals(remoteMessage.getData().get("source"), "inTrack")) {
+            Boolean result = InTrack.displayMessage(
                 applicationContext,
                 remoteMessage.getData(),
                 "your_push_notification_channel_id",
@@ -162,28 +144,26 @@ If you want **inTrack** handle displaying push notifications you should call **i
             if (result == null) {
                 Log.i(TAG,
                   "Message doesn't have anything to display or wasn't sent from "
-                  + "$InTrack, so it cannot be handled by $InTrack SDK");
+                  + "InTrack, so it cannot be handled by InTrack SDK");
             } else if (result) {
-                Log.i(TAG, "Message was handled by $InTrack SDK");
+                Log.i(TAG, "Message was handled by InTrack SDK");
             } else {
                 Log.i(TAG,
-                    "Message wasn't handled by $InTrack SDK because API level is too "
+                    "Message wasn't handled by InTrack SDK because API level is too "
                     + "low for Notification support or because currentActivity is null "
                     + "(not enough lifecycle method calls)");
             }
         }
     }
-}`
 }
 ```
 
 ### kotlin
 
 ```kotlin
-{
-  `class MyFirebaseMessagingService : FirebaseMessagingService() {
+class MyFirebaseMessagingService : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage : RemoteMessage) {
-      val result = $InTrack.displayMessage(
+      val result = InTrack.displayMessage(
         applicationContext,
         remoteMessage.data,
         getString(R.string.default_notification_channel_id),
@@ -203,8 +183,7 @@ If you want **inTrack** handle displaying push notifications you should call **i
             + "(not enough lifecycle method calls)");
        }
      }
-  }`
-}
+  }
 ```
 
 ## 6. Add Your Firebase Credentials to Our Panel

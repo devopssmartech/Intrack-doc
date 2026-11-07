@@ -56,14 +56,13 @@ In this stage, after identifying the user and obtaining their corresponding push
 For example, when communicating with FCM, inTrack sends a message formatted as follows:
 
 ```json
-{
-  `{ "to": "<CUSTOMER_PUSH_TOKEN>",
+{ "to": "<CUSTOMER_PUSH_TOKEN>",
   "data": {
     "id": "<CUSTOM_CHANNEL_TOKEN>",
     "title": "PUSH TITLE",
     "message": "PUSH BODY",
     "media": "URL OF PUSH IMAGE",
-    "source": "$inTrack",
+    "source": "inTrack",
     "link": "DEEPLINK (click on push body)",
     "buttons": [
       {
@@ -80,8 +79,6 @@ For example, when communicating with FCM, inTrack sends a message formatted as f
     },
      "priority": "high"
   }
-`
-}
 ```
 
 :::note
@@ -111,10 +108,7 @@ When a message is successfully delivered to its intended recipient, it can be re
 **anonymousId:** String – The anonymous identifier, if applicable.
 
 ```json
-{
-  `curl -X GET $https://api.intrack.ir//api/sdk/track/delivered?token=ewogICAgImlkIjogIjEyM2U0NTY3LWU4OWItMTJkMy1hNDU2LTQyNjY1MjM0MDAwMCIsCiAgICAicHJvZHVjdElkIjogMSwKICAgICJ1c2VySWQiOiAiMDAwMSIKfQ
-`
-}
+curl -X GET https://api.intrack.ir//api/sdk/track/delivered?token=ewogICAgImlkIjogIjEyM2U0NTY3LWU4OWItMTJkMy1hNDU2LTQyNjY1MjM0MDAwMCIsCiAgICAicHJvZHVjdElkIjogMSwKICAgICJ1c2VySWQiOiAiMDAwMSIKfQ
 ```
 
 ##### Registering click action
@@ -130,10 +124,7 @@ This request should include the following parameters:
 **url (optional):** A String specifying the URL that was clicked. This parameter allows for tracking specific links within the message.
 
 ```json
-{
-  `curl -X GET $https://api.intrack.ir/api/sdk/track/clicked?token=ewogICAgImlkIjogIjEyM2U0NTY3LWU4OWItMTJkMy1hNDU2LTQyNjY1MjM0MDAwMCIsCiAgICAicHJvZHVjdElkIjogMSwKICAgICJ1c2VySWQiOiAiMDAwMSIKfQ&button=1&url=https://example.com
-`
-}
+curl -X GET https://api.intrack.ir/api/sdk/track/clicked?token=ewogICAgImlkIjogIjEyM2U0NTY3LWU4OWItMTJkMy1hNDU2LTQyNjY1MjM0MDAwMCIsCiAgICAicHJvZHVjdElkIjogMSwKICAgICJ1c2VySWQiOiAiMDAwMSIKfQ&button=1&url=https://example.com
 ```
 
 ### Marking a User as Reachable

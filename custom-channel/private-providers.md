@@ -25,17 +25,15 @@ By following these steps, you can maintain the privacy of your users' contact in
 All **inTrack** platform integration SDKs allow you to pass hashed phone numbers and email addresses for each user. To utilize this feature, include the hashedPhone and hashedEmail properties in the userDetails. For example:
 
 ```bash
-{
-`curl -X POST <HOST>/api/sdk/accounts/<YOUR_$InTrack_LICENSE_CODE>/users \\
-    --header 'Authorization: Bearer <YOUR_$InTrack_API_KEY>' \\
+curl -X POST <HOST>/api/sdk/accounts/<YOUR_InTrack_LICENSE_CODE>/users \\
+    --header 'Authorization: Bearer <YOUR_InTrack_API_KEY>' \\
     --header 'Content-Type: application/json' \\
     --data '{
         "userId" : "str", // for your known users
         "anonymousId" : "str", // for your unknown users
         "hashedPhone" : "+98********67",
         "hashedEmail" : "u1******.com",
-    }'`
-}
+    }'
 ```
 
 ## API Endpoint for Private ESP/SSP
@@ -63,8 +61,7 @@ In the following sections, we will discuss the details of each API request and r
 Here is a sample request:
 
 ```bash
-{
-`curl -X POST <YOUR_DESIRED_URL> \\
+curl -X POST <YOUR_DESIRED_URL> \\
     --header 'Content-Type: application/json' \\
     --header 'YOUR_KEY: YOUR_VALUE' \\
     --data-raw '{
@@ -84,8 +81,7 @@ Here is a sample request:
             "content" : "string" // base64
         }],
         "trackingId": "string" // will be null in automatic delivery
-    }'`
-}
+    }'
 ```
 
 :::note
@@ -96,7 +92,7 @@ In the case of automatic tracking, trackingIds will not be sent.
 
 ### Required Response
 
-In response to the `$inTrack request`, you should provide appropriate data as shown below. If the response is not provided correctly, inTrack will record an Email rejected event.
+In response to the `inTrack request`, you should provide appropriate data as shown below. If the response is not provided correctly, inTrack will record an Email rejected event.
 
 ```json
 {
@@ -150,7 +146,7 @@ By following these steps, inTrack will handle automatic delivery status updates 
 If automatic tracking is not possible, you can manually send the delivery status of SMS messages by calling the following endpoint:
 
 ```
-{`curl -X PUT '$https://api.intrack.ir/api/sdk/track/manualDelivery?token={token}&status={status}'`}
+curl -X PUT 'https://api.intrack.ir/api/sdk/track/manualDelivery?token={token}&status={status}'
 ```
 
 - **token** (required): Unique trackingId provided to your send endpoint
@@ -235,7 +231,7 @@ By completing these steps, inTrack can seamlessly manage and track the delivery 
 If automatic tracking is not possible, you can manually send the delivery status of SMS messages by calling the following endpoint:
 
 ```
-{`curl -X PUT '$https://api.intrack.ir/api/sdk/track/manualDelivery?token={token}&status={status}'`}
+curl -X PUT 'https://api.intrack.ir/api/sdk/track/manualDelivery?token={token}&status={status}'
 ```
 
 - **token** (required): Unique trackingId provided to your send endpoint

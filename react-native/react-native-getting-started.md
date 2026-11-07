@@ -16,17 +16,13 @@ Use the below command in your project directory to install **inTrack** React Nat
 ### npm
 
 ```npm
-{
-`npm install --save $intrack-react-native-bridge@3.0.3`
-}
+npm install --save intrack-react-native-bridge@3.0.3
 ```
 
 ### Yarn
 
 ```yarn
-{
-`yarn add $intrack-react-native-bridge@3.0.3`
-}
+yarn add intrack-react-native-bridge@3.0.3
 ```
 
 
@@ -38,9 +34,7 @@ Don't forget to link the library with your project in case you are using a React
 :::
 
 ```yarn
-{
-`react-native link $intrack-react-native-bridge`
-}
+react-native link intrack-react-native-bridge
 ```
 
 for iOS we are using CocoaPods for auto-linking, so you need to install Pods
@@ -68,9 +62,7 @@ Grab a reference to the inTrack React Native library in your JavaScript file.
 ### Java
 
 ```javascript
-{
-`import $InTrack from '$intrack-react-native-bridge';`
-}
+import InTrack from 'intrack-react-native-bridge';
 ```
 
 
@@ -80,18 +72,15 @@ In order to initialize the **inTrack** SDK, two init and start methods should be
 ### Java
 
 ```javascript
-{
-  `if (!(await $InTrack.isInitialized())) {
+if (!(await InTrack.isInitialized())) {
     const options = {
         appKey: 'APP_KEY',
         iosAuthKey: 'ّAUTH_KEY_FOR_IOS',
         androidAuthKey: 'AUTH_KEY_FOR_ANDROID',
     };
-    await $InTrack.init(options);
-    $InTrack.start();
+    await InTrack.init(options);
+    InTrack.start();
   }
-`
-}
 ```
 
 
@@ -109,16 +98,13 @@ If version 1.2.1 or older used, please init as a below:
 :::
 
 ```javascript
-{
-  `if (!(await $InTrack.isInitialized())) {
+if (!(await InTrack.isInitialized())) {
     const appKey = 'APP_KEY';
     const authKey =
     Platform.OS === 'ios' ? 'ّAUTH_KEY_FOR_IOS' : 'AUTH_KEY_FOR_ANDROID';
-    await $InTrack.init(appKey, authKey);
-      $InTrack.start();
+    await InTrack.init(appKey, authKey);
+      InTrack.start();
   }
-`
-}
 ```
 
 :::tip[ **Congratulations** ]
@@ -132,19 +118,16 @@ You have successfully integrated **inTrack** with your React Native apps and are
 To receive **inTrack** internal logs and debug messages about its internal state and encountered problems, you can enable logging during initialization. This can be helpful for troubleshooting and monitoring the SDK's behavior.
 
 ```javascript
-{
-  `if (!(await $InTrack.isInitialized())) {
+if (!(await InTrack.isInitialized())) {
   const options = {
     appKey: 'APP_KEY',
     iosAuthKey: 'ّAUTH_KEY_FOR_IOS',
     androidAuthKey: 'AUTH_KEY_FOR_ANDROID',
     loggingEnabled: true, // <-- HERE
   };
-  await $InTrack.init(options);
-  $InTrack.start();
+  await InTrack.init(options);
+  InTrack.start();
   }
-`
-}
 ```
 
 Enabling logging can provide valuable insights into the SDK's operations, aiding in diagnosing issues and ensuring smooth functionality.
@@ -156,36 +139,27 @@ The **inTrack** SDK for Android offers robust crash reporting capabilities, allo
 To activate automatic crash reporting, simply enable the feature in your initialization configuration. This will automatically catch uncaught Java exceptions and send them to the [dashboard](https://dash.intrack.ir) once the app relaunches and the SDK initializes.
 
 ```javascript
-{
-  `const options = {
+const options = {
     appKey: 'APP_KEY',
     iosAuthKey: 'ّAUTH_KEY_FOR_IOS',
     androidAuthKey: 'AUTH_KEY_FOR_ANDROID',
     enableCrashReporting: true,
   };
-  await $InTrack.init(options);
-  $InTrack.start();
-`
-}
+  await InTrack.init(options);
+  InTrack.start();
 ```
 
 **Logging handled exceptions**
 You can also log handled exceptions during your app's runtime to monitor their occurrence and impact. Use the following command to log these exceptions:
 
 ```javascript
-{
-  `$InTrack.logException('SOME ERROR HAPPEND!', false);
-`
-}
+InTrack.logException('SOME ERROR HAPPEND!', false);
 ```
 
 If you encounter a handled exception that proves to be fatal to your app, use this call instead:
 
 ```javascript
-{
-  `$InTrack.logException(error, true);
-`
-}
+InTrack.logException(error, true);
 ```
 
 By logging both automatic and handled exceptions, you can gain valuable insights into your app's stability and performance.
@@ -197,16 +171,13 @@ Before initializing the **inTrack** SDK, you have the option to set the geograph
 ### Java
 
 ```javascript
-{
-  `const options = {
+const options = {
     appKey: 'APP_KEY',
     iosAuthKey: 'ّAUTH_KEY_FOR_IOS',
     androidAuthKey: 'AUTH_KEY_FOR_ANDROID',
     setLatitude: 'Latitude',
     setLongitude: 'Longitude'
   };
-  await $InTrack.init(options);
-  $InTrack.start();
-`
-}
+  await InTrack.init(options);
+  InTrack.start();
 ```

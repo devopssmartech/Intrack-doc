@@ -22,12 +22,9 @@ You can create Custom Events to track any other user interactions that are curci
 Users can create their own custom events and send them to **inTrack** server. This can be done by calling sendEvent with an input having the following model:
 
 ```JavaScript
-
-{
-`EventData: {
+EventData: {
     eventName: String,
     eventData: JsonObject
-}`
 }
 ```
 
@@ -36,8 +33,7 @@ For example:
 ### Asynchronous
 
 ```javascript
-{
-  `$Intk('sendEvent', {
+Intk('sendEvent', {
     eventName: 'my-custom-event',
     eventData: {
       count: 1000,
@@ -49,8 +45,7 @@ For example:
         myList: ['firstValue', 'secondValue'],
       },
     },
-  });`
-}
+  });
 ```
 
 
@@ -58,8 +53,7 @@ For example:
 ### Synchronous
 
 ```javascript
-{
-  `$InTrack.sendEvent({
+InTrack.sendEvent({
     eventName: 'my-custom-event',
     eventData: {
       count: 1000,
@@ -71,8 +65,7 @@ For example:
         myList: ['firstValue', 'secondValue'],
       },
     },
-});`
-}
+});
 ```
 
 
@@ -103,8 +96,7 @@ To log in a user, you can send the userId to the sendEvent method. Below are exa
 ### Asynchronous
 
 ```javascript
-{
-`$Intk('sendEvent', {
+Intk('sendEvent', {
     userId: 'USER_ID',
     eventName: 'my-custom-event',
     eventData: {
@@ -116,15 +108,13 @@ To log in a user, you can send the userId to the sendEvent method. Below are exa
         myList: ['firstValue', 'secondValue'],
       },
     },
-});`
-}
+});
 ```
 
 ### Synchronous
 
 ```javascript
-{
-`$InTrack.sendEvent({
+InTrack.sendEvent({
     userId: 'USER_ID',
     eventName: 'my-custom-event',
     eventData: {
@@ -136,8 +126,7 @@ To log in a user, you can send the userId to the sendEvent method. Below are exa
         myList: ['firstValue', 'secondValue'],
       },
     },
-});`
-}
+});
 ```
 
 

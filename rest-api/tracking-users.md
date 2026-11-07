@@ -131,7 +131,7 @@ Maximum size of the user list in batch requests can be 100.
 
 **Method:** POST
 
-**URL STRUCTURE:** `<HOST>/api/sdk/accounts/<YOUR_$INTRACK_LICENSE_CODE>/users`
+**URL STRUCTURE:** `<HOST>/api/sdk/accounts/<YOUR_INTRACK_LICENSE_CODE>/users`
 
 **AUTHENTICATION:** `Authorization: Bearer <YOUR_API_KEY>`
 
@@ -140,14 +140,13 @@ Maximum size of the user list in batch requests can be 100.
 | Name                                       | Description                                                                                                                                                                                                                                                                                      |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ```x-request-id:<HEX_STRING>```            | Replace `{HEX_STRING}` with a unique random hex string.If API re-attempts are being made, this tag stops propagation of duplicate events within a 4 hour window. Events with same ID re-attempted within 4 hours won't get duplicated if the previous HTTP request was able to ingest the event. |
-| ```Authorization: Bearer <YOUR_API_KEY>``` | Replace `<YOUR_$INTRACK_API_KEY>` with your inTrack API KEY.                                                                                                                                                                                     |
+| ```Authorization: Bearer <YOUR_API_KEY>``` | Replace `<YOUR_INTRACK_API_KEY>` with your inTrack API KEY.                                                                                                                                                                                     |
 
 #### Requests Example
 
 ```bash
-{
-`curl -X POST <HOST>/api/sdk/accounts/<YOUR_$INTRACK_LICENSE_CODE>/users \\
-    --header 'Authorization: Bearer <YOUR_$INTRACK_API_KEY>' \\
+curl -X POST <HOST>/api/sdk/accounts/<YOUR_INTRACK_LICENSE_CODE>/users \\
+    --header 'Authorization: Bearer <YOUR_INTRACK_API_KEY>' \\
     --header 'Content-Type: application/json' \\
     --data '{
       "userId": "str", // for your known users
@@ -174,15 +173,14 @@ Maximum size of the user list in batch requests can be 100.
         "additionalProp3": "1988-11-11T00:00:00+0000",
         "field4": true
       }
-    }'`
-}
+    }'
 ```
 
 ### Batch requests(/usersBatch)
 
 **Method:** POST
 
-**URL STRUCTURE:** `<HOST>/api/sdk/accounts/<YOUR_$INTRACK_LICENSE_CODE>/usersBatch`
+**URL STRUCTURE:** `<HOST>/api/sdk/accounts/<YOUR_INTRACK_LICENSE_CODE>/usersBatch`
 
 **AUTHENTICATION:** `Authorization: Bearer <YOUR_API_KEY>`
 
@@ -191,7 +189,7 @@ Maximum size of the user list in batch requests can be 100.
 | Name                                       | Description                                                                                                                                                                                                                                                                                      |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ```x-request-id:<HEX_STRING>```            | Replace `{HEX_STRING}` with a unique random hex string.If API re-attempts are being made, this tag stops propagation of duplicate events within a 4 hour window. Events with same ID re-attempted within 4 hours won't get duplicated if the previous HTTP request was able to ingest the event. |
-| ```Authorization: Bearer <YOUR_API_KEY>``` | Replace `<YOUR_$INTRACK_API_KEY>` with your inTrack API KEY.                                                                                                                                                                                     |
+| ```Authorization: Bearer <YOUR_API_KEY>``` | Replace `<YOUR_INTRACK_API_KEY>` with your inTrack API KEY.                                                                                                                                                                                     |
 
 :::note
 
@@ -202,9 +200,8 @@ Maximum size of the user list in batch requests can be 100.
 #### Requests Example
 
 ```bash
-{
-`curl -X POST "<HOST>/api/sdk/accounts/<YOUR_$INTRACK_LICENSE_CODE>/usersBatch" \\
-    --header "Authorization: Bearer <YOUR_$INTRACK_API_KEY>" \\
+curl -X POST "<HOST>/api/sdk/accounts/<YOUR_INTRACK_LICENSE_CODE>/usersBatch" \\
+    --header "Authorization: Bearer <YOUR_INTRACK_API_KEY>" \\
     --header "Content-Type: application/json" \\
     --data '{
       "list": [
@@ -261,6 +258,5 @@ Maximum size of the user list in batch requests can be 100.
           }
         }
       ]
-  }'`
-}
+  }'
 ```

@@ -22,19 +22,16 @@ You can create Custom Events to track any other user interactions that are curci
 Users can create their own custom events and send them to **inTrack** server. This can be done by calling recordEvent, events contains event data, event data format is:
 
 ```dart
-{
-`EventData: {
+EventData: {
     eventName: String,
     eventDetails: JsonObject
-}`
 }
 ```
 
 example of custom event with an event data:
 
 ```dart
-{
-  `$InTrack.recordEvent({
+InTrack.recordEvent({
     eventName: 'my-custom-event',
     eventDetails: {
       count: 1000,
@@ -47,8 +44,6 @@ example of custom event with an event data:
         },
       },
   });
-`
-}
 ```
 
 ### Guidelines

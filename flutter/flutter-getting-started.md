@@ -21,9 +21,7 @@ Here's how you can integrate the **inTrack**  SDK with your Flutter apps:
 To install the **inTrack** Flutter SDK, use the following command:
 
 ```sh
-{
-`flutter pub add $intrack_flutter`
-}
+flutter pub add intrack_flutter
 ```
 
 ### Proguard Rule
@@ -31,14 +29,11 @@ To install the **inTrack** Flutter SDK, use the following command:
 If you are using Proguard, add the following rule to your Proguard settings to ensure proper functionality:
 
 ```json
-{
-  `-keep class com.google.android.gms.ads.**{*;}
+-keep class com.google.android.gms.ads.**{*;}
   -dontwarn io.reactivex.**
   -keep class io.reactivex.** { *; }
   -keep class ir.intrack.android.sdk.** { *; }
   -keep class sdk.main.core.** { *; }
-`
-}
 ```
 
 ## 2. Initialization
@@ -47,7 +42,7 @@ First, import **inTrack** using the following lines:
 
 ```dart
 {
-`import 'package:$intrack_flutter/$intrack_flutter.dart';
+`import 'package:intrack_flutter/intrack_flutter.dart';
 
 }
 ```
@@ -55,21 +50,18 @@ First, import **inTrack** using the following lines:
  Initialize **inTrack** in main.dart in initState();
 
 ```dart
-{
-  `$InTrack.isInitialized().then((bool isInitialized) {
+InTrack.isInitialized().then((bool isInitialized) {
       if (!isInitialized) {
-        $InTrackConfig config =
-            $InTrackConfig("YOUR_APP_KEY")
+        InTrackConfig config =
+            InTrackConfig("YOUR_APP_KEY")
               ..setAndroidAuthKey("YOUR_ANDROID_AUTH_KEY")
               ..setIOSAuthKey("YOUR_IOS_AUTH_KEY")
-        $InTrack.initWithConfig(config).then((value) {
-          print('$inTrack $value');
+        InTrack.initWithConfig(config).then((value) {
+          print('inTrack $value');
           //you can enable push notification here
         });
       }
   });
-`
-}
 ```
 
 :::info
@@ -78,7 +70,7 @@ Check your **APP_KEY** and **AUTH_KEY**, in [inTrackPanel](https://dash.intrack.
 
 :::
 
-To configure the SDK during initialization, use a configuration object called `$InTrackConfig`. This is done by creating an instance of `$InTrackConfig` and calling its provided functions to enable the functionality you need.
+To configure the SDK during initialization, use a configuration object called `InTrackConfig`. This is done by creating an instance of `InTrackConfig` and calling its provided functions to enable the functionality you need.
 
 :::tip[ **Congratulations** ]
 
@@ -92,13 +84,10 @@ You have successfully integrated inTrack with your Flutter apps and are sending 
 To receive **inTrack** internal logs and debug messages about its internal state and encountered problems, you can enable logging during initialization. This can be helpful for troubleshooting and monitoring the SDK's behavior.
 
 ```dart
-{
-  `$InTrackConfig config = $InTrackConfig(APP_KEY)
+InTrackConfig config = InTrackConfig(APP_KEY)
     ..setAndroidAuthKey(ANDROID_AUTH_KEY)
       ..setIOSAuthKey(IOS_AUTH_KEY);
       config.setLoggingEnabled(true);
-`
-}
 ```
 
 Enabling logging can provide valuable insights into the SDK's operations, aiding in diagnosing issues and ensuring smooth functionality.
@@ -110,54 +99,39 @@ The **inTrack** SDK for Android offers robust crash reporting capabilities, allo
 To activate automatic crash reporting, simply enable the feature in your initialization configuration. This will automatically catch uncaught exceptions and send them to the [inTrack dashboard](https://dash.intrack.ir) once the app relaunches and the SDK initializes.
 
 ```dart
-{
-  `$InTrackConfig config = $InTrackConfig(APP_KEY)
+InTrackConfig config = InTrackConfig(APP_KEY)
         ..setAndroidAuthKey(ANDROID_AUTH_KEY)
         ..setIOSAuthKey(IOS_AUTH_KEY)
         ..enableCrashReporting();
-`
-}
 ```
 
 If you want to catch Dart errors, run your app inside a Zone and supply InTrack.recordDartError to the onError parameter:
 
 ```dart
-{
-  `void main() {
+void main() {
     runZonedGuarded<Future<void>>(() async {
       runApp(MyApp());
-    }, $InTrack.recordDartError);
+    }, InTrack.recordDartError);
   }
-`
-}
 ```
 
 **Logging handled exceptions**
 You can also log handled exceptions during your app's runtime to monitor their occurrence and impact. Use the following command to log these exceptions:
 
 ```dart
-{
-  `$InTrack.logException('This is a manually created exception', false);
-`
-}
+InTrack.logException('This is a manually created exception', false);
 ```
 
 If you have handled an exception and it turns out to be fatal to your app, you can log it using the following call:
 
 ```dart
-{
-  `$InTrack.logException('This is a manually created exception', true);
-`
-}
+InTrack.logException('This is a manually created exception', true);
 ```
 
 You can also send the exception itself:
 
 ```dart
-{
-  `$InTrack.logExceptionEx(e as Exception, true);
-`
-}
+InTrack.logExceptionEx(e as Exception, true);
 ```
 
 By logging both automatic and handled exceptions, you can gain valuable insights into your app's stability and performance.
@@ -167,20 +141,17 @@ By logging both automatic and handled exceptions, you can gain valuable insights
 In android devices, by default, **inTrack** SDK will try to get and collect google advertisingId (if you implement it in your app), if you want to disable this functionality you shoud call seCollectAdvertisingId on config object.
 
 ```dart
-{
-  `$InTrack.isInitialized().then((bool isInitialized) {
+InTrack.isInitialized().then((bool isInitialized) {
     if (!isInitialized) {
-      $InTrackConfig config =
-          $InTrackConfig("YOUR_APP_KEY")
+      InTrackConfig config =
+          InTrackConfig("YOUR_APP_KEY")
             ..setAndroidAuthKey("YOUR_ANDROID_AUTH_KEY")
             ..setIOSAuthKey("YOUR_IOS_AUTH_KEY")
             ..seCollectAdvertisingId(false); //<--HERE: disable google AdId collection
-        $InTrack.initWithConfig(config).then((value) {
-          print('$inTrack $value');
+        InTrack.initWithConfig(config).then((value) {
+          print('inTrack $value');
           //you can enable push notification here
         });
       }
   });
-`
-}
 ```

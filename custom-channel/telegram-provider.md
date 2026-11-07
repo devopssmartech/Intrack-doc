@@ -14,7 +14,7 @@ Obtain your Telegram API token by creating a bot through `@BotFather`. Follow [t
 Here’s an example of what the token looks like:
 
 ```jsx
-{`4839574812:AAFD39kkdpWt3ywyRZergyOLMaJhac60qc`}
+4839574812:AAFD39kkdpWt3ywyRZergyOLMaJhac60qc
 ```
 
 ## Start the Telegram Bot
@@ -32,16 +32,14 @@ To achieve this, send the `Chat ID` and `Phone Number` of the user to **inTrack*
 Here’s a sample CURL request:
 
 ```bash
-{
-`curl -X POST <HOST>/api/sdk/accounts/<YOUR_$INTRACK_LICENSE_CODE>/telegram-info \\
-    --header 'Authorization: Bearer <YOUR_$INTRACK_API_KEY>' \\
+curl -X POST <HOST>/api/sdk/accounts/<YOUR_INTRACK_LICENSE_CODE>/telegram-info \\
+    --header 'Authorization: Bearer <YOUR_INTRACK_API_KEY>' \\
     --header 'Content-Type: application/json' \\
     --data '{
         "phoneNumber": "980000000000",
         "telegramChatId": "0000000000",
         "optIn": true
     }'
-`}
 ```
 
 :::info

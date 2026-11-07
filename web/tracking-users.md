@@ -51,9 +51,7 @@ Make sure you call login as soon as the user logs in to your application, or whe
 ### Asynchronous
 
 ```javascript
-{
-  `$Intk('login', userDetails);`
-}
+Intk('login', userDetails);
 ```
 
 
@@ -61,9 +59,7 @@ Make sure you call login as soon as the user logs in to your application, or whe
 ### Synchronous
 
 ```javascript
-{
-  `$InTrack.login(userDetails);`
-}
+InTrack.login(userDetails);
 ```
 
 
@@ -75,19 +71,13 @@ Make sure that you call logout when the user logs out and you don't want to atta
 ### Asynchronous
 
 ```javascript
-{
-  `$Intk('logout')
-`
-}
+Intk('logout')
 ```
 
 ### Synchronous
 
 ```javascript
-{
-  `$InTrack.logout();
-`
-}
+InTrack.logout();
 ```
 
 
@@ -99,19 +89,13 @@ In case of having any changes in user's details, these changes can be sent to **
 ### Asynchronous
 
 ```javascript
-{
-  `$Intk('updateProfile', userDetails);
-`
-}
+Intk('updateProfile', userDetails);
 ```
 
 ### Synchronous
 
 ```javascript
-{
-  `$InTrack.updateProfile(userDetails)
-`
-}
+InTrack.updateProfile(userDetails)
 ```
 
 
@@ -119,8 +103,7 @@ In case of having any changes in user's details, these changes can be sent to **
 Method recordLogin and  Profile Updates accepts a parameter with the following model:
 
 ```JavaScript
-{
-`UserDetails: {
+UserDetails: {
     firstName: String,
     lastName: String,
     email: String,
@@ -139,7 +122,6 @@ Method recordLogin and  Profile Updates accepts a parameter with the following m
     webPushOptIn: Boolean,
     userId: String,
     attributes: Object
-}`
 }
 ```
 
@@ -182,21 +164,16 @@ For tracking unknown users, **inTrack** SDK automatically generate a random id f
 ### Asynchronous
 
 ```javascript
-{
-`$Intk('getDeviceId', (deviceId) => {
+Intk('getDeviceId', (deviceId) => {
     console.log("Device a.k.a. Anonymous id: ", deviceId)
-});`
-}
+});
 ```
 
 ### Synchronous
 
 ```javascript
-{
-`const deviceId = $InTrack.getDeviceId();
+const deviceId = InTrack.getDeviceId();
 console.log("Device a.k.a. Anonymous id: ", deviceId);
-`
-}
 ```
 
 #### Getting User ID
@@ -206,19 +183,14 @@ After calling our login method, we keep userId and treat that user as KNOWN user
 ### Asynchronous
 
 ```javascript
-{
-`$Intk('getUserId', (userId) => {
+Intk('getUserId', (userId) => {
     console.log("userId : ", userId);
-});`
-}
+});
 ```
 
 ### Synchronous
 
 ```javascript
-{
-`const userId = $InTrack.getUserId();
+const userId = InTrack.getUserId();
 console.log("userId : ", userId);
-`
-}
 ```

@@ -22,10 +22,8 @@ If your connection to international internet / Maven Central is unavailable, you
 ### Groovy
 
 ```Groovy
-{
-`dependencies {
-    implementation 'ir.smartech.$intrack:android-sdk:3.0.3'
-}`
+dependencies {
+    implementation 'ir.smartech.intrack:android-sdk:3.0.3'
 }
 ```
 
@@ -34,10 +32,8 @@ If your connection to international internet / Maven Central is unavailable, you
 ### KotlinDSL
 
 ```Kotlin
-{
-`dependencies {
-    implementation("ir.smartech.$intrack:android-sdk:3.0.3")
-}`
+dependencies {
+    implementation("ir.smartech.intrack:android-sdk:3.0.3")
 }
 ```
 
@@ -60,27 +56,23 @@ add the following rules to your ProGuard file (proguard-rules.pro):
 ### Java
 
 ```java
-{
-`$InTrack.init(
-    new $InTrackConfig()
+InTrack.init(
+    new InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
-);`
-}
+);
 ```
 
 ### Kotlin
 
 ```kotlin
-{
-`$InTrack.init(
-    $InTrackConfig()
+InTrack.init(
+    InTrackConfig()
       .setApplication(this)
       .setAppKey("APP_KEY")
       .setAuthKey("AUTH_KEY")
-)`
-}
+)
 ```
 
 
@@ -98,17 +90,13 @@ Also, the following call should be added in `onStart` method of the main activit
 ### Java
 
 ```java
-{
-`$InTrack.onStart(this);`
-}
+InTrack.onStart(this);
 ```
 
 ### kotlin
 
 ```kotlin
-{
-`$InTrack.onStart(this)`
-}
+InTrack.onStart(this)
 ```
 
 To configure the SDK during init, a config object called <code>InTrackConfig</code> is used. Configuration is done by creating such an object and then calling it's provided function calls to enable functionality you need. Afterward that config object is provided to the "init" method.
@@ -130,29 +118,25 @@ Call setLoggingEnabled on the config class to enable logging:
 ### Java
 
 ```java
-{
-`$InTrack.init(
-    new $InTrackConfig()
+InTrack.init(
+    new InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .setLoggingEnabled(true) //<-- HERE
-);`
-}
+);
 ```
 
 ### kotlin
 
 ```kotlin
-{
-`$InTrack.init(
-    $InTrackConfig()
+InTrack.init(
+    InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .setLoggingEnabled(true) //<-- HERE
-)`
-}
+)
 ```
 
 ### Crash Reporting
@@ -164,29 +148,25 @@ To enable automatic crash reporting, call the following function on the config o
 ### Java
 
 ```java
-{
-`$InTrack.init(
-    new $InTrackConfig()
+InTrack.init(
+    new InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .enableCrashReporting(); //<-- HERE
-);`
-}
+);
 ```
 
 ### kotlin
 
 ```kotlin
-{
-`$InTrack.init(
-    $InTrackConfig()
+InTrack.init(
+    InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .enableCrashReporting(); //<-- HERE
-)`
-}
+)
 ```
 
 **Logging handled exceptions**
@@ -198,17 +178,13 @@ You may also log these handled exceptions to monitor how and when they are happe
 ### Java
 
 ```java
-{
-`$InTrack.recordHandledException(Exception exception);`
-}
+InTrack.recordHandledException(Exception exception);
 ```
 
 ### kotlin
 
 ```kotlin
-{
-`$InTrack.recordHandledException(exception)`
-}
+InTrack.recordHandledException(exception)
 ```
 
 If you have handled an exception, and it turns out to be fatal to your app, you may use this call:
@@ -216,17 +192,13 @@ If you have handled an exception, and it turns out to be fatal to your app, you 
 ### Java
 
 ```java
-{
-`$InTrack.recordUnhandledException(Exception exception);`
-}
+InTrack.recordUnhandledException(Exception exception);
 ```
 
 ### kotlin
 
 ```kotlin
-{
-`$InTrack.recordUnhandledException(exception)`
-}
+InTrack.recordUnhandledException(exception)
 ```
 
 ### Google advertising id collection
@@ -236,27 +208,23 @@ In android devices, by default, **inTrack** SDK will try to get and collect goog
 ### Java
 
 ```java
-{
-`$InTrack.init(
-    new $InTrackConfig()
+InTrack.init(
+    new InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .seCollectAdvertisingId(false) // <-- HERE
-);`
-}
+);
 ```
 
 ### kotlin
 
 ```kotlin
-{
-`$InTrack.init(
-    $InTrackConfig()
+InTrack.init(
+    InTrackConfig()
         .setApplication(this)
         .setAppKey("APP_KEY")
         .setAuthKey("AUTH_KEY")
         .seCollectAdvertisingId(false) // <-- HERE
-)`
-}
+)
 ```

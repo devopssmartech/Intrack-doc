@@ -77,21 +77,20 @@ please note that you also need to ask for user's permission for push notificatio
 ### Objective-C
 
 ```objectivec
-{`
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
   {
-    $InTrackConfig* config = $InTrackConfig.new;
+    InTrackConfig* config = InTrackConfig.new;
     config.appKey = @"YOUR_APP_KEY";
     config.authKey = @"YOUR_AUTH_KEY";
     config.enableCrashReporting = YES;
-    [$InTrack startWithConfig:config];
-    $InTrackPushConfig* pushConfig = $InTrackPushConfig.new;
+    [InTrack startWithConfig:config];
+    InTrackPushConfig* pushConfig = InTrackPushConfig.new;
 
     // pushConfig.doNotShowAlertForNotifications = NO;
-    [$InTrackPush startWithConfig:pushConfig];
+    [InTrackPush startWithConfig:pushConfig];
     //Ask for user's permission for Push Notifications (not necessarily here)
-    //You can do this later at any point in the app after starting $InTrack push service.
-    [$InTrack askForNotificationPermission];
+    //You can do this later at any point in the app after starting InTrack push service.
+    [InTrack askForNotificationPermission];
 
     /**
       YOUR CODE GOES HERE
@@ -99,31 +98,30 @@ please note that you also need to ask for user's permission for push notificatio
 
     return YES;
 }
-`}
 ```
 
 ### swift
 
 ```swift
-{`func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
 {
-    let config: $InTrackConfig = $InTrackConfig()
+    let config: InTrackConfig = InTrackConfig()
     config.appKey = "YOUR_APP_KEY"
     config.authKey = "YOUR_AUTH_KEY"
-    $InTrack.initWith(config)
+    InTrack.initWith(config)
     // initialize push
-    let pushConfig: $InTrackPushConfig = $InTrackPushConfig()
+    let pushConfig: InTrackPushConfig = InTrackPushConfig()
     // pushConfig.doNotShowAlertForNotifications = false
-    $InTrack.initPush(pushConfig)
+    InTrack.initPush(pushConfig)
     //Ask for user's permission for Push Notifications (not necessarily here)
-    //You can do this later at any point in the app after starting $InTrack push service.
-    $InTrack.askForNotificationPermission()
+    //You can do this later at any point in the app after starting InTrack push service.
+    InTrack.askForNotificationPermission()
     /**
         YOUR CODE GOES HERE
     **/
 
     return true
-}`}
+}
 ```
 
 :::note
@@ -139,37 +137,37 @@ Please make sure you do not set UNUserNotificationCenter.currentNotificationCent
 ### Objective-C
 
 ```objectivec
-{`- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    $InTrackConfig* config = $InTrackConfig.new;
+    InTrackConfig* config = InTrackConfig.new;
     config.appKey = @"YOUR_APP_KEY";
     config.authKey = @"YOUR_AUTH_KEY";
     config.enableCrashReporting = YES;
-    [$InTrack startWithConfig:config];
-    $InTrackPushConfig* pushConfig = $InTrackPushConfig.new;
+    [InTrack startWithConfig:config];
+    InTrackPushConfig* pushConfig = InTrackPushConfig.new;
     // pushConfig.doNotShowAlertForNotifications = NO;
-    [$InTrackPush startWithConfig:pushConfig];
+    [InTrackPush startWithConfig:pushConfig];
     //Ask for user's permission for Push Notifications (not necessarily here)
-    //You can do this later at any point in the app after starting $InTrack push service.
-    [$InTrack askForNotificationPermission];
+    //You can do this later at any point in the app after starting InTrack push service.
+    [InTrack askForNotificationPermission];
 
     /**
         YOUR CODE GOES HERE
     **/
 
     return YES;
-}`}
+}
 ```
 
 ### swift
 
 ```swift
-{`let authorizationOptions: UNAuthorizationOptions = [.badge, .alert, .sound]
-$InTrack.askForNotificationPermission(options: authorizationOptions, completionHandler:
+let authorizationOptions: UNAuthorizationOptions = [.badge, .alert, .sound]
+InTrack.askForNotificationPermission(options: authorizationOptions, completionHandler:
 { (granted: Bool, error: Error?) in
     print("granted: \(granted)")
     print("error: \(error)")
-})`}
+})
 ```
 
 ### Rich Push Notifications
@@ -189,7 +187,7 @@ Here's how you can go about it:
 
 **Step 2:** Click Next, fill out the Product Name  as you wish (for example: inTrackNSE), and click Finish.
 
-**Step 3:** Click Activate on the prompt shown to activate the service extension. Xcode will now create a new top-level folder in your project with the name, `$InTrackNotificationService` (NotificationService.swift in Swift projects).
+**Step 3:** Click Activate on the prompt shown to activate the service extension. Xcode will now create a new top-level folder in your project with the name, `InTrackNotificationService` (NotificationService.swift in Swift projects).
 
 #### 2. Create Notification Content Extension
 
@@ -206,26 +204,26 @@ Here's how you can update service and content extension classes:
 ### Objective-C
 
 ```objectivec
-{`#import "$InTrackNotificationService.h"
+#import "InTrackNotificationService.h"
 
 - (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
     self.contentHandler = contentHandler;
     self.bestAttemptContent = [request.content mutableCopy];
     //delete existing template code, and add this line
-    [$InTrackNotificationService didReceiveNotificationRequest:request withContentHandler:contentHandler];
-}`}
+    [InTrackNotificationService didReceiveNotificationRequest:request withContentHandler:contentHandler];
+}
 ```
 
 ### swift
 
 ```swift
-{`override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void)
+override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void)
 {
     self.contentHandler = contentHandler
     bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
     //delete existing template code, and add this line
-    $InTrackNotificationService.didReceive(request, withContentHandler: contentHandler)
-}`}
+    InTrackNotificationService.didReceive(request, withContentHandler: contentHandler)
+}
 ```
 
 :::note
@@ -242,7 +240,7 @@ Please ensure you also configure the App Transport Security setting in the exten
 
 ### Disabling Alerts Shown by Notifications
 
-To disable messages from automatically being shown by the inTrack while the app is in the foreground, you can set the `doNotShowAlertForNotifications` flag on the `$InTrackPushConfig` object. If set, no message will be displayed by using the default system UI in the app, but push-open events will be recorded automatically.
+To disable messages from automatically being shown by the inTrack while the app is in the foreground, you can set the `doNotShowAlertForNotifications` flag on the `InTrackPushConfig` object. If set, no message will be displayed by using the default system UI in the app, but push-open events will be recorded automatically.
 
 ### Manually Handling Notifications
 
@@ -263,19 +261,19 @@ you're also using WebEngage.
 
 :::note
 
-Important: Do not call `$InTrack.askForNotificationPermission(...) ` or `$InTrack.initPush(pushConfig)` in your app.
+Important: Do not call `InTrack.askForNotificationPermission(...) ` or `InTrack.initPush(pushConfig)` in your app.
 
 :::
 
 ### 1.Add Notification Service to Service Extension Target
 
-* `$InTrackNotificationService.m`
-* `$InTrackNotificationService.h`
+* `InTrackNotificationService.m`
+* `InTrackNotificationService.h`
 
 **Note:** Please contact **InTrack Customer Support** to obtain these files.
 
 If your project uses Swift: Add this line to your Bridging Header:
-`#import $InTrackNotificationService.m`
+`#import InTrackNotificationService.m`
 
 ### 2.Update Notification Service Class to Support Rich Push
 
@@ -284,9 +282,9 @@ Modify your Notification Service Extension as follows:
 ### Objective-C
 
 ```objectivec
-{`#import "WEXPushNotificationService.h"
+#import "WEXPushNotificationService.h"
 #import <UserNotifications/UserNotifications.h>
-#import "$InTrackNotificationService.h"
+#import "InTrackNotificationService.h"
 
 @interface NotificationService : WEXPushNotificationService
 @end
@@ -297,31 +295,31 @@ Modify your Notification Service Extension as follows:
                   withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
 
     NSDictionary *userInfo = request.content.userInfo;
-    NSDictionary *$intrackPl = userInfo[@"c"];
+    NSDictionary *intrackPl = userInfo[@"c"];
 
-    if ($intrackPl != nil && [$intrackPl isKindOfClass:[NSDictionary class]] && $intrackPl.count > 0) {
-        [$InTrackNotificationService didReceive:request withContentHandler:contentHandler];
+    if (intrackPl != nil && [intrackPl isKindOfClass:[NSDictionary class]] && intrackPl.count > 0) {
+        [InTrackNotificationService didReceive:request withContentHandler:contentHandler];
     } else {
         [super didReceiveNotificationRequest:request withContentHandler:contentHandler];
     }
 }
-@end`}
+@end
 ```
 
 ### swift
 
 ```swift
-{`class NotificationService: WEXPushNotificationService {
+class NotificationService: WEXPushNotificationService {
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         let userInfo = request.content.userInfo
-        let $intrackPl = userInfo["c"] as? [String: Any] ?? [:]
-        if !$intrackPl.isEmpty {
-            $InTrackNotificationService.didReceive(request, withContentHandler: contentHandler)
+        let intrackPl = userInfo["c"] as? [String: Any] ?? [:]
+        if !intrackPl.isEmpty {
+            InTrackNotificationService.didReceive(request, withContentHandler: contentHandler)
         } else {
             super.didReceive(request, withContentHandler: contentHandler)
         }
     }
-}`}
+}
 ```
 
 ### 3.Configure WebEngage in AppDelegate
@@ -331,7 +329,7 @@ In your `AppDelegate.swift`, set up WebEngage as shown:
 ### Objective-C
 
 ```objectivec
-{`#import "AppDelegate.h"
+#import "AppDelegate.h"
 #import <UserNotifications/UserNotifications.h>
 #import "GeneratedPluginRegistrant.h"
 #import <WebEngage/WebEngage.h>
@@ -352,20 +350,20 @@ In your `AppDelegate.swift`, set up WebEngage as shown:
     return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
-@end`}
+@end
 ```
 
 ### swift
 
 ```swift
-{`override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     GeneratedPluginRegistrant.register(with: self)
     WebEngage.sharedInstance().pushNotificationDelegate = self.bridge
     WebEngage.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions, notificationDelegate: self.bridge)
     UIApplication.shared.registerForRemoteNotifications()
     UNUserNotificationCenter.current().delegate = self
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-}`}
+}
 ```
 
 ### 4.Send Device Token to SDK
@@ -373,23 +371,23 @@ In your `AppDelegate.swift`, set up WebEngage as shown:
 ### Objective-C
 
 ```objectivec
-{`#import "AppDelegate.h"
-#import <$InTrack/$InTrack.h>
+#import "AppDelegate.h"
+#import <InTrack/InTrack.h>
 
 @implementation AppDelegate
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [$InTrack onTokenRefresh:deviceToken];
+    [InTrack onTokenRefresh:deviceToken];
 }
-@end`}
+@end
 ```
 
 ### swift
 
 ```swift
-{`override func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-    $InTrack.onTokenRefresh(deviceToken)
-}`}
+override func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    InTrack.onTokenRefresh(deviceToken)
+}
 ```
 
 ### 5.Handle Foreground Push Notifications
@@ -397,7 +395,7 @@ In your `AppDelegate.swift`, set up WebEngage as shown:
 ### Objective-C
 
 ```objectivec
-{`#import "AppDelegate.h"
+#import "AppDelegate.h"
 #import <UserNotifications/UserNotifications.h>
 
 @implementation AppDelegate
@@ -406,15 +404,15 @@ In your `AppDelegate.swift`, set up WebEngage as shown:
     completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound);
 }
 
-@end`}
+@end
 ```
 
 ### swift
 
 ```swift
-{`override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     completionHandler([.alert, .sound])
-}`}
+}
 ```
 
 ### 6.Handle Background Push Notifications
@@ -422,7 +420,7 @@ In your `AppDelegate.swift`, set up WebEngage as shown:
 ### Objective-C
 
 ```objectivec
-{`#import "AppDelegate.h"
+#import "AppDelegate.h"
 #import <UIKit/UIKit.h>
 
 @implementation AppDelegate
@@ -432,15 +430,15 @@ In your `AppDelegate.swift`, set up WebEngage as shown:
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
-@end`}
+@end
 ```
 
 ### swift
 
 ```swift
-{`override func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+override func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     completionHandler(.newData)
-}`}
+}
 ```
 
 ### 7.Send Click Event and Handle Notification Clicks
@@ -448,7 +446,6 @@ In your `AppDelegate.swift`, set up WebEngage as shown:
 ### Objective-C
 
 ```objectivec
-{`
 #import "AppDelegate.h"
 #import <UserNotifications/UserNotifications.h>
 
@@ -459,10 +456,10 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void (^)(void))completionHandler {
 
     NSDictionary *userInfo = response.notification.request.content.userInfo;
-    NSDictionary *$intrackPayload = userInfo[@"c"];
-    NSString *notificationID = $intrackPayload[@"id"];
+    NSDictionary *intrackPayload = userInfo[@"c"];
+    NSString *notificationID = intrackPayload[@"id"];
 
-    if (!$intrackPayload || !notificationID) {
+    if (!intrackPayload || !notificationID) {
         completionHandler();
         return;
     }
@@ -471,12 +468,12 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     NSString *url = nil;
 
     if ([response.actionIdentifier isEqualToString:UNNotificationDefaultActionIdentifier]) {
-        url = $intrackPayload[@"link"];
-    } else if ([response.actionIdentifier hasPrefix:@"$InTrackActionIdentifier"]) {
-        NSString *indexString = [response.actionIdentifier stringByReplacingOccurrencesOfString:@"$InTrackActionIdentifier" withString:@""];
+        url = intrackPayload[@"link"];
+    } else if ([response.actionIdentifier hasPrefix:@"InTrackActionIdentifier"]) {
+        NSString *indexString = [response.actionIdentifier stringByReplacingOccurrencesOfString:@"InTrackActionIdentifier" withString:@""];
         buttonIndex = [indexString integerValue];
 
-        NSArray *buttons = $intrackPayload[@"buttons"];
+        NSArray *buttons = intrackPayload[@"buttons"];
         if ([buttons isKindOfClass:[NSArray class]] && buttons.count >= buttonIndex) {
             NSDictionary *button = buttons[buttonIndex - 1];
             url = button[@"l"];
@@ -484,7 +481,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     }
 
     // Send click event
-    NSString *eventUrl = [NSString stringWithFormat:@"https://api.$intrack.ir/api/sdk/track/clicked?token=%@&button=%ld&url=%@", notificationID, (long)buttonIndex, url ?: @""];
+    NSString *eventUrl = [NSString stringWithFormat:@"https://api.intrack.ir/api/sdk/track/clicked?token=%@&button=%ld&url=%@", notificationID, (long)buttonIndex, url ?: @""];
     NSURL *urlObj = [NSURL URLWithString:eventUrl];
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:urlObj completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         // Handle response if needed
@@ -498,15 +495,15 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     completionHandler();
 }
 
-@end`}
+@end
 ```
 
 ### swift
 
 ```swift
-{`override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
     let userInfo = response.notification.request.content.userInfo
-    guard let $intrackPayload = userInfo["c"] as? [String: Any], let notificationID = $intrackPayload["id"] as? String else {
+    guard let intrackPayload = userInfo["c"] as? [String: Any], let notificationID = intrackPayload["id"] as? String else {
         completionHandler()
         return
     }
@@ -515,19 +512,19 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     var url: String?
 
     if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
-        url = $intrackPayload["link"] as? String
-    } else if response.actionIdentifier.hasPrefix("$InTrackActionIdentifier") {
-        let indexString = response.actionIdentifier.replacingOccurrences(of: "$InTrackActionIdentifier", with: "")
+        url = intrackPayload["link"] as? String
+    } else if response.actionIdentifier.hasPrefix("InTrackActionIdentifier") {
+        let indexString = response.actionIdentifier.replacingOccurrences(of: "InTrackActionIdentifier", with: "")
         if let index = Int(indexString) {
             buttonIndex = index
-            if let buttons = $intrackPayload["buttons"] as? [[String: Any]],
+            if let buttons = intrackPayload["buttons"] as? [[String: Any]],
                buttons.indices.contains(buttonIndex - 1) {
                 url = buttons[buttonIndex - 1]["l"] as? String
             }
         }
     }
 
-    let eventUrl = URL(string: "https://api.$intrack.ir/api/sdk/track/clicked?token=\(notificationID)&button=\(buttonIndex)&url=\(url ?? "")")!
+    let eventUrl = URL(string: "https://api.intrack.ir/api/sdk/track/clicked?token=\(notificationID)&button=\(buttonIndex)&url=\(url ?? "")")!
     let task = URLSession.shared.dataTask(with: eventUrl) { data, response, error in
         // Handle response if needed
     }
@@ -538,5 +535,5 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     }
 
     completionHandler()
-}`}
+}
 ```

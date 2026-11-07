@@ -21,52 +21,41 @@ first, you need to register our service worker, which is responsible to display 
  `https://your-domain.com/sw.js`
 
 ```jsx
-{
-`https://static1.intrack.ir/api/web/download/sdk/v1/sw.js`
-}
+https://static1.intrack.ir/api/web/download/sdk/v1/sw.js
 ```
 
 if you already have a service worker you can import our script in your file :
 
 ```jsx
-{
-`if('function' === typeof importScripts) {
-    importScripts("https://static1.$intrack.ir/api/web/download/sdk/v1/inTrack-sw.min.js")
-}`
+if('function' === typeof importScripts) {
+    importScripts("https://static1.intrack.ir/api/web/download/sdk/v1/inTrack-sw.min.js")
 }
 ```
 
 please note that in order to access [PushManager](https://developer.mozilla.org/en-US/docs/Web/API/PushManager) and getting subscription status of users, our SDK need to be aware of service worker registration status, so by default we assume the script is located at root of your domain (ie: `https://your-domain.com/sw.js`), if it is not the case, you need to give your service worker path throuhg `sw_path` config in initialization of SDK.
 
 ```jsx
-{
-  `var $intrack_config = {
+var intrack_config = {
     app_key: 'Provided_App_Key',
     auth_key: 'Provided_Auth_Key',
     public_key: 'Provided_Public_Key',
     sw_path: "/path-to-your/serviceWorker.js" //<-- HERE
   }
-`
-}
 ```
 
-Initializing **inTrack** notification service is done by calling `$InTrack.InitWebPush()` with optional config parameter. This method should be called after importing the
-`$inTrack.js` file and calling `$InTrack.init()`, so the initialization block of SDK will look like this:
+Initializing **inTrack** notification service is done by calling `InTrack.InitWebPush()` with optional config parameter. This method should be called after importing the
+`inTrack.js` file and calling `InTrack.init()`, so the initialization block of SDK will look like this:
 
 ### Asynchronous
 
 ```jsx
-{
-`$Intk('InitWebPush', webPushConfig);`
-}
+Intk('InitWebPush', webPushConfig);
 ```
 
 ### Synchronous
 
 ```jsx
-{
-`$InTrack.InitWebPush(webPushConfig);`
-}
+InTrack.InitWebPush(webPushConfig);
 ```
 
 :::note
@@ -78,8 +67,7 @@ You should call this method after SDK initialization with appropriate `public_ke
 Method `InitWebPush` accepts a config parameter with the following model. You can customize look and feel of widgets (welcome message and subscription bell) with these parameters:
 
 ```jsx
-{
-`webPushConfig: {
+webPushConfig: {
     subscriptionStyle: {
         subscriptionTheme: 1,
         subscriptionThemePos: 1,
@@ -146,7 +134,6 @@ Method `InitWebPush` accepts a config parameter with the following model. You ca
             "unblockFirefox":"شما اعلان ها را بلاک کرده اید، لطفا روی آیکون تنظیمات در کنار نوارآدرس کلیک کرده و گزینه Blocked/Blocked Temporarily را حذف کنید",
         }
     }
-}`
 }
 ```
 
@@ -202,22 +189,18 @@ you can also customize the look of widget with following properties:
 
 ### Subscription Info
 
-You can get subscription status of user with calling `$InTrack.SubscriptionWebPushInfo()`.
+You can get subscription status of user with calling `InTrack.SubscriptionWebPushInfo()`.
 
 ### Asynchronous
 
 ```jsx
-{
-`$Intk('SubscriptionWebPushInfo', callBack);`
-}
+Intk('SubscriptionWebPushInfo', callBack);
 ```
 
 ### Synchronous
 
 ```jsx
-{
-`$InTrack.SubscriptionWebPushInfo(callBack);`
-}
+InTrack.SubscriptionWebPushInfo(callBack);
 ```
 
 The result specified below:
@@ -239,17 +222,13 @@ You can unsubscribe users from receiving web push notifications.
 ### Asynchronous
 
 ```javascript
-{
-`$Intk('UnsubscribeWebPush');`
-}
+Intk('UnsubscribeWebPush');
 ```
 
 ### Synchronous
 
 ```javascript
-{
-`$InTrack.UnsubscribeWebPush();`
-}
+InTrack.UnsubscribeWebPush();
 ```
 
 For Example:
@@ -257,17 +236,13 @@ For Example:
 ### Asynchronous
 
 ```jsx
-{
-`<button onclick="$Intk('UnsubscribeWebPush')">Unsubscribe</button>`
-}
+<button onclick="Intk('UnsubscribeWebPush')">Unsubscribe</button>
 ```
 
 ### Synchronous
 
 ```jsx
-{
-`<button onclick="$InTrack.UnsubscribeWebPush()">Unsubscribe</button>`
-}
+<button onclick="InTrack.UnsubscribeWebPush()">Unsubscribe</button>
 ```
 
 ### Integrate with other SDK
@@ -287,17 +262,13 @@ you need to get registration token from Firebase sdk and send it to inTrack by c
 ### Asynchronous
 
 ```jsx
-{
-`$Intk('sendFireBaseToken', token);`
-}
+Intk('sendFireBaseToken', token);
 ```
 
 ### Synchronous
 
 ```jsx
-{
-`$InTrack.sendFireBaseToken(token);`
-}
+InTrack.sendFireBaseToken(token);
 ```
 
 **Example:**
@@ -305,8 +276,7 @@ you need to get registration token from Firebase sdk and send it to inTrack by c
 ### Asynchronous
 
 ```javascript
-{
-`import {
+import {
     getMessaging,
     getToken
 } from "firebase/messaging";
@@ -316,22 +286,20 @@ getToken(messaging, {
 }).then((currentToken) => {
     if (currentToken) {
       // Send the token to our server
-      $Intk('sendFireBaseToken', currentToken); //<-- here
+      Intk('sendFireBaseToken', currentToken); //<-- here
     } else {
       // ...
     }
 }).catch((err) => {
     console.log('An error occurred while retrieving token. ', err);
     // ...
-});`
-}
+});
 ```
 
 ### Synchronous
 
 ```javascript
-{
-`import {
+import {
     getMessaging,
     getToken
 } from "firebase/messaging";
@@ -341,15 +309,14 @@ getToken(messaging, {
 }).then((currentToken) => {
     if (currentToken) {
       // Send the token to our server
-      $InTrack.sendFireBaseToken(currentToken); //<-- here
+      InTrack.sendFireBaseToken(currentToken); //<-- here
     } else {
       // ...
     }
 }).catch((err) => {
     console.log('An error occurred while retrieving token. ', err);
     // ...
-});`
-}
+});
 ```
 
 **2- update your Service worker**
@@ -357,10 +324,8 @@ getToken(messaging, {
 Add following code at the top of your current service worker:
 
 ```javascript
-{
-`if ('function' === typeof importScripts) {
+if ('function' === typeof importScripts) {
     importScripts("https://static1.intrack.ir/api/web/download/sdk/v1/inTrack-sw.min.js");
-}`
 }
 ```
 
@@ -368,13 +333,11 @@ with this change, our service worker would handle incoming messages from inTrack
 for example when you get new message in onBackgroundMessage method of Firebase SDK:
 
 ```javascript
-{
-`onBackgroundMessage((payload) => {
-    if (payload?.data?.source === "$inTrack")
+onBackgroundMessage((payload) => {
+    if (payload?.data?.source === "inTrack")
         return
     //...
-});`
-}
+});
 ```
 
 #### Integrate with other tools
@@ -386,17 +349,13 @@ but if you want to subscribe users yourself, or using a library that directly de
 ### Asynchronous
 
 ```javascript
-{
-`$Intk('sendPushSubscription', token);`
-}
+Intk('sendPushSubscription', token);
 ```
 
 ### Synchronous
 
 ```javascript
-{
-`$InTrack.sendPushSubscription(token);`
-}
+InTrack.sendPushSubscription(token);
 ```
 
 **Example:**
@@ -404,50 +363,44 @@ but if you want to subscribe users yourself, or using a library that directly de
 ### Asynchronous
 
 ```javascript
-{
-`navigator.serviceWorker.register('serviceworker.js');
+navigator.serviceWorker.register('serviceworker.js');
 navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
     const options = {
       userVisibleOnly: true,
       applicationServerKey,
     };
     serviceWorkerRegistration.pushManager.subscribe(options).then((pushSubscription) => {
-      $Intk('sendPushSubscription', pushSubscription); //<-- here
+      Intk('sendPushSubscription', pushSubscription); //<-- here
     },
     (error) => {
       console.error(error);
     });
-  });`
-}
+  });
 ```
 
 ### Synchronous
 
 ```javascript
-{
-`navigator.serviceWorker.register('serviceworker.js');
+navigator.serviceWorker.register('serviceworker.js');
 navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
     const options = {
       userVisibleOnly: true,
       applicationServerKey,
     };
     serviceWorkerRegistration.pushManager.subscribe(options).then((pushSubscription) => {
-      $InTrack.sendPushSubscription(pushSubscription); //<-- here
+      InTrack.sendPushSubscription(pushSubscription); //<-- here
     },
     (error) => {
       console.error(error);
     });
-  });`
-}
+  });
 ```
 
 On the other hand, you should add our service worker to your current service, by adding the following code at the top of it:
 
 ```javascript
-{
-`if ('function' === typeof importScripts) {
+if ('function' === typeof importScripts) {
     importScripts("https://static1.intrack.ir/api/web/download/sdk/v1/inTrack-sw.min.js");
-}`
 }
 ```
 
@@ -455,8 +408,7 @@ with this change, our service worker would handle incoming messages from inTrack
 for example when you get new message in your service worker:
 
 ```javascript
-{
-`self.addEventListener('push',
+self.addEventListener('push',
     function(i) {
       let data
       try {
@@ -466,11 +418,10 @@ for example when you get new message in your service worker:
       } catch(error) {
         console.log('error', error)
       }
-      if (data?.source === '$inTrack') return;
+      if (data?.source === 'inTrack') return;
       //... rest of your code
     }
-);`
-}
+);
 ```
 
 :::info

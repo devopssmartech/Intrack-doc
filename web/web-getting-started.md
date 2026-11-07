@@ -18,45 +18,39 @@ To integrate the **inTrack** Web SDK, simply add the following code snippet to t
 ### Asynchronous
 
 ```html
-{
-  `<!-- $inTrack Initialization-->
+<!-- inTrack Initialization-->
   <script type="text/javascript">
-    var $inTrack_config = {
+    var inTrack_config = {
       app_key: 'App_Key',
       auth_key: 'Auth_Key',
       public_key: 'Public_Key',
       environment: 'production',
     };
     (function (i, n, t, r, a, c, k) {
-      o = i['$InTrack'] = i['$InTrack'] || {}; i[a] = i[a] || function () { (o.q = o.q || []).push(arguments); };
+      o = i['InTrack'] = i['InTrack'] || {}; i[a] = i[a] || function () { (o.q = o.q || []).push(arguments); };
       s = n.createElement(t); s.async = true; s.src = r; s.onload = function () { o.init(c) };
       e = n.getElementsByTagName(t)[0]; e.parentNode.insertBefore(s, k);
-    })(window, document, 'script', "//static1.intrack.ir/api/web/download/sdk/v1/inTrack.min.js?v=00", "$Intk", inTrack_config);
+    })(window, document, 'script', "//static1.intrack.ir/api/web/download/sdk/v1/inTrack.min.js?v=00", "Intk", inTrack_config);
   </script>
   <!-- End inTrack Initialization -->
-`
-}
 ```
 
 ### Synchronous
 
 ```html
-{
-  `<!-- $inTrack Initialization -->
+<!-- inTrack Initialization -->
   <script
     type="text/javascript"
     src="https://static1.intrack.ir/api/web/download/sdk/v1/inTrack.min.js?v=00"/>
   <script type="text/javascript">
-    $InTrack.init({
+    InTrack.init({
       app_key: 'Provided_App_Key',
       auth_key: 'Provided_Auth_Key',
       public_key: 'Provided_Public_Key',
       environment: 'production',
     });
   </script>
-  <!-- End $inTrack Initialization -->
-`
-}
+  <!-- End inTrack Initialization -->
 ```
 
 :::info
@@ -87,10 +81,9 @@ you can set the debug flag of the SDK configuration object to enable logging:
 ### Asynchronous
 
 ```html
-{
-  `<!-- $inTrack Initialization-->
+<!-- inTrack Initialization-->
   <script type="text/javascript">
-    var $inTrack_config = {
+    var inTrack_config = {
       app_key: 'App_Key',
       auth_key: 'Auth_Key',
       public_key: 'Public_Key',
@@ -98,26 +91,23 @@ you can set the debug flag of the SDK configuration object to enable logging:
       debug: true, //<--
     };
     (function (i, n, t, r, a, c, k) {
-      o = i['$InTrack'] = i['$InTrack'] || {}; i[a] = i[a] || function () { (o.q = o.q || []).push(arguments); };
+      o = i['InTrack'] = i['InTrack'] || {}; i[a] = i[a] || function () { (o.q = o.q || []).push(arguments); };
       s = n.createElement(t); s.async = true; s.src = r; s.onload = function () { o.init(c) };
       e = n.getElementsByTagName(t)[0]; e.parentNode.insertBefore(s, k);
-    })(window, document, 'script', "//static1.intrack.ir/api/web/download/sdk/v1/inTrack.min.js?v=00", "$Intk", $inTrack_config);
+    })(window, document, 'script', "//static1.intrack.ir/api/web/download/sdk/v1/inTrack.min.js?v=00", "Intk", inTrack_config);
   </script>
-  <!-- End $inTrack Initialization -->
-`
-}
+  <!-- End inTrack Initialization -->
 ```
 
 ### Synchronous
 
 ```html
-{
-  `<!-- $inTrack Initialization -->
+<!-- inTrack Initialization -->
     <script
       type="text/javascript"
       src="https://static1.intrack.ir/api/web/download/sdk/v1/inTrack.min.js?v=00"/>
     <script type="text/javascript">
-      $InTrack.init({
+      InTrack.init({
         app_key: 'Provided_App_Key',
         auth_key: 'Provided_Auth_Key',
         public_key: 'Provided_Public_Key',
@@ -125,9 +115,7 @@ you can set the debug flag of the SDK configuration object to enable logging:
         debug: true, //<--
       });
     </script>
-    <!-- End $inTrack Initialization -->
-`
-}
+    <!-- End inTrack Initialization -->
 ```
 
 ### Sharing audience with Ad Networks
@@ -135,15 +123,12 @@ you can set the debug flag of the SDK configuration object to enable logging:
 you can sync inTrack users id with Ad Networks like MediaAD and YektaNet, for this reason you should add following properties to SDK configuration object:
 
 ```javascript
-{
-  `var $intrack_config = {
+var intrack_config = {
     app_key: 'Provided_App_Key',
     auth_key: 'Provided_Auth_Key',
     public_key: 'Provided_Public_Key',
     environment: 'production',
-    yektanet_syncing: true, //<-- sync $intrack user id with yektaNet
-    mediaad_syncing: true, //<-- sync $intrack user id with mediaAD
+    yektanet_syncing: true, //<-- sync intrack user id with yektaNet
+    mediaad_syncing: true, //<-- sync intrack user id with mediaAD
   }
-`
-}
 ```

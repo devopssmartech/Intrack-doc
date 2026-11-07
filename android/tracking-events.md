@@ -24,13 +24,10 @@ Users can create their own custom events and send them to inTrack server. This c
 ### Java
 
 ```java
-{
-  `HashMap<String, Object> eventDetails = new HashMap<String, Object>();
+HashMap<String, Object> eventDetails = new HashMap<String, Object>();
    eventDetails.put("currency", "IRR");
    eventDetails.put("app_version", "1.0");
-   $InTrack.recordEvent("custom_event_name", eventDetails);
-`
-}
+   InTrack.recordEvent("custom_event_name", eventDetails);
 ```
 
 
@@ -38,13 +35,10 @@ Users can create their own custom events and send them to inTrack server. This c
 ### kotlin
 
 ```kotlin
-{
-  `val eventDetails = HashMap<String, Any>()
+val eventDetails = HashMap<String, Any>()
   eventDetails["currency"] = "IRR"
   eventDetails["app_version"] = "1.0"
-  $InTrack.recordEvent("custom_event_name", eventDetails)
-`
-}
+  InTrack.recordEvent("custom_event_name", eventDetails)
 ```
 
 
@@ -77,10 +71,7 @@ sending delivery event:
 ### Java
 
 ```java
-{
-  `$InTrack.recordCustomChannelDelivery(applicationContext, messageToken);
-`
-}
+InTrack.recordCustomChannelDelivery(applicationContext, messageToken);
 ```
 
 
@@ -88,10 +79,7 @@ sending delivery event:
 ### kotlin
 
 ```kotlin
-{
-  `$InTrack.recordCustomChannelDelivery(applicationContext, messageToken)
-`
-}
+InTrack.recordCustomChannelDelivery(applicationContext, messageToken)
 ```
 
 
@@ -101,10 +89,7 @@ sending click event:
 ### Java
 
 ```java
-{
-  `$InTrack.recordCustomChannelClick(applicationContext,messageToken);
-`
-}
+InTrack.recordCustomChannelClick(applicationContext,messageToken);
 ```
 
 
@@ -112,10 +97,7 @@ sending click event:
 ### kotlin
 
 ```kotlin
-{
-  `$InTrack.recordCustomChannelClick(applicationContext,messageToken)
-`
-}
+InTrack.recordCustomChannelClick(applicationContext,messageToken)
 ```
 
 

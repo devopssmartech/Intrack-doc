@@ -20,10 +20,7 @@ Initializing On Site messages service is done by calling initOnSiteMessaging met
 ### Asynchronous
 
 ```javascript
-{
-  `$Intk('initOnSiteMessaging', config);
-`
-}
+Intk('initOnSiteMessaging', config);
 ```
 
 
@@ -31,10 +28,7 @@ Initializing On Site messages service is done by calling initOnSiteMessaging met
 ### Synchronous
 
 ```javascript
-{
-  `$InTrack.initOnSiteMessaging(config);
-`
-}
+InTrack.initOnSiteMessaging(config);
 ```
 
 
@@ -42,11 +36,9 @@ Initializing On Site messages service is done by calling initOnSiteMessaging met
 Method `initOnSiteMessaging` accepts a config parameter with the following model. You can customize look and feel of widget with these parameters:
 
 ```javascript
-{
-`config: {
+config: {
     displayMessage: null,
     disableAutoTracking: false
-}`
 }
 ```
 
@@ -68,8 +60,7 @@ if you don't disable our automatic tracking, we will count user's page view and 
 our tracking object is look like this:
 
 ```javascript
-{
-`pageInfo: {
+pageInfo: {
     title: "", // document.title
     data: {
       ...history.state,
@@ -78,7 +69,6 @@ our tracking object is look like this:
       _int_hash:"", //location.hash
       _int_search:"" //location.search
     }
-}`
 }
 ```
 
@@ -91,17 +81,13 @@ you can tell our SDK about user's page views manually, by calling `sendScreenInf
 ### Asynchronous
 
 ```javascript
-{
-  `$Intk('sendScreenInfo', pageInfo, replace);`
-}
+Intk('sendScreenInfo', pageInfo, replace);
 ```
 
 ### Synchronous
 
 ```javascript
-{
-  `$InTrack.sendScreenInfo(pageInfo, replace);`
-}
+InTrack.sendScreenInfo(pageInfo, replace);
 ```
 
 
@@ -119,9 +105,7 @@ you can use `sendScreenInfo` with our automatic page tracking for enriching page
 
 
 ```javascript
-        {
-          `$Intk('sendScreenInfo', title: 'MY_PRODUCT', data: {price: 10000}, false);`
-        }
+Intk('sendScreenInfo', title: 'MY_PRODUCT', data: {price: 10000}, false);
 ```
 
 
@@ -131,9 +115,7 @@ you can use `sendScreenInfo` with our automatic page tracking for enriching page
 
 
 ```javascript
-        {
-          `$InTrack.sendScreenInfo(title: 'MY_PRODUCT', data: {price: 10000}, false);`
-        }
+InTrack.sendScreenInfo(title: 'MY_PRODUCT', data: {price: 10000}, false);
 ```
 
 
@@ -145,27 +127,23 @@ if you are not happy with the way that we display messages, you could handle tha
 ### Asynchronous
 
 ```javascript
-{
-  `$Intk('initOnSiteMessaging',
+Intk('initOnSiteMessaging',
     displayMessage: (data) => {
       console.log('message data', data);
       //display message here...
     }
-  );`
-}
+  );
 ```
 
 ### Synchronous
 
 ```javascript
-{
-  `$InTrack.initOnSiteMessaging(
+InTrack.initOnSiteMessaging(
     displayMessage: (data) => {
       console.log('message data', data);
       //display message here...
     }
-  );`
-}
+  );
 ```
 
 by doing this, we track user's activity and when campaing conditions are met, we will call your provided function and send message information to you.
@@ -245,29 +223,25 @@ if user perform primary action of message (for example by clicking on action but
 ### Asynchronous
 
 ```javascript
-{
-  `$Intk('sendEvent', {
+Intk('sendEvent', {
     eventName: 'ON_SITE_CLICK',
     eventData: {
       id: '', //id of the message
     },
     isSystem: true
-  });`
-}
+  });
 ```
 
 ### Synchronous
 
 ```javascript
-{
-  `$InTrack.sendEvent({
+InTrack.sendEvent({
     eventName: 'ON_SITE_CLICK',
     eventData: {
       id: '', //id of the message
     },
     isSystem: true
-  });`
-}
+  });
 ```
 
 and if user dissmissed the message send `ON_SITE_CLOSED` event:
@@ -275,29 +249,25 @@ and if user dissmissed the message send `ON_SITE_CLOSED` event:
 ### Asynchronous
 
 ```javascript
-{
-  `$Intk('sendEvent', {
+Intk('sendEvent', {
     eventName: 'ON_SITE_CLOSED',
     eventData: {
       id: '', //id of the message
     },
     isSystem: true
-  });`
-}
+  });
 ```
 
 ### Synchronous
 
 ```javascript
-{
-  `$InTrack.sendEvent({
+InTrack.sendEvent({
     eventName: 'ON_SITE_CLOSED',
     eventData: {
       id: '', //id of the message
     },
     isSystem: true
-  });`
-}
+  });
 ```
 
 note that in these cases you should set `isSystem` key to true.
