@@ -41,10 +41,8 @@ If you are using Proguard, add the following rule to your Proguard settings to e
 First, import **inTrack** using the following lines:
 
 ```dart
-{
-`import 'package:intrack_flutter/intrack_flutter.dart';
-
-}
+import 'package:intrack_flutter/intrack_flutter.dart';
+import 'package:intrack_flutter/intrack_config.dart';
 ```
 
  Initialize **inTrack** in main.dart in initState();
